@@ -9,9 +9,12 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Search, FileText, Hash, BookOpen, Sparkles } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
-import searchData from "./search-data"
+import { v0SearchData } from "./v0-search-data"
+import { v1SearchData } from "./v1-search-data"
 import { ThemeToggle } from "./theme-toggle"
 import { AiSearchModal } from "./ai-search-modal"
+import { Button } from "./ui/button"
+import { useHeaderVisibility } from "@/contexts/header-visibility-context"
 
 export function Header() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -24,10 +27,15 @@ export function Header() {
   const [showBorder, setShowBorder] = useState(true)
   const [showAiModal, setShowAiModal] = useState(false)
   const [aiQuery, setAiQuery] = useState("")
+  const [searchVersion, setSearchVersion] = useState<'v0' | 'v1'>('v0')
+  const { setIsHeaderVisible } = useHeaderVisibility()
   const router = useRouter()
   const pathname = usePathname()
   const searchRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  // Determine which search data to use based on current page
+  const currentSearchData = searchVersion === 'v0' ? v0SearchData : v1SearchData;
 
   // Keyboard shortcut for AI search (Cmd+K or Ctrl+K)
   useEffect(() => {
@@ -48,15 +56,18 @@ export function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      if (currentScrollY < 10) {
+      if (currentScrollY <= 10) {
         // Always show header at the top
         setIsVisible(true)
+        setIsHeaderVisible(true)
       } else if (currentScrollY > lastScrollY) {
         // Scrolling down - hide header
         setIsVisible(false)
+        setIsHeaderVisible(false)
       } else {
         // Scrolling up - show header
         setIsVisible(true)
+        setIsHeaderVisible(true)
       }
 
       setLastScrollY(currentScrollY)
@@ -64,7 +75,7 @@ export function Header() {
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [lastScrollY])
+  }, [lastScrollY, setIsHeaderVisible])
 
   // Comprehensive search data including pages and their headings
   // handled in search-data.ts now
@@ -75,7 +86,7 @@ export function Header() {
     const normalizedQuery = query.toLowerCase()
     const results: SearchResultType[] = []
 
-    searchData.forEach((item) => {
+    currentSearchData.forEach((item) => {
       const titleMatch = item.title.toLowerCase().includes(normalizedQuery)
       const descriptionMatch = item.description?.toLowerCase().includes(normalizedQuery)
       const parentPageMatch = item.parentPage?.toLowerCase().includes(normalizedQuery)
@@ -289,7 +300,28 @@ export function Header() {
             <span className="hidden sm:inline text-sm text-muted-foreground">Documentation</span>
           </div>
           <div className="flex items-center gap-2">
+            {/* Theme Toggle */}
             <ThemeToggle />
+            {/* Version Toggle */}
+            <div className="flex items-center gap-1 border rounded-md p-0.5">
+              <Button
+                variant={searchVersion === 'v0' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setSearchVersion('v0')}
+                className="h-6 px-2 text-xs"
+              >
+                v0
+              </Button>
+              <Button
+                variant={searchVersion === 'v1' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setSearchVersion('v1')}
+                className="h-6 px-2 text-xs"
+              >
+                v1
+              </Button>
+            </div>
+            {/* Search Input */}
             <div 
               className={`relative transition-all duration-300 ease-in-out ${
                 isSearchFocused ? 'w-[300px] sm:w-[400px]' : 'w-[200px] sm:w-[280px]'

@@ -8,6 +8,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { NavigationLoading } from "@/components/navigation-loading"
 import { ThemeProvider } from "@/components/theme-provider"
+import { HeaderVisibilityProvider } from "@/contexts/header-visibility-context"
+import { DeprecationBanner } from "@/components/deprecation-banner"
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -61,15 +63,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NavigationLoading />
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarInset>
-              <Header />
-              <main className="flex-1 p-6">{children}</main>
-              <Footer />
-            </SidebarInset>
-          </SidebarProvider>
+          <HeaderVisibilityProvider>
+            <NavigationLoading />
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarInset>
+                <Header />
+                <DeprecationBanner />
+                <main className="flex-1 p-6">{children}</main>
+                <Footer />
+              </SidebarInset>
+            </SidebarProvider>
+          </HeaderVisibilityProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,10 +1,16 @@
+'use client'
+
+import { useState } from "react"
+
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Zap, Shield, Cpu, Download, Users, Star, Database } from "lucide-react"
+import { ArrowRight, Zap, Shield, Cpu, Download, Users, Star, Database, AlertTriangle } from "lucide-react"
 import { Analytics } from "@vercel/analytics/react"
 
 export default function HomePage() {
+  const [activeVersion, setActiveVersion] = useState<'v0' | 'v1'>('v0')
+  
   return (
     <>
       <div className="max-w-5xl mx-auto space-y-6">
@@ -321,13 +327,54 @@ export default function HomePage() {
 
         {/* Quick Navigation */}
         <div className="mt-16 py-16 px-4 bg-muted/30 rounded-lg" id="quick-navigation">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold tracking-tight mb-4">Documentation</h2>
-            <p className="text-lg text-muted-foreground">Everything you need to get started with Model HQ</p>
+            <p className="text-lg text-muted-foreground mb-6">Everything you need to get started with Model HQ</p>
+            
+            {/* Version Toggle */}
+            <div className="inline-flex items-center gap-2 p-1 bg-background border rounded-lg shadow-sm">
+              <button
+                onClick={() => setActiveVersion('v0')}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+                  activeVersion === 'v0'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                v0 Docs
+              </button>
+              <button
+                onClick={() => setActiveVersion('v1')}
+                className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+                  activeVersion === 'v1'
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                v1 Docs
+              </button>
+            </div>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
+          {/* V0 Documentation */}
+          {activeVersion === 'v0' && (
+            <div className="max-w-4xl mx-auto">
+              {/* Deprecation Warning */}
+              <div className="bg-orange-50 dark:bg-orange-950/30 border-2 border-orange-200 dark:border-orange-800 rounded-lg p-4 mb-8">
+                <div className="flex items-start gap-3">
+                  <AlertTriangle className="h-5 w-5 text-orange-600 dark:text-orange-400 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-orange-900 dark:text-orange-100 mb-1">
+                      Important: v0 will be deprecated soon
+                    </p>
+                    <p className="text-xs text-orange-800 dark:text-orange-200">
+                      Please migrate to v1 for continued support and new features.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-8">
               {/* System Configuration */}
               <div>
                 <div className="mb-3">
@@ -572,7 +619,29 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* V1 Documentation */}
+        {activeVersion === 'v1' && (
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center py-16">
+              <div className="inline-flex items-center gap-2 px-6 py-3 bg-blue-100 dark:bg-blue-900/50 border border-blue-300 dark:border-blue-700 rounded-full mb-6">
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
+                </div>
+                <span className="text-blue-700 dark:text-blue-300 font-semibold">Coming Soon</span>
+              </div>
+              <p className="text-muted-foreground mb-4 max-w-2xl mx-auto">
+                We're working hard on the next version of Model HQ with exciting new features, improved performance, and enhanced capabilities.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Stay tuned for updates and documentation!
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
 
         <div className="mt-16 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
           <h2 className="text-xl font-semibold text-blue-900 dark:text-blue-100 mb-4">🚀 Quick Start</h2>
