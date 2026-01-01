@@ -2,6 +2,7 @@
 // TODO: Update these mappings as V1 documentation is added
 
 export const V1_BASE_URL = 'https://model-hq-docs.vercel.app';
+export const V1_BASE_IMAGE_URL = 'https://model-hq-docs.vercel.app/v1';
 
 // Exact path mappings for V1 documentation
 // TODO: Add V1-specific documentation paths as they become available
@@ -164,46 +165,45 @@ Cookbooks (V1):
 `;
 
 // Image mappings for V1
-// TODO: Update image paths as V1-specific images are added
 export const V1_AVAILABLE_IMAGES = `
 Main Interface:
-- Main Menu: ![Main Menu](${V1_BASE_URL}/main_menu.png)
-- Landing Interface or setup options or entry page or getting started: ![Landing Interface](${V1_BASE_URL}/getting-started/landing_interface.png)
-- System Config: ![Laptop Config](${V1_BASE_URL}/laptop_config.png)
+- Main Menu: ![Main Menu](${V1_BASE_IMAGE_URL}/main_menu.png)
+- Landing Interface or setup options or entry page or getting started: ![Landing Interface](${V1_BASE_IMAGE_URL}/getting-started/landing_interface.png)
+- System Config: ![Laptop Config](${V1_BASE_IMAGE_URL}/laptop_config.png)
 
 Agents (V1):
-- Agent Builder: ![Agent Builder](${V1_BASE_URL}/agent/v1/agentBuilder.png)
-- Agent Interface: ![Agent Interface](${V1_BASE_URL}/agent/v1/agentInterface.png)
-- Create New Agent: ![New Agent](${V1_BASE_URL}/agent/v1/agentNew.png)
-- Agent Process: ![Agent Process](${V1_BASE_URL}/agent/v1/agentProcess.png)
-- Service Examples: ![Service 1](${V1_BASE_URL}/agent/v1/service1.png)
+- Agent Builder: ![Agent Builder](${V1_BASE_IMAGE_URL}/agent/v1/agentBuilder.png)
+- Agent Interface: ![Agent Interface](${V1_BASE_IMAGE_URL}/agent/v1/agentInterface.png)
+- Create New Agent: ![New Agent](${V1_BASE_IMAGE_URL}/agent/v1/agentNew.png)
+- Agent Process: ![Agent Process](${V1_BASE_IMAGE_URL}/agent/v1/agentProcess.png)
+- Service Examples: ![Service 1](${V1_BASE_IMAGE_URL}/agent/v1/service1.png)
 
 Chat (V1):
-- Chat Interface: ![Chat Interface](${V1_BASE_URL}/chat/v1/chatInterface.png)
-- Change Models: ![Change Models](${V1_BASE_URL}/chat/v1/changeModels.png)
-- Model Config: ![Model Config](${V1_BASE_URL}/chat/v1/modelConfig.png)
+- Chat Interface: ![Chat Interface](${V1_BASE_IMAGE_URL}/chat/v1/chatInterface.png)
+- Change Models: ![Change Models](${V1_BASE_IMAGE_URL}/chat/v1/changeModels.png)
+- Model Config: ![Model Config](${V1_BASE_IMAGE_URL}/chat/v1/modelConfig.png)
 
 Bots (V1):
-- Bots Interface: ![Bots](${V1_BASE_URL}/bots/v1.png)
+- Bots Interface: ![Bots](${V1_BASE_IMAGE_URL}/bots/v1.png)
 
 RAG (V1):
-- RAG Interface: ![RAG](${V1_BASE_URL}/rag/v1.png)
-- PDF Parsing: ![PDF Parsing](${V1_BASE_URL}/chat/v1/pdfParsing.png)
-- OCR: ![OCR](${V1_BASE_URL}/chat/v1/ocr.png)
+- RAG Interface: ![RAG](${V1_BASE_IMAGE_URL}/rag/v1.png)
+- PDF Parsing: ![PDF Parsing](${V1_BASE_IMAGE_URL}/chat/v1/pdfParsing.png)
+- OCR: ![OCR](${V1_BASE_IMAGE_URL}/chat/v1/ocr.png)
 
 Models (V1):
-- Models Interface: ![Models](${V1_BASE_URL}/models/v1.png)
+- Models Interface: ![Models](${V1_BASE_IMAGE_URL}/models/v1.png)
 
 Shutdown (V1):
-- Shutdown: ![Shutdown](${V1_BASE_URL}/shutdown/v1.png)
+- Shutdown: ![Shutdown](${V1_BASE_IMAGE_URL}/shutdown/v1.png)
 
 Model HQ SDK Or Code Documentation or Getting Started with SDK (V1):
-- ![Tools Location](${V1_BASE_URL}/getting-started-with-sdk/v1/menu.png)
-- ![Tools Interface](${V1_BASE_URL}/getting-started-with-sdk/v1/tools.png)
-- ![Initiate Backend](${V1_BASE_URL}/getting-started-with-sdk/v1/backend.png)
-- ![Launching Backend](${V1_BASE_URL}/getting-started-with-sdk/v1/launch.png)
-- ![Backend Configure](${V1_BASE_URL}/getting-started-with-sdk/v1/backend.png)
-- ![Download SDK](${V1_BASE_URL}/getting-started-with-sdk/v1/download.png)
-- ![Inside Downloaded SDK Files](${V1_BASE_URL}/getting-started-with-sdk/v1/files.png)
-- ![Closing Backend](${V1_BASE_URL}/getting-started-with-sdk/v1/close.png)
+- ![Tools Location](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/menu.png)
+- ![Tools Interface](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/tools.png)
+- ![Initiate Backend](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/backend.png)
+- ![Launching Backend](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/launch.png)
+- ![Backend Configure](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/backend.png)
+- ![Download SDK](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/download.png)
+- ![Inside Downloaded SDK Files](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/files.png)
+- ![Closing Backend](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/close.png)
 `;

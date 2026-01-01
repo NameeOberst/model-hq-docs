@@ -279,7 +279,7 @@ export default function ACMarketingWorkflowPage() {
                             to follow along with this tutorial)
                             <div className="my-4 bg-blue-100 dark:bg-blue-900 p-4 rounded-lg mt-4">
                               <img
-                                src="/cookbooks/photo-to-email-automation/unitSticker.png"
+                                src="/cookbooks/v0/photo-to-email-automation/unitSticker.png"
                                 alt="all process"
                                 className="rounded-lg shadow-md border dark:border-gray-700 max-w-md w-full"
                               />
@@ -301,7 +301,7 @@ export default function ACMarketingWorkflowPage() {
                           </span>
                         </div>
                         <a
-                          href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/photo-to-email-automation"
+                          href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/v0/photo-to-email-automation"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline inline-flex items-center gap-1"
@@ -359,7 +359,7 @@ export default function ACMarketingWorkflowPage() {
                         </a>
                         <div className="my-4 p-4 rounded-lg mt-4">
                           <img
-                            src="/cookbooks/photo-to-email-automation/gmailCredentials.png"
+                            src="/cookbooks/v0/photo-to-email-automation/gmailCredentials.png"
                             alt="all process"
                             className="rounded-lg shadow-md border dark:border-gray-700 w-full"
                           />
@@ -1005,7 +1005,7 @@ export default function ACMarketingWorkflowPage() {
                         </p>
                         <div className="my-4 p-4 rounded-lg mt-4">
                           <img
-                            src="/cookbooks/photo-to-email-automation/allProcess.png"
+                            src="/cookbooks/v0/photo-to-email-automation/allProcess.png"
                             alt="all process"
                             className="rounded-lg shadow-md border dark:border-gray-700 w-full"
                           />
@@ -1051,7 +1051,7 @@ export default function ACMarketingWorkflowPage() {
                           <p className="text-gray-800 dark:text-gray-200 text-sm">You will see the following results</p>
                           <div className="my-4 p-4 rounded-lg">
                             <img
-                              src="/cookbooks/photo-to-email-automation/output.png"
+                              src="/cookbooks/v0/photo-to-email-automation/output.png"
                               alt="output"
                               className="rounded-lg shadow-md border dark:border-gray-700 w-full"
                             />

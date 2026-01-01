@@ -35,7 +35,7 @@ export default function ShutdownPage() {
             </div>
 
             <div className="prose prose-gray max-w-none">
-                <img src="/shutdown.png" alt="shutdown" />
+                <img src="/v0/shutdown.png" alt="shutdown" />
 
                 <h2>How to Shut Down</h2>
                 <p>

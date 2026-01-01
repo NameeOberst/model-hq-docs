@@ -623,17 +623,17 @@ export default function AboutModelHQPage() {
           <div className="bg-primary/10 dark:bg-primary/20 p-4 rounded-lg border border-primary/20 mt-4">
             <h3 className="font-semibold text-base mb-2">Try Model HQ Free</h3>
             <p className="text-sm text-muted-foreground mb-3">
-              90-day free trial for the Developer Version
+              90-day free trial
             </p>
             <a 
-              href="https://llmware.ai/enterprise#developers-waitlist"
+              href="https://llmware-modelhq.checkoutpage.com/model-hq-app-90-days-free-trial"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium"
             >
-              Request Free Trial <ExternalLink className="h-4 w-4" />
+              Get the Trial <ExternalLink className="h-4 w-4" />
             </a>
-            <p className="text-xs text-muted-foreground mt-2">Terms and conditions apply</p>
+            <p className="text-xs text-muted-foreground mt-2"><a href="/support" rel="noopener noreferrer" className="text-gray hover:underline">Request Free Trial Promo Code</a> • Terms and conditions apply • <a href="/license" rel="noopener noreferrer" className="text-gray hover:underline">Request Free Trial Promo Code</a></p>
           </div>
         </CardContent>
       </Card>

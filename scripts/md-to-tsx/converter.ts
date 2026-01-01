@@ -26,13 +26,16 @@ import { fileURLToPath } from 'url';
 
 const CONFIG = {
   // Source folder for markdown files (relative to project root)
-  SOURCE_FOLDER: './model-hq-markdown-docs',
+  SOURCE_FOLDER: './model-hq-markdown-docs/v1',
   
   // Destination folder for generated TSX files (relative to project root)
-  DEST_FOLDER: './app',
+  DEST_FOLDER: './app/v1',
   
   // Default output filename
-  OUTPUT_FILENAME: 'page.tsx'
+  OUTPUT_FILENAME: 'page.tsx',
+  
+  // Default version for docs generation
+  DEFAULT_VERSION: 'v1' // 'v0' or 'v1'
 };
 
 // Get __dirname equivalent in ES modules
@@ -50,11 +53,20 @@ interface MarkdownMeta {
   type: 'docs' | 'cookbook';
   youtubeUrl?: string;
   videoTitle?: string;
+  version?: 'v0' | 'v1'; // Which version layout to use
+  references?: Reference[]; // For v1 layout
 }
 
 interface BreadcrumbItem {
   label: string;
   href?: string;
+}
+
+interface Reference {
+  title: string;
+  href: string;
+  type: 'internal' | 'external' | 'doc';
+  description?: string;
 }
 
 interface ParsedContent {
@@ -115,6 +127,8 @@ class MarkdownParser {
     let description = '';
     let youtubeUrl = '';
     let videoTitle = '';
+    let version: 'v0' | 'v1' = CONFIG.DEFAULT_VERSION as 'v0' | 'v1';
+    const references: Reference[] = [];
     const breadcrumbs: BreadcrumbItem[] = [{ label: 'Home', href: '/' }];
 
     // Look for front matter (YAML) or extract from first heading
@@ -171,18 +185,24 @@ class MarkdownParser {
       }
     }
 
-    return { title, description, breadcrumbs, type, youtubeUrl, videoTitle };
+    return { title, description, breadcrumbs, type, youtubeUrl, videoTitle, version, references };
   }
 
   private parseSections(): Section[] {
     const sections: Section[] = [];
-    
+
     while (this.currentIndex < this.lines.length) {
       const line = this.lines[this.currentIndex];
-      
+
       // Skip empty lines
       if (line.trim() === '' || line.trim() === '&nbsp;') {
         this.currentIndex++;
+        continue;
+      }
+
+      // Collapsible raw HTML blocks (e.g., <details>...</details>)
+      if (line.trim().toLowerCase().startsWith('<details')) {
+        sections.push(this.parseRawBlock());
         continue;
       }
 
@@ -286,6 +306,24 @@ class MarkdownParser {
     const src = match[2];
     
     return { type: 'image', content: src, title: alt };
+  }
+
+  /**
+   * Parse a raw HTML block such as <details>...</details> and return as a raw section.
+   * The generator will emit raw content verbatim into the TSX output.
+   */
+  private parseRawBlock(): Section {
+    const lines: string[] = [];
+    while (this.currentIndex < this.lines.length) {
+      const line = this.lines[this.currentIndex];
+      lines.push(line);
+      this.currentIndex++;
+      if (line.toLowerCase().includes('</details>')) {
+        break;
+      }
+    }
+
+    return { type: 'raw', content: lines.join('\n') };
   }
 
   private parseBlockquote(): Section {
@@ -433,6 +471,8 @@ class DocsGenerator {
   }
 
   private generateImports(): string {
+    const { version } = this.content.meta;
+    
     const lines = [
       `import {`,
       `  Breadcrumb,`,
@@ -444,6 +484,12 @@ class DocsGenerator {
       `} from "@/components/ui/breadcrumb"`
     ];
 
+    // Add v1-specific imports
+    if (version === 'v1') {
+      lines.push(`import { DocPageLayout } from "@/components/doc-page-layout"`);
+      lines.push(`import { references } from "./references"`);
+    }
+
     return lines.join('\n');
   }
 
@@ -454,7 +500,28 @@ class DocsGenerator {
     const breadcrumbsJsx = this.generateBreadcrumbs(meta.breadcrumbs, meta.title);
     const contentJsx = this.generateContent(sections);
 
-    return `export default function ${componentName}Page() {
+    if (meta.version === 'v1') {
+      // V1 layout with DocPageLayout wrapper
+      return `export default function ${componentName}Page() {
+  return (
+    <DocPageLayout references={references}>
+      <div className="space-y-6">
+      ${breadcrumbsJsx}
+
+      <div className="space-y-4">
+        <h1 className="text-3xl font-bold tracking-tight">${this.escapeJsx(meta.title)}</h1>
+      </div>
+
+      <div className="prose prose-gray max-w-none">
+${contentJsx}
+      </div>
+    </div>
+    </DocPageLayout>
+  )
+}`;
+    } else {
+      // V0 layout (original)
+      return `export default function ${componentName}Page() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       ${breadcrumbsJsx}
@@ -469,6 +536,33 @@ ${contentJsx}
     </div>
   )
 }`;
+    }
+  }
+
+  private generateReferencesFile(): string {
+    const { references } = this.content.meta;
+    
+    if (!references || references.length === 0) {
+      return `import { Reference } from "@/components/references"
+
+export const references: Reference[] = []
+`;
+    }
+
+    const referencesJson = references.map(ref => {
+      return `  {
+    title: "${ref.title}",
+    href: "${ref.href}",
+    type: "${ref.type}",${ref.description ? `\n    description: "${ref.description}",` : ''}
+  }`;
+    }).join(',\n');
+
+    return `import { Reference } from "@/components/references"
+
+export const references: Reference[] = [
+${referencesJson},
+]
+`;
   }
 
   private generateBreadcrumbs(breadcrumbs: BreadcrumbItem[], currentPage: string): string {
@@ -507,6 +601,9 @@ ${contentJsx}
         return this.paragraphToJsx(section, indent);
       case 'image':
         return `${indent}<img src="${section.content}" alt="${section.title || ''}" />`;
+      case 'raw':
+        // Emit raw HTML/JSX as-is (useful for <details> blocks)
+        return `${indent}${section.content}`;
       case 'code':
         return this.codeToJsx(section, indent);
       case 'blockquote':
@@ -1017,6 +1114,9 @@ ${indent}    alt="${section.title || ''}"
 ${indent}    className="rounded-lg shadow-md border dark:border-gray-800 w-full"
 ${indent}  />
 ${indent}</div>`;
+      case 'raw':
+        // Emit raw HTML/JSX blocks like <details> directly
+        return `${indent}${section.content}`;
       case 'code':
         return this.codeToJsx(section, indent);
       case 'blockquote':
@@ -1238,7 +1338,24 @@ export class MarkdownToTsxConverter {
 
   convertFile(inputPath: string, outputPath: string, type: 'docs' | 'cookbook' = 'docs'): void {
     const content = fs.readFileSync(inputPath, 'utf-8');
-    const tsx = this.convert(content, type);
+    const parser = new MarkdownParser(content);
+    const parsedContent = parser.parse(type);
+    
+    let tsx: string;
+    let referencesContent: string | null = null;
+    
+    if (type === 'cookbook') {
+      const generator = new CookbookGenerator(parsedContent);
+      tsx = generator.generate();
+    } else {
+      const generator = new DocsGenerator(parsedContent);
+      tsx = generator.generate();
+      
+      // Generate references file for v1 layout
+      if (parsedContent.meta.version === 'v1') {
+        referencesContent = generator['generateReferencesFile']();
+      }
+    }
     
     // Ensure output directory exists
     const outputDir = path.dirname(outputPath);
@@ -1246,8 +1363,16 @@ export class MarkdownToTsxConverter {
       fs.mkdirSync(outputDir, { recursive: true });
     }
     
+    // Write main page.tsx file
     fs.writeFileSync(outputPath, tsx, 'utf-8');
     console.log(`✅ Converted: ${inputPath} -> ${outputPath}`);
+    
+    // Write references.ts file if v1 layout
+    if (referencesContent) {
+      const referencesPath = path.join(outputDir, 'references.ts');
+      fs.writeFileSync(referencesPath, referencesContent, 'utf-8');
+      console.log(`✅ Generated references file: ${referencesPath}`);
+    }
   }
 }
 
@@ -1302,6 +1427,7 @@ if (args.length === 0 || args.includes('--help') || args.includes('-h')) {
 Configuration:
   Source folder: ${CONFIG.SOURCE_FOLDER}
   Dest folder:   ${CONFIG.DEST_FOLDER}
+  Default version: ${CONFIG.DEFAULT_VERSION}
 
 Usage:
   npx tsx scripts/md-to-tsx/converter.ts <input> [output] [--type=docs|cookbook]
@@ -1311,23 +1437,29 @@ Arguments:
   output   Output folder (optional, relative to DEST_FOLDER or full path)
   --type   Output format: 'docs' (default) or 'cookbook'
 
+Version Layouts:
+  v0: Original layout with max-w-4xl container
+  v1: New layout with DocPageLayout wrapper and references sidebar
+      (automatically generates references.ts file)
+
 Examples:
   # Short form (uses configured folders):
-  npx tsx scripts/md-to-tsx/converter.ts v0/chat/CHAT.md --type=docs
-  # -> Reads: ${CONFIG.SOURCE_FOLDER}/v0/chat/CHAT.md
-  # -> Writes: ${CONFIG.DEST_FOLDER}/v0/chat/chat/page.tsx
+  npx tsx scripts/md-to-tsx/converter.ts v1/chat/CHAT.md --type=docs
+  # -> Reads: ${CONFIG.SOURCE_FOLDER}/v1/chat/CHAT.md
+  # -> Writes: ${CONFIG.DEST_FOLDER}/v1/chat/page.tsx
+  # -> Writes: ${CONFIG.DEST_FOLDER}/v1/chat/references.ts (v1 only)
 
   # With explicit output folder:
-  npx tsx scripts/md-to-tsx/converter.ts v0/chat/CHAT.md v0/chat --type=docs
-  # -> Writes: ${CONFIG.DEST_FOLDER}/v0/chat/page.tsx
+  npx tsx scripts/md-to-tsx/converter.ts v1/chat/CHAT.md v1/chat --type=docs
+  # -> Writes: ${CONFIG.DEST_FOLDER}/v1/chat/page.tsx
 
   # Full paths:
-  npx tsx scripts/md-to-tsx/converter.ts ./my-doc.md ./app/v0/chat --type=docs
+  npx tsx scripts/md-to-tsx/converter.ts ./my-doc.md ./app/v1/chat --type=docs
 
   # Cookbook:
-  npx tsx scripts/md-to-tsx/converter.ts v0/cookbooks/RAG_Bot.md cookbooks/v0/rag-bot --type=cookbook
+  npx tsx scripts/md-to-tsx/converter.ts v1/cookbooks/RAG_Bot.md cookbooks/v1/rag-bot --type=cookbook
 
-To change source/dest folders, edit CONFIG in converter.ts
+To change source/dest folders or version, edit CONFIG in converter.ts
 
 For documentation: scripts/md-to-tsx/README.md
   `);

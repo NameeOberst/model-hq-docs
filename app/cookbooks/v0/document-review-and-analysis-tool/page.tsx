@@ -270,7 +270,7 @@ export default function DocumentReviewAnalysisPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/document-analysis/setup.png"
+                            src="/cookbooks/v0/document-analysis/setup.png"
                             alt="Setup Agents"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />
@@ -464,7 +464,7 @@ export default function DocumentReviewAnalysisPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/document-analysis/steps.png"
+                            src="/cookbooks/v0/document-analysis/steps.png"
                             alt="Steps"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />
@@ -490,7 +490,7 @@ export default function DocumentReviewAnalysisPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/document-analysis/upload.png"
+                            src="/cookbooks/v0/document-analysis/upload.png"
                             alt="Upload"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />
@@ -542,7 +542,7 @@ export default function DocumentReviewAnalysisPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/document-analysis/run.png"
+                            src="/cookbooks/v0/document-analysis/run.png"
                             alt="Running Agent"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />
@@ -607,7 +607,7 @@ export default function DocumentReviewAnalysisPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/document-analysis/circleLicense.png"
+                            src="/cookbooks/v0/document-analysis/circleLicense.png"
                             alt="Document path"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />
@@ -637,7 +637,7 @@ export default function DocumentReviewAnalysisPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/document-analysis/multiDocs.png"
+                            src="/cookbooks/v0/document-analysis/multiDocs.png"
                             alt="Running Multiple Docs"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />

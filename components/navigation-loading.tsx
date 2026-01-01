@@ -104,7 +104,25 @@ export function NavigationLoading() {
 
       const link = target.closest("a")
 
-      if (link && link.href && link.href.startsWith(window.location.origin)) {
+      if (link && link.href) {
+        // Skip loading for TOC links
+        if (link.hasAttribute("data-toc-link") || link.closest("[data-toc]")) {
+          return
+        }
+
+        const url = new URL(link.href)
+        const currentUrl = new URL(window.location.href)
+        
+        // Skip loading for same-page anchor/hash links
+        if (url.pathname === currentUrl.pathname && url.hash) {
+          return
+        }
+        
+        // Skip loading for external links
+        if (!link.href.startsWith(window.location.origin)) {
+          return
+        }
+
         setIsLoading(true)
         setProgress(0)
       }

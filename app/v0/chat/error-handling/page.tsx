@@ -35,7 +35,7 @@ export default function ChatErrorPage() {
       <div className="prose prose-gray max-w-none">
         <p>If you encounter any such issues during the download—such as the error prompt below:</p>
 
-        <img src="/chat/error1.png" alt="error" />
+        <img src="/v0/chat/error1.png" alt="error" />
 
         <p>
           Click <strong>"Yes"</strong> to retry and continue the download.
@@ -48,11 +48,11 @@ export default function ChatErrorPage() {
 
         <p>After confirming, the interface should update to:</p>
 
-        <img src="/chat/error2.png" alt="error" />
+        <img src="/v0/chat/error2.png" alt="error" />
 
         <p>Once you confirm and continue the download, the interface will update to the following:</p>
 
-        <img src="/chat/chatLoad.png" alt="chatLoad" />
+        <img src="/v0/chat/chatLoad.png" alt="chatLoad" />
 
         <p>
           At this stage, the selected models will begin loading automatically after the download completes.

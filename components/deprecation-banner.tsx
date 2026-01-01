@@ -38,7 +38,7 @@ export function DeprecationBanner() {
 
   return (
     <div 
-      className={`sticky z-40 left-0 right-0 bg-orange-50 dark:bg-orange-950/50 border-b-2 border-orange-200 dark:border-orange-800 transition-all duration-300 ${
+      className={`sticky z-30 left-0 right-0 bg-orange-50 dark:bg-orange-950/50 border-b-2 border-orange-200 dark:border-orange-800 transition-all duration-300 ${
         isHeaderVisible ? 'top-16' : 'top-0'
       }`}
     >

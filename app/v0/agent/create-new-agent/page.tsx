@@ -52,7 +52,7 @@ export default function CreateAgentPage() {
           </li>
         </ol>
 
-        <img src="/agent/agentNew.png" alt="create_agents" />
+        <img src="/v0/agent/agentNew.png" alt="create_agents" />
 
         <p>
           Click on <code>&gt;</code> to proceed to the next step.
@@ -65,14 +65,14 @@ export default function CreateAgentPage() {
           Click on <strong>Start Building</strong> to begin the agent development process.
         </p>
 
-        <img src="/agent/configure.png" alt="create_agents" />
+        <img src="/v0/agent/configure.png" alt="create_agents" />
 
         <p>&nbsp;</p>
 
         <h2 id="agent-setup">Agent Setup</h2>
         <p>In this section, you will define the foundational settings for your agent.</p>
 
-        <img src="/agent/setup.png" alt="create_agents" />
+        <img src="/v0/agent/setup.png" alt="create_agents" />
 
         <h3 id="inputs" >Inputs</h3>
         <ol>
@@ -190,7 +190,7 @@ export default function CreateAgentPage() {
         <h2 id="agent-builder">Agent Builder</h2>
         <p>This is where you construct the core logic of your agent.</p>
 
-        <img src="/agent/builder.png" alt="create_agents" />
+        <img src="/v0/agent/builder.png" alt="create_agents" />
 
         <h2 id="building-the-process">🏗️ Building the Process</h2>
         <p>To define each step in the agent workflow:</p>
@@ -275,7 +275,7 @@ export default function CreateAgentPage() {
           a visual and structured way to define services, instructions, and contexts for each step in your agent&apos;s
           workflow.
         </p>
-        <img src="/agent/agentBuilder.png" alt="create_agents" />
+        <img src="/v0/agent/agentBuilder.png" alt="create_agents" />
 
         <p>&nbsp;</p>
 
@@ -284,7 +284,7 @@ export default function CreateAgentPage() {
           After understanding the Agent Builder section, let&apos;s try to make a <code>demo agent</code>. Before start
           creating, here is a preview of what our <code>demo agent</code> going to look like.
         </p>
-        <img src="/agent/agentBuilderUI.png" alt="create_agents" />
+        <img src="/v0/agent/agentBuilderUI.png" alt="create_agents" />
 
         <blockquote data-type="note">
           <p>
@@ -408,7 +408,7 @@ export default function CreateAgentPage() {
         <p>
           Click the <code>+ Inputs</code> button and select the inputs as shown in the image below:
         </p>
-        <img src="/agent/inputsDemo.png" alt="create_agents" />
+        <img src="/v0/agent/inputsDemo.png" alt="create_agents" />
 
         <p>
           Adding these inputs will allow the user to enter or upload text as <code>MAIN-INPUT</code>, upload a document
@@ -444,7 +444,7 @@ export default function CreateAgentPage() {
             <strong>Define Inputs</strong> section above for the proper context to add to this service). We&apos;ve
             entered &quot;Music License Agreement&quot; as the instruction to define this agreement.
             <br />
-            <img src="/agent/service1.png" alt="create_agents" />
+            <img src="/v0/agent/service1.png" alt="create_agents" />
             <br />
             Now, click the &quot;➕&quot; icon to add a new service. The &quot;➖&quot; icon removes a service.
           </li>
@@ -456,7 +456,7 @@ export default function CreateAgentPage() {
             &quot;Music License Agreement&quot; as the context and ask, &quot;What is the commission rate?&quot; as the
             instruction.
             <br />
-            <img src="/agent/service2.png" alt="create_agents" />
+            <img src="/v0/agent/service2.png" alt="create_agents" />
             <br />
             Click the &quot;➕&quot; icon to add another service.
           </li>
@@ -467,7 +467,7 @@ export default function CreateAgentPage() {
             Service Table for more information). We&apos;ve entered &quot;Describe this picture&quot; as the instruction
             so that we can build general textual context but you can also ask a more specific question.
             <br />
-            <img src="/agent/service3.png" alt="create_agents" />
+            <img src="/v0/agent/service3.png" alt="create_agents" />
             <br />
             Click the &quot;➕&quot; icon to continue.
           </li>
@@ -480,7 +480,7 @@ export default function CreateAgentPage() {
             <br />
             Note: This service does <strong>not</strong> require any instruction.
             <br />
-            <img src="/agent/service4.png" alt="create_agents" />
+            <img src="/v0/agent/service4.png" alt="create_agents" />
             <br />
             Click the &quot;➕&quot; icon to proceed.
           </li>
@@ -492,7 +492,7 @@ export default function CreateAgentPage() {
             <br />
             Note: This service also does <strong>not</strong> require any instruction.
             <br />
-            <img src="/agent/service5.png" alt="create_agents" />
+            <img src="/v0/agent/service5.png" alt="create_agents" />
             <br />
             Click the &quot;➕&quot; icon to continue.
           </li>
@@ -508,7 +508,7 @@ export default function CreateAgentPage() {
         </ol>
 
         <p>The final agent will look like this:</p>
-        <img src="/agent/service6.png" alt="create_agents" />
+        <img src="/v0/agent/service6.png" alt="create_agents" />
 
         <h3>Getting Service Information</h3>
         <p>
@@ -516,12 +516,12 @@ export default function CreateAgentPage() {
           that service. Clicking the number reveals details like what the service does, expected input formats, and
           usage tips.
         </p>
-        <img src="/agent/numbered.png" alt="create_agents" />
+        <img src="/v0/agent/numbered.png" alt="create_agents" />
 
         <p>
           Below is an example for the <code>build_table</code> service after clicking on it:
         </p>
-        <img src="/agent/numberdButton.png" alt="create_agents" />
+        <img src="/v0/agent/numberdButton.png" alt="create_agents" />
 
         <p>&nbsp;</p>
 
@@ -533,7 +533,7 @@ export default function CreateAgentPage() {
           This page also asks you to confirm the agent. If anything is missing, go back and make the necessary edits.
         </p>
 
-        <img src="/agent/finalDemo.png" alt="create_agents" />
+        <img src="/v0/agent/finalDemo.png" alt="create_agents" />
 
         <p>
           Once satisfied, click on <code>&gt;</code> to proceed.
@@ -567,7 +567,7 @@ export default function CreateAgentPage() {
           <li>
             <strong>Image</strong>: We uploaded the following image:
             <br />
-            <img src="/agent/image.png" alt="create_agents" />
+            <img src="/v0/agent/image.png" alt="create_agents" />
           </li>
         </ul>
 
@@ -582,7 +582,7 @@ export default function CreateAgentPage() {
         </p>
 
         <p>The final output looks like this:</p>
-        <img src="/agent/finalOutput.png" alt="create_agents" />
+        <img src="/v0/agent/finalOutput.png" alt="create_agents" />
 
         <p>
           Click <a href="/agent#6-inference-history" style={{ color: "#00aaff" }} >Inference History</a> and{" "}

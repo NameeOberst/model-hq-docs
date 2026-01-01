@@ -140,17 +140,29 @@ export function AiSearchModal({ isOpen, onClose, initialQuery = "" }: AiSearchMo
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b">
-            <div className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5 text-primary" />
-              <h2 className="text-lg font-semibold">AI Search</h2>
-              <span className="text-xs text-muted-foreground">
-                Ask anything about Model HQ
-              </span>
+          <div className="p-4 border-b">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-primary" />
+                <h2 className="text-lg font-semibold">AI Search</h2>
+                <span className="text-xs text-muted-foreground">
+                  Ask anything about Model HQ
+                </span>
+              </div>
+
+              <div>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={handleClose}
+                  className="h-8 w-8"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              {/* Version Selector */}
-              <div className="flex items-center gap-1 mr-2 border rounded-md p-1">
+            <div className="mt-2 flex items-center gap-2">
+              <div className="flex items-center gap-1 border rounded-md p-1">
                 <Button
                   variant={version === 'v0' ? 'default' : 'ghost'}
                   size="sm"
@@ -168,14 +180,6 @@ export function AiSearchModal({ isOpen, onClose, initialQuery = "" }: AiSearchMo
                   v1
                 </Button>
               </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={handleClose}
-                className="h-8 w-8"
-              >
-                <X className="h-4 w-4" />
-              </Button>
             </div>
           </div>
 

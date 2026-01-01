@@ -42,7 +42,7 @@ export default function CloudModelsPage() {
                     </code>
                 </pre>
 
-                <img src="/agent/cloudAgent.png" alt="Cloud Agent" />
+                <img src="/v0/agent/cloudAgent.png" alt="Cloud Agent" />
 
                 <br />
 
@@ -62,7 +62,7 @@ export default function CloudModelsPage() {
                     </code>
                 </pre>
 
-                <img src="/agent/cloudAgentNext.png" alt="Cloud Agent Configuration" />
+                <img src="/v0/agent/cloudAgentNext.png" alt="Cloud Agent Configuration" />
 
                 <p>&nbsp;</p>
 
@@ -83,14 +83,14 @@ export default function CloudModelsPage() {
                         <pre className="bg-muted p-4 rounded-md overflow-x-auto mt-2">
                             <code>Edit {">"} Process</code>
                         </pre>
-                        <img src="/agent/cloudEdit.png" alt="Cloud Edit" className="mt-2" />
+                        <img src="/v0/agent/cloudEdit.png" alt="Cloud Edit" className="mt-2" />
                     </li>
                     <li>
                         Locate the <strong>second row</strong> and change:
                         <pre className="bg-muted p-4 rounded-md overflow-x-auto mt-2">
                             <code>anthropic_chat → openai_chat</code>
                         </pre>
-                        <img src="/agent/cloudChange.png" alt="Cloud Change" className="mt-2" />
+                        <img src="/v0/agent/cloudChange.png" alt="Cloud Change" className="mt-2" />
                     </li>
                     <li>
                         Click <code>{">"}</code> to proceed.
@@ -142,7 +142,7 @@ export default function CloudModelsPage() {
                     <li>You will see a completed Agent workflow similar to the responses below.</li>
                 </ol>
 
-                <img src="/agent/cloudRun.png" alt="Cloud Run" />
+                <img src="/v0/agent/cloudRun.png" alt="Cloud Run" />
 
                 <p>&nbsp;</p>
 

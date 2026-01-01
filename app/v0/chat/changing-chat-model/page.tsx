@@ -45,7 +45,7 @@ export default function ChangingChatModelPage() {
           You can locate it as shown below:
         </p>
 
-        <img src="/chat/config.png" alt="config" />
+        <img src="/v0/chat/modelConfig.png" alt="config" />
 
         <p>&nbsp;</p>
 
@@ -56,7 +56,7 @@ export default function ChangingChatModelPage() {
           From here, select the <strong>Models</strong> tab:
         </p>
 
-        <img src="/chat/selectModesl.png" alt="config" />
+        <img src="/v0/chat/selectModesl.png" alt="config" />
 
         <p>&nbsp;</p>
 
@@ -67,7 +67,7 @@ export default function ChangingChatModelPage() {
           Scroll down to locate the <strong>Chat</strong> and <strong>RAG</strong> model settings, as shown below:
         </p>
 
-        <img src="/chat/changeModels.png" alt="config" />
+        <img src="/v0/chat/changeModels.png" alt="config" />
 
         <p>
           From this interface, you can select your preferred model for both general chat and RAG-based interactions.

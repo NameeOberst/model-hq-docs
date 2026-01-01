@@ -20,6 +20,9 @@ import {
   Stethoscope,
   Info,
   Mail,
+  Rocket,
+  BookMarked,
+  BookCopy,
 } from "lucide-react"
 
 import {
@@ -41,14 +44,35 @@ import {
 } from "@/components/ui/sidebar"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "./theme-toggle"
 import { v0NavigationData, v0CodeDocumentation } from "./navigation-data-v0"
 import { v1NavigationData, v1CodeDocumentation } from "./navigation-data-v1"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
+
+// Custom V0 and V1 icons
+const V0Icon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="24" rx="4" fill="currentColor" fillOpacity="0.1"/>
+    <text x="12" y="17" fontSize="14" fontWeight="bold" fill="currentColor" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">v0</text>
+  </svg>
+)
+
+const V1Icon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="24" rx="4" fill="currentColor" fillOpacity="0.1"/>
+    <text x="12" y="17" fontSize="14" fontWeight="bold" fill="currentColor" textAnchor="middle" fontFamily="system-ui, -apple-system, sans-serif">v1</text>
+  </svg>
+)
 
 type NavItem = {
   title: string
   url: string
   icon: React.ComponentType<{ className?: string }>
-  items?: { title: string; url: string }[]
+  items?: { 
+    title: string; 
+    url: string; 
+    icon?: React.ComponentType<{ className?: string }> 
+  }[]
 }
 
 const navigationData = {
@@ -97,39 +121,146 @@ const navigationData = {
       icon: BookOpen,
     },
   ],
-  cookbooksV0: [
-    {
-      title: "Personalized Bot",
-      url: "/cookbooks/v0/personalized-bot",
-      icon: BrainCircuit,
-    },
-    {
-      title: "RAG Bot",
-      url: "/cookbooks/v0/rag-bot",
-      icon: Library,
-    },
-    {
-      title: "Document Review and Analysis Tool",
-      url: "/cookbooks/v0/document-review-and-analysis-tool",
-      icon: FileSearch,
-    },
-    {
-      title: "Hybrid Inferencing",
-      url: "/cookbooks/v0/hybrid-inferencing",
-      icon: Server,
-    },
-    {
-      title: "Photo to Email Automation",
-      url: "/cookbooks/v0/photo-to-email-automation",
-      icon: Camera,
-    },
-    {
-      title: "Clinical Trial Screening Autmation",
-      url: "/cookbooks/v0/clinical-trial-screening-autmation",
-      icon: Stethoscope ,
-    }
-  ],
-  cookbooksV1: [] as NavItem[],
+  // Cookbooks are now imported from navigation data files
+  // Transform sub-items to NavItems by ensuring they have icons
+  cookbooksV0: (v0NavigationData.find(item => item.title === "Cookbooks")?.items || []).map(item => ({
+    ...item,
+    icon: item.icon || BookOpen // Fallback icon if somehow missing
+  })) as NavItem[],
+  cookbooksV1: (v1NavigationData.find(item => item.title === "Cookbooks")?.items || []).map(item => ({
+    ...item,
+    icon: item.icon || BookOpen // Fallback icon if somehow missing
+  })) as NavItem[],
+}
+
+// Helper component for collapsed state with hover menu
+function CollapsedNavItem({ 
+  item, 
+  pathname, 
+  hasSubItems = false 
+}: { 
+  item: NavItem
+  pathname: string
+  hasSubItems?: boolean
+}) {
+  const isActive = pathname === item.url || (item.items && item.items.some(sub => pathname === sub.url))
+  
+  if (hasSubItems && item.items) {
+    return (
+      <HoverCard openDelay={100} closeDelay={100}>
+        <HoverCardTrigger asChild>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              asChild
+              tooltip={item.title}
+              isActive={isActive}
+              suppressHydrationWarning
+              className="justify-center"
+            >
+              <a href={item.url}>
+                {item.icon && <item.icon className="size-4" />}
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </HoverCardTrigger>
+        <HoverCardContent side="right" align="start" className="w-56 p-2">
+          <div className="font-semibold text-sm mb-2 px-2">{item.title}</div>
+          <div className="space-y-1">
+            {item.items.map((subItem) => (
+              <a
+                key={subItem.url}
+                href={subItem.url}
+                className={`block px-2 py-1.5 text-sm rounded-md hover:bg-accent transition-colors ${
+                  pathname === subItem.url ? 'bg-accent text-accent-foreground font-medium' : ''
+                }`}
+              >
+                {subItem.title}
+              </a>
+            ))}
+          </div>
+        </HoverCardContent>
+      </HoverCard>
+    )
+  }
+
+  return (
+    <SidebarMenuItem>
+      <SidebarMenuButton
+        asChild
+        tooltip={item.title}
+        isActive={pathname === item.url}
+        suppressHydrationWarning
+        className="justify-center"
+      >
+        <a href={item.url}>
+          {item.icon && <item.icon className="size-4" />}
+        </a>
+      </SidebarMenuButton>
+    </SidebarMenuItem>
+  )
+}
+
+// Helper component for collapsed section header with hover menu
+function CollapsedSectionWithHover({ 
+  icon: Icon, 
+  title, 
+  items, 
+  pathname 
+}: { 
+  icon: React.ComponentType<{ className?: string }>
+  title: string
+  items: NavItem[]
+  pathname: string
+}) {
+  return (
+    <HoverCard openDelay={100} closeDelay={100}>
+      <HoverCardTrigger asChild>
+        <SidebarMenuItem>
+          <SidebarMenuButton
+            tooltip={title}
+            suppressHydrationWarning
+            className="justify-center"
+            isActive={items.some(item => pathname === item.url || (item.items && item.items.some(sub => pathname === sub.url)))}
+          >
+            <Icon className="size-4" />
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </HoverCardTrigger>
+      <HoverCardContent side="right" align="start" className="w-64 p-2 max-h-80 overflow-y-auto">
+        <div className="font-semibold text-sm mb-2 px-2">{title}</div>
+        <div className="space-y-1">
+          {items.map((item) => (
+            <div key={item.url}>
+              <a
+                href={item.url}
+                className={`flex items-center gap-2 px-2 py-1.5 text-sm rounded-md hover:bg-accent transition-colors ${
+                  pathname === item.url ? 'bg-accent text-accent-foreground font-medium' : ''
+                }`}
+              >
+                {item.icon && <item.icon className="size-4 shrink-0" />}
+                <span className="truncate">{item.title}</span>
+              </a>
+              {item.items && (
+                <div className="ml-6 space-y-1 mt-1">
+                  {item.items.map((subItem) => (
+                    <a
+                      key={subItem.url}
+                      href={subItem.url}
+                      className={`block px-2 py-1 text-xs rounded-md hover:bg-accent transition-colors ${
+                        pathname === subItem.url ? 'bg-accent text-accent-foreground font-medium' : ''
+                      }`}
+                    >
+                      {subItem.title}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  )
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -142,21 +273,31 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild className={`h-16 ${isCollapsed ? "px-0 justify-center" : "px-3"}`}>
-              <a href="/">
-                <div
-                  className={`flex aspect-square ${isCollapsed ? "size-10" : "size-12"} items-center justify-center rounded-lg bg-white p-2 shadow-sm mx-auto`}
-                >
-                  <img src="/images/llmware-logo.png" alt="Model HQ" className="size-full object-contain" />
-                </div>
-                {!isCollapsed && (
-                  <div className="grid flex-1 text-left leading-tight ml-3">
-                    <span className="truncate text-lg font-bold">Model HQ</span>
-                    <span className="truncate text-sm text-muted-foreground">Documentation</span>
+            <div className="flex items-center justify-between w-full gap-2">
+              <SidebarMenuButton size="lg" asChild className={`h-16 flex-1 ${isCollapsed ? "px-0 justify-center" : "px-3"}`}>
+                <a href="/">
+                  <div
+                    className={`flex aspect-square ${isCollapsed ? "size-10" : "size-12"} items-center justify-center rounded-lg bg-white p-2 shadow-sm mx-auto`}
+                  >
+                    <img src="/images/llmware-logo.png" alt="Model HQ" className="size-full object-contain" />
                   </div>
-                )}
-              </a>
-            </SidebarMenuButton>
+                  {!isCollapsed && (
+                    <div className="grid flex-1 text-left leading-tight ml-3">
+                      <span className="truncate text-lg font-bold">Model HQ</span>
+                      <span className="truncate text-sm text-muted-foreground">Documentation</span>
+                    </div>
+                  )}
+                </a>
+              </SidebarMenuButton>
+              {/* Theme Toggle - only visible on mobile in sidebar */}
+              {!isCollapsed && (
+                <div className="md:hidden pr-3">
+                  <div className="rounded-md p-1 border border-border dark:border-border">
+                    <ThemeToggle />
+                  </div>
+                </div>
+              )}
+            </div>
           </SidebarMenuItem>
           {state === "collapsed" && (
             <SidebarMenuItem>
@@ -171,6 +312,113 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
+        {isCollapsed ? (
+          // COLLAPSED STATE - Show icons with hover menus
+          <>
+            {/* Start Here - Icons */}
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {navigationData.startHere.map((item) => (
+                    <CollapsedNavItem key={item.title} item={item} pathname={pathname} />
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            {/* Separator */}
+            <div className="mx-2 my-1 h-px bg-border" />
+
+            {/* Model HQ v0 - Single icon with hover menu */}
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <CollapsedSectionWithHover
+                    icon={V0Icon}
+                    title="Model HQ v0 Docs"
+                    items={[...navigationData.v0, ...navigationData.codeDocumentation] as NavItem[]}
+                    pathname={pathname}
+                  />
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            {/* Model HQ v1 - Single icon with hover menu */}
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <CollapsedSectionWithHover
+                    icon={V1Icon}
+                    title="Model HQ v1 Docs"
+                    items={navigationData.v1.length > 0 ? navigationData.v1 : [{ title: "Coming soon...", url: "#", icon: Info }]}
+                    pathname={pathname}
+                  />
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            {/* Separator */}
+            <div className="mx-2 my-1 h-px bg-border" />
+
+            {/* Supported Models - Icons */}
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {navigationData.supportedModels.map((item) => (
+                    <CollapsedNavItem key={item.title} item={item} pathname={pathname} />
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            {/* Separator */}
+            <div className="mx-2 my-1 h-px bg-border" />
+
+            {/* Resources - Icons */}
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  {navigationData.resources.map((item) => (
+                    <CollapsedNavItem key={item.title} item={item} pathname={pathname} />
+                  ))}
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            {/* Separator */}
+            <div className="mx-2 my-1 h-px bg-border" />
+
+            {/* Cookbooks v0 - Single icon with hover menu */}
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <CollapsedSectionWithHover
+                    icon={BookMarked}
+                    title="Cookbooks v0"
+                    items={navigationData.cookbooksV0}
+                    pathname={pathname}
+                  />
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+
+            {/* Cookbooks v1 - Single icon with hover menu */}
+            <SidebarGroup>
+              <SidebarGroupContent>
+                <SidebarMenu>
+                  <CollapsedSectionWithHover
+                    icon={BookCopy}
+                    title="Cookbooks v1"
+                    items={navigationData.cookbooksV1.length > 0 ? navigationData.cookbooksV1 : [{ title: "Coming soon...", url: "#", icon: Info }]}
+                    pathname={pathname}
+                  />
+                </SidebarMenu>
+              </SidebarGroupContent>
+            </SidebarGroup>
+          </>
+        ) : (
+          // EXPANDED STATE - Full navigation
+          <>
         {/* Start Here - Always visible at top */}
         <SidebarGroup>
           <SidebarGroupLabel>Start Here</SidebarGroupLabel>
@@ -552,6 +800,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </Collapsible>
           </SidebarGroupContent>
         </SidebarGroup>
+          </>
+        )}
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
@@ -559,10 +809,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton asChild tooltip="Contact Support" suppressHydrationWarning>
               <a
                 href="/support"
-                className="w-full flex gap-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md py-6 transition-colors"
+                className={`w-full flex gap-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 rounded-md transition-colors ${isCollapsed ? 'py-2 justify-center' : 'py-6'}`}
               >
-                <Mail className="size-6" />
-                <span>Contact Support</span>
+                <Mail className={isCollapsed ? "size-4" : "size-6"} />
+                {!isCollapsed && <span>Contact Support</span>}
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

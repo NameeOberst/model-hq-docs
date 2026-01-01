@@ -262,7 +262,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/enterprise.png"
+                              src="/cookbooks/v0/hybrid-inferencing/enterprise.png"
                               alt="Turn ON Enterprise"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -301,7 +301,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/library.png"
+                              src="/cookbooks/v0/hybrid-inferencing/library.png"
                               alt="Library Button"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -396,7 +396,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/phi4.png"
+                              src="/cookbooks/v0/hybrid-inferencing/phi4.png"
                               alt="phi4-ov"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -487,7 +487,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/mediumBot.png"
+                              src="/cookbooks/v0/hybrid-inferencing/mediumBot.png"
                               alt="Medium Bot"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -526,7 +526,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/source.png"
+                              src="/cookbooks/v0/hybrid-inferencing/source.png"
                               alt="Source"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -579,7 +579,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/results.png"
+                              src="/cookbooks/v0/hybrid-inferencing/results.png"
                               alt="Output"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -631,7 +631,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/API.png"
+                              src="/cookbooks/v0/hybrid-inferencing/API.png"
                               alt="Run as API"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -676,7 +676,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/chooseFile.png"
+                              src="/cookbooks/v0/hybrid-inferencing/chooseFile.png"
                               alt="Choose Files"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -705,7 +705,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/Details.png"
+                              src="/cookbooks/v0/hybrid-inferencing/Details.png"
                               alt="Detailed output"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -767,7 +767,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/newLibrary.png"
+                              src="/cookbooks/v0/hybrid-inferencing/newLibrary.png"
                               alt="New Library"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -845,7 +845,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/embedding.png"
+                              src="/cookbooks/v0/hybrid-inferencing/embedding.png"
                               alt="Create Embedding"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -879,7 +879,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/mini.png"
+                              src="/cookbooks/v0/hybrid-inferencing/mini.png"
                               alt="Trigger"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />
@@ -902,7 +902,7 @@ export default function HybridInferencingPage() {
 
                           <div className="my-4">
                             <img
-                              src="/cookbooks/hybrid-inferencing/final.png"
+                              src="/cookbooks/v0/hybrid-inferencing/final.png"
                               alt="Final State"
                               className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                             />

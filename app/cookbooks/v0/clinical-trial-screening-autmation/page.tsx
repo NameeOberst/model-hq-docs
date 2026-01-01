@@ -211,7 +211,7 @@ export default function ClinicalTrialScreeningPage() {
                             <div className="my-6">
                                 <p className="text-gray-700 dark:text-gray-300">
                                     <a
-                                        href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/clinical-trial-screening-automation"
+                                        href="https://github.com/BloksAdmin/model-hq-docs/tree/main/public/cookbooks/v0/clinical-trial-screening-automation"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 underline inline-flex items-center gap-1"

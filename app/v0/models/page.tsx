@@ -47,7 +47,7 @@ export default function ModelsPage() {
           To begin, click on the <strong>Models</strong> button from the main menu.
         </p>
 
-        <img src="/models.png" alt="models" />
+        <img src="/v0/models.png" alt="models" />
 
         <p>&nbsp;</p>
 
@@ -56,7 +56,7 @@ export default function ModelsPage() {
           After launching the Models section, you will be presented with an interface similar to the one shown below:
         </p>
 
-        <img src="/models/models.png" alt="models" />
+        <img src="/v0/models/models.png" alt="models" />
 
         <p>The interface includes the following key options:</p>
 
@@ -110,7 +110,7 @@ export default function ModelsPage() {
           Upon selecting <strong>Discover</strong>, you will be prompted to choose a model category:
         </p>
 
-        <img src="/models/discover.png" alt="models" />
+        <img src="/v0/models/discover.png" alt="models" />
 
         <p>The available categories include:</p>
         <ul>
@@ -119,14 +119,14 @@ export default function ModelsPage() {
           <li>Function-Calling</li>
         </ul>
 
-        <img src="/models/options.png" alt="models" />
+        <img src="/v0/models/options.png" alt="models" />
 
         <p>
           Select the category you're interested in, and click <code>&gt;</code> to proceed. A list of models relevant to
           that category will appear:
         </p>
 
-        <img src="/models/selectModels.png" alt="models" />
+        <img src="/v0/models/selectModels.png" alt="models" />
 
         <p>
           For demonstration purposes, we'll proceed with the default model, <code>qwen--0.5B</code>. Click{" "}
@@ -143,7 +143,7 @@ export default function ModelsPage() {
 
         <p>You will then be taken to the detailed page with model description and the model card contact:</p>
 
-        <img src="/models/selectedModels.png" alt="models" />
+        <img src="/v0/models/selectedModels.png" alt="models" />
 
         <p>Here you can:</p>
         <ul>
@@ -162,7 +162,7 @@ export default function ModelsPage() {
                 other relevant metrics such as input and output tokens, total processing time for the response and first
                 token speed.
                 <br />
-                <img src="/models/test2.png" alt="models" />
+                <img src="/v0/models/test2.png" alt="models" />
                 Optionally, download the results for offline review. You can terminate the process anytime by pressing
                 "x" key.
               </li>
@@ -182,7 +182,7 @@ export default function ModelsPage() {
 
         <p>You will be prompted to select a model from your local list:</p>
 
-        <img src="/models/selectModel.png" alt="models" />
+        <img src="/v0/models/selectModel.png" alt="models" />
 
         <p>
           Click <code>&gt; Select</code> to proceed. The interface will now display information about the selected model
@@ -199,7 +199,7 @@ export default function ModelsPage() {
           <li>
             <strong>Troubleshoot</strong>: Resolve issues such as incomplete downloads
             <br />
-            <img src="/models/troubleshoot.png" alt="models" />
+            <img src="/v0/models/troubleshoot.png" alt="models" />
             <br />
             If any issues are detected, you can:
             <ul>
@@ -232,7 +232,7 @@ export default function ModelsPage() {
           "Save all inferences to local database."
         </p>
 
-        <img src="/models/history.png" alt="models" />
+        <img src="/v0/models/history.png" alt="models" />
 
         <p>&nbsp;</p>
 
@@ -244,7 +244,7 @@ export default function ModelsPage() {
 
         <p>Results can be downloaded and reviewed to assist in model selection.</p>
 
-        <img src="/models/test.png" alt="models" />
+        <img src="/v0/models/test.png" alt="models" />
 
         <p>&nbsp;</p>
 
@@ -254,7 +254,7 @@ export default function ModelsPage() {
           maintained for reference. You can choose to pull any version, preferably the latest one.
         </p>
 
-        <img src="/models/catalog.png" alt="models" />
+        <img src="/v0/models/catalog.png" alt="models" />
 
         <p>&nbsp;</p>
 
@@ -266,7 +266,7 @@ export default function ModelsPage() {
           Note that models will not be accessible until a new catalog is pulled.
         </p>
 
-        <img src="/models/reset.png" alt="models" />
+        <img src="/v0/models/reset.png" alt="models" />
 
         <p>&nbsp;</p>
 

@@ -81,6 +81,7 @@ The converter supports these markdown features:
 | Code blocks | ` ```language ` | |
 | Tables | `\| Header \|` | |
 | Alerts | `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]` | GitHub-style alerts |
+| Collapsible / Expandable sections | `<details><summary>Title</summary>...</details>` | Use HTML `<details>`/`<summary>`; converter preserves these tags and nested Markdown. |
 
 ### For Cookbooks (--type=cookbook)
 

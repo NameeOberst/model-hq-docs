@@ -48,14 +48,14 @@ export default function RAGPage() {
           Click on the <strong>RAG</strong> button from the main menu to get started.
         </p>
 
-        <img src="/rag.png" alt="rag" />
+        <img src="/v0/rag.png" alt="rag" />
 
         <p>&nbsp;</p>
 
         <h2 id="understanding-the-rag-interface">2. Understanding the RAG Interface</h2>
         <p>You will be presented with an interface similar to the one shown below:</p>
 
-        <img src="/rag/rag.png" alt="rag" />
+        <img src="/v0/rag/rag.png" alt="rag" />
 
         <p>Key elements of the interface:</p>
 
@@ -100,7 +100,7 @@ export default function RAGPage() {
           You will be prompted to enter a name and select an <strong>Analysis Mode</strong>:
         </p>
 
-        <img src="/rag/createSource.png" alt="rag" />
+        <img src="/v0/rag/createSource.png" alt="rag" />
 
         <ul>
           <li>
@@ -117,7 +117,7 @@ export default function RAGPage() {
 
         <p>Once created, you will be directed to a screen where you can add documents:</p>
 
-        <img src="/rag/createdSource.png" alt="rag" />
+        <img src="/v0/rag/createdSource.png" alt="rag" />
 
         <p>
           Once the initial group of files are uploaded, you can add more files to the source by selecting{" "}
@@ -128,7 +128,7 @@ export default function RAGPage() {
 
         <p>After uploading, you will gain access to all features in the RAG section:</p>
 
-        <img src="/rag/created.png" alt="rag" />
+        <img src="/v0/rag/created.png" alt="rag" />
 
         <p>&nbsp;</p>
 
@@ -149,7 +149,7 @@ export default function RAGPage() {
           In the example below, the RAG source <strong>"Clinical_Study"</strong> is selected:
         </p>
 
-        <img src="/rag/ragSource.png" alt="rag" />
+        <img src="/v0/rag/ragSource.png" alt="rag" />
 
         <p>
           Once the source is loaded, you will enter the RAG workspace.
@@ -171,7 +171,7 @@ export default function RAGPage() {
         <h3 id="add-docs">Add Docs</h3>
         <p>Use this button to add additional documents to your RAG source.</p>
 
-        <img src="/rag/addDocs.png" alt="rag" />
+        <img src="/v0/rag/addDocs.png" alt="rag" />
 
         <p>
           Click <strong>Upload File</strong> to import documents. Recommended file types include <code>.pdf</code>,{" "}
@@ -210,7 +210,7 @@ export default function RAGPage() {
           </p>
         </blockquote>
 
-        <img src="/rag/configure.png" alt="rag" />
+        <img src="/v0/rag/configure.png" alt="rag" />
 
         <h3 id="search">Search</h3>
         <p>
@@ -218,7 +218,7 @@ export default function RAGPage() {
           within documents efficiently and effectively.
         </p>
 
-        <img src="/rag/search.png" alt="rag" />
+        <img src="/v0/rag/search.png" alt="rag" />
 
         <p>
           Unlike basic search tools, the RAG-powered search is augmented with semantic understanding. This allows you
@@ -338,7 +338,7 @@ export default function RAGPage() {
           <p>For demonstration purposes, we will use the default model and default settings.</p>
         </blockquote>
 
-        <img src="/rag/test.png" alt="rag" />
+        <img src="/v0/rag/test.png" alt="rag" />
 
         <ul>
           <li>
@@ -418,7 +418,7 @@ export default function RAGPage() {
           </li>
         </ul>
 
-        <img src="/rag/test1.png" alt="rag" />
+        <img src="/v0/rag/test1.png" alt="rag" />
 
         <h3>Reset (🔄)</h3>
         <p>Resets any modifications made to the current RAG source.</p>

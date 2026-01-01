@@ -115,7 +115,7 @@ export default function PersonalizedBotPage() {
 
               <div className="my-6">
                 <img
-                  src="/cookbooks/personalized-bot/botBuilder.png"
+                  src="/cookbooks/v0/personalized-bot/botBuilder.png"
                   alt="Bot Builder Interface"
                   className="rounded-lg shadow-md border w-full"
                 />
@@ -185,7 +185,7 @@ export default function PersonalizedBotPage() {
 
               <div className="my-6">
                 <img
-                  src="/cookbooks/personalized-bot/prompt.png"
+                  src="/cookbooks/v0/personalized-bot/prompt.png"
                   alt="Prompt Configuration Interface"
                   className="rounded-lg shadow-md border w-full dark:border-gray-800"
                 />
@@ -244,7 +244,7 @@ export default function PersonalizedBotPage() {
 
               <div className="my-6">
                 <img
-                  src="/cookbooks/personalized-bot/michael.png"
+                  src="/cookbooks/v0/personalized-bot/michael.png"
                   alt="Michael Scott Bot Interface"
                   className="rounded-lg shadow-md border w-full dark:border-gray-800"
                 />

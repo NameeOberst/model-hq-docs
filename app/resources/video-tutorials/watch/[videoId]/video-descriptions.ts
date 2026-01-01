@@ -1,4 +1,4 @@
-// Video descriptions mapping - in a real app, this would come from a database or API
+// Video descriptions mapping
 export const videoDescriptions: Record<string, string> = {
   Dbxb5qfsMaM: `
     Introducing Model HQ for AI PCs powered by Intel
@@ -478,4 +478,4 @@ export const videoDescriptions: Record<string, string> = {
     **Audience Insights:**
     Perfect for entrepreneurs, investors, technologists, and anyone interested in understanding the strategic thinking behind one of the most promising AI platforms in the market today.
   `,
-}
+};

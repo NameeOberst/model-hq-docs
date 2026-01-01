@@ -43,7 +43,7 @@ export default function VideoWatchPage() {
       <div className="space-y-6">
         {/* Back Button */}
         <Button variant="outline" asChild className="mb-4 w-full sm:w-auto">
-          <a href="/video-tutorials" className="flex items-center justify-center sm:justify-start gap-2">
+          <a href="/resources/video-tutorials" className="flex items-center justify-center sm:justify-start gap-2">
             <ArrowLeft className="h-4 w-4" />
             Back to Video Tutorials
           </a>

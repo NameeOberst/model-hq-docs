@@ -40,7 +40,7 @@ export default function AgentPage() {
         <p>
           To begin, click on the <strong>Agent</strong> button from the main menu.
           <br />
-          <img src="/agent/agent.png" alt="Launch Agent Interface" />
+          <img src="/v0/agent/agent.png" alt="Launch Agent Interface" />
         </p>
 
         <p>&nbsp;</p>
@@ -49,7 +49,7 @@ export default function AgentPage() {
         <p>
           Upon entering the Agent interface, you will be presented with a variety of options.
           <br />
-          <img src="/agent/agentInterface.png" alt="Agent Menu Overview" />
+          <img src="/v0/agent/agentInterface.png" alt="Agent Menu Overview" />
         </p>
 
         <p>Here is a breakdown of the key components:</p>
@@ -118,7 +118,7 @@ export default function AgentPage() {
           </li>
         </ul>
 
-        <img src="/agent/agentOptions.png" alt="Select Agent" />
+        <img src="/v0/agent/agentOptions.png" alt="Select Agent" />
 
         <p>
           Select any agent from the list and click the <code>&gt;</code> button to continue.
@@ -154,7 +154,7 @@ export default function AgentPage() {
         <p>
           If everything looks good, proceed by clicking the <strong>RUN</strong> button.
           <br />
-          <img src="/agent/agent2.png" alt="Confirm Agent" />
+          <img src="/v0/agent/agent2.png" alt="Confirm Agent" />
         </p>
 
         <p>&nbsp;</p>
@@ -176,7 +176,7 @@ export default function AgentPage() {
           This screen is straightforward—simply upload an example file of an Executive Employment Agreement from the file path above and click the{" "}
           <code>&gt;</code> button to proceed.
           <br />
-          <img src="/agent/agent3.png" alt="Upload File" />
+          <img src="/v0/agent/agent3.png" alt="Upload File" />
         </p>
 
         <p>&nbsp;</p>
@@ -190,8 +190,8 @@ export default function AgentPage() {
 
         <p>The agent will process the input and generate the output as defined in its configuration.</p>
 
-        <img src="/agent/agentOutput1.png" alt="Agent Output" />
-        <img src="/agent/agentOutput2.png" alt="Agent Output" />
+        <img src="/v0/agent/agentOutput1.png" alt="Agent Output" />
+        <img src="/v0/agent/agentOutput2.png" alt="Agent Output" />
 
         <p>&nbsp;</p>
 
@@ -251,7 +251,7 @@ export default function AgentPage() {
           </tbody>
         </table>
 
-        <img src="/agent/inference.png" alt="Agent Output" />
+        <img src="/v0/agent/inference.png" alt="Agent Output" />
 
         <p>&nbsp;</p>
 
@@ -317,7 +317,7 @@ export default function AgentPage() {
           </tbody>
         </table>
 
-        <img src="/agent/createdFiles.png" alt="Agent Output" />
+        <img src="/v0/agent/createdFiles.png" alt="Agent Output" />
 
         <blockquote>
           <p>
@@ -334,7 +334,7 @@ export default function AgentPage() {
           A graphical image that provides a visual representation of the contract analysis process or its extracted
           structure. It might include hierarchical clause trees, entity relationships, or summary visualizations.
         </p>
-        <img src="/agent/file1.png" alt="Agent Output" />
+        <img src="/v0/agent/file1.png" alt="Agent Output" />
 
         <br />
 
@@ -555,7 +555,7 @@ flowchart TD
           This is a technical report in Word format that documents the internal workings of the agent. It includes
           inference logic, model details, parameters used, and evaluation outcomes.
         </p>
-        <img src="/agent/file2.png" alt="Agent Output" />
+        <img src="/v0/agent/file2.png" alt="Agent Output" />
 
         <br />
 

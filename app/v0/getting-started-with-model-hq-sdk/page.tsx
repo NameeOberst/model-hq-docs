@@ -40,11 +40,11 @@ export default function GettingStartedPage() {
           <strong>Tools</strong> button (🔧).
         </p>
 
-        <img src="/getting-started-with-sdk/menu.png" alt="Tools Interface" />
+        <img src="/v0/getting-started-with-sdk/menu.png" alt="Tools Interface" />
 
         <p>The tools page should look like this:</p>
 
-        <img src="/getting-started-with-sdk/tools.png" alt="Tools Interface" />
+        <img src="/v0/getting-started-with-sdk/tools.png" alt="Tools Interface" />
 
         <p>&nbsp;</p>
 
@@ -66,7 +66,7 @@ export default function GettingStartedPage() {
           preferred IDE, and start coding with direct access to the backend APIs.
         </p>
 
-        <img src="/getting-started-with-sdk/backend.png" alt="Backend Launch" />
+        <img src="/v0/getting-started-with-sdk/backend.png" alt="Backend Launch" />
 
         <p>The backend interface includes two main options:</p>
         <ul>
@@ -82,7 +82,7 @@ export default function GettingStartedPage() {
 
         <h2 id="launch-backend-inference-server-guide">Launch Backend Inference Server Guide</h2>
 
-        <img src="/getting-started-with-sdk/launch.png" alt="Launch" />
+        <img src="/v0/getting-started-with-sdk/launch.png" alt="Launch" />
 
         <h3 id="starting-the-server">Starting the Server</h3>
         <p>
@@ -149,7 +149,7 @@ print('llm response: ', response)`}</code>
 
         <h2 id="configure-backend-api-server">Configure or Configure Backend API Server for 'Headless' Mode</h2>
 
-        <img src="/getting-started-with-sdk/backend.png" alt="Backend Configure" />
+        <img src="/v0/getting-started-with-sdk/backend.png" alt="Backend Configure" />
 
         <p>
           Before launching the backend in headless mode, you may choose to configure the server using the{" "}
@@ -210,14 +210,14 @@ print('llm response: ', response)`}</code>
 
         <h2 id="downloading-the-model-hq-sdk">Downloading the Model HQ SDK</h2>
 
-        <img src="/getting-started-with-sdk/download.png" alt="SDK" />
+        <img src="/v0/getting-started-with-sdk/download.png" alt="SDK" />
 
         <p>
           Clicking on the <strong>Download Model HQ Development Kit</strong> button will download a <code>.zip</code>{" "}
           file. Once extracted, it will contain the following files:
         </p>
 
-        <img src="/getting-started-with-sdk/files.png" alt="SDK Files" />
+        <img src="/v0/getting-started-with-sdk/files.png" alt="SDK Files" />
 
         <pre>
           <code>{`
@@ -251,7 +251,7 @@ print('llm response: ', response)`}</code>
           </li>
         </ul>
 
-        <img src="/getting-started-with-sdk/close.png" alt="SDK Files" />
+        <img src="/v0/getting-started-with-sdk/close.png" alt="SDK Files" />
 
         <p>&nbsp;</p>
 

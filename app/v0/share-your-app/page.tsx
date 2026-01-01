@@ -48,7 +48,7 @@ export default function SharingAgentsBotsPage() {
                     <li>Email the downloaded <code>.zip</code> file to the recipient, along with any necessary instructions.</li>
                 </ol>
 
-                <img src="/share/agent.png" alt="agent share" />
+                <img src="/v0/share/agent.png" alt="agent share" />
 
                 <h3 id="upload-and-use-a-shared-agent-process">To upload and use a shared Agent process:</h3>
                 <ol>
@@ -69,7 +69,7 @@ export default function SharingAgentsBotsPage() {
                     <li>Email this file to the recipient along with any usage instructions.</li>
                 </ol>
 
-                <img src="/share/bot.png" alt="bot share" />
+                <img src="/v0/share/bot.png" alt="bot share" />
 
                 <h3 id="upload-and-use-a-shared-custom-bot">To upload and use a shared custom Bot:</h3>
                 <ol>

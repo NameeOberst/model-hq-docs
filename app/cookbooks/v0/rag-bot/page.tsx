@@ -121,7 +121,7 @@ export default function RAGBotPage() {
                     </code>
                     <div className="my-4">
                       <img
-                        src="/cookbooks/rag-bot/docPath.png"
+                        src="/cookbooks/v0/rag-bot/docPath.png"
                         alt="doc path"
                         className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                       />
@@ -235,7 +235,7 @@ export default function RAGBotPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/rag-bot/executiveEmploymentAgreement.png"
+                            src="/cookbooks/v0/rag-bot/executiveEmploymentAgreement.png"
                             alt="Executive Employment Agreement"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />
@@ -315,7 +315,7 @@ export default function RAGBotPage() {
 
                         <div className="my-4">
                           <img
-                            src="/cookbooks/rag-bot/contractAnalyzer.png"
+                            src="/cookbooks/v0/rag-bot/contractAnalyzer.png"
                             alt="Contract Analyzer"
                             className="rounded-lg shadow-md border dark:border-gray-800 w-full"
                           />

@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Open_Sans } from "next/font/google"
 import "./globals.css"
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar"
@@ -16,7 +16,16 @@ const openSans = Open_Sans({
   display: "swap",
 })
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: "cover",
+}
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://model-hq-docs.vercel.app'),
   title: "Model HQ Documentation",
   description: "Complete documentation for Model HQ platform",
   icons: {

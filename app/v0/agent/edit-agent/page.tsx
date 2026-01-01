@@ -43,7 +43,7 @@ export default function EditAgentPage() {
 
         <p>Select the Agent you want to edit from the dropdown.</p>
 
-        <img src="/agent/editAgent.png" alt="edit" />
+        <img src="/v0/agent/editAgent.png" alt="edit" />
 
         <p>
           We will use the Contract Analyzer example to illustrate this process. (Editing the Contract Analyzer Agent
@@ -93,7 +93,7 @@ export default function EditAgentPage() {
         </p>
 
         <p>
-          <img src="/agent/agentProcess.png" alt="agent process" />
+          <img src="/v0/agent/agentProcess.png" alt="agent process" />
         </p>
 
         <ol>
@@ -112,7 +112,7 @@ export default function EditAgentPage() {
         <h2 id="edit-interface">Edit Interface</h2>
         <p>You will now see the following screen:</p>
 
-        <img src="/agent/editInterface.png" alt="edit" />
+        <img src="/v0/agent/editInterface.png" alt="edit" />
 
         <p>At the top, there is a brief instructional guide.</p>
 
@@ -357,7 +357,7 @@ export default function EditAgentPage() {
         <h2 id="export">Export</h2>
         <p>Custom agents can be exported for easy sharing with colleagues who have Model HQ installed.</p>
 
-        <img src="/agent/editExport.png" alt="edit" />
+        <img src="/v0/agent/editExport.png" alt="edit" />
 
         <p>The Export section provides two options:</p>
 
@@ -372,7 +372,7 @@ export default function EditAgentPage() {
           </p>
         </blockquote>
 
-        <img src="/agent/editBuild.png" alt="edit" />
+        <img src="/v0/agent/editBuild.png" alt="edit" />
 
         <h3 id="meta" >2. Meta</h3>
         <p>
@@ -381,7 +381,7 @@ export default function EditAgentPage() {
           process) and author information.
         </p>
 
-        <img src="/agent/editBuild.png" alt="edit" />
+        <img src="/v0/agent/editBuild.png" alt="edit" />
 
         <p>You can add the following metadata:</p>
         <ul>
@@ -398,21 +398,21 @@ export default function EditAgentPage() {
         <h2 id="options">Options</h2>
         <p>Opens a &quot;Configure [Agent Process Name]&quot; screen with the following configuration options:</p>
 
-        <img src="/agent/editOptions.png" alt="edit" />
+        <img src="/v0/agent/editOptions.png" alt="edit" />
 
         <h3 id="json-editor">JSON Editor</h3>
         <p>
           Enables advanced users to modify the agent process directly in JSON. You can edit inline or upload a
           pre-configured JSON file.
         </p>
-        <img src="/agent/editJSON.png" alt="edit" />
+        <img src="/v0/agent/editJSON.png" alt="edit" />
 
         <h3 id="files">Files</h3>
         <p>
           Attach source files directly to the Agent. These files will be available in the Process Builder and included
           in exported packages.
         </p>
-        <img src="/agent/editFiles.png" alt="edit" />
+        <img src="/v0/agent/editFiles.png" alt="edit" />
 
         <h3 id="reports">Reports</h3>
         <p>Configure the types of reports the agent can generate. This includes:</p>
@@ -423,7 +423,7 @@ export default function EditAgentPage() {
           <li>Technical Report Elements</li>
           <li>Compliance Report Elements</li>
         </ul>
-        <img src="/agent/editReports.png" alt="edit" />
+        <img src="/v0/agent/editReports.png" alt="edit" />
 
         <h3 id="outputs">Outputs</h3>
         <p>
@@ -437,25 +437,25 @@ export default function EditAgentPage() {
             Use the <code>standard</code> option to ignore custom settings and include all default keys
           </li>
         </ul>
-        <img src="/agent/editOutput.png" alt="edit" />
+        <img src="/v0/agent/editOutput.png" alt="edit" />
 
         <h3 id="global">Global</h3>
         <p>Set global configuration options such as chat models and custom instructions.</p>
-        <img src="/configs/rag.png" alt="edit" />
+        <img src="/v0/configs/rag.png" alt="edit" />
 
         <h3 id="controls">Controls</h3>
         <p>
           Configure controls like Model Hash Checks, Pattern Redaction, and Classifier Tests used during the agent
           process.
         </p>
-        <img src="/configs/controls.png" alt="edit" />
+        <img src="/v0/configs/controls.png" alt="edit" />
 
         <h3 id="upload">Upload</h3>
         <p>
           Upload an agent <code>.zip</code> file to build a custom agent. Once uploaded, the agent will be installed and
           can be further edited.
         </p>
-        <img src="/agent/editUpload.png" alt="edit" />
+        <img src="/v0/agent/editUpload.png" alt="edit" />
 
         <h3>Home</h3>
         <p>Returns to the previous Agent Menu screen.</p>

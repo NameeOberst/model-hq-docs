@@ -42,7 +42,7 @@ export default function BotsPage() {
         <p>
           Click on the <strong>Bots</strong> button from the main menu to get started.
           <br />
-          <img src="/bots.png" alt="bots" />
+          <img src="/v0/bots.png" alt="bots" />
         </p>
 
         <p>&nbsp;</p>
@@ -51,7 +51,7 @@ export default function BotsPage() {
         <p>
           You will land on an interface similar to the one shown in the screenshot.
           <br />
-          <img src="/bots/bots.png" alt="bots" />
+          <img src="/v0/bots/bots.png" alt="bots" />
         </p>
 
         <p>Here you will get multiple options. Let us briefly go over each button:</p>
@@ -102,7 +102,7 @@ export default function BotsPage() {
         <p>
           The bot will begin loading and will look like this:
           <br />
-          <img src="/bots/loading.png" alt="bots" />
+          <img src="/v0/bots/loading.png" alt="bots" />
         </p>
 
         <p>
@@ -133,7 +133,7 @@ export default function BotsPage() {
         <p>
           Click on the <strong>Edit</strong> button in the bots screen or You will land on this screen:
           <br />
-          <img src="/bots/edit.png" alt="bots" />
+          <img src="/v0/bots/edit.png" alt="bots" />
         </p>
 
         <p>Now we will look into each button one by one:</p>
@@ -215,7 +215,7 @@ export default function BotsPage() {
           Once configured, click on <code>&gt;</code> to save your changes.
         </p>
 
-        <img src="/bots/models.png" alt="bots" />
+        <img src="/v0/bots/models.png" alt="bots" />
 
         <h3 id="files-button">b. Files button</h3>
         <p>Another crucial button for your bot.</p>
@@ -250,7 +250,7 @@ export default function BotsPage() {
           </p>
         </blockquote>
 
-        <img src="/bots/files.png" alt="bots" />
+        <img src="/v0/bots/files.png" alt="bots" />
 
         <h3 id="rag-button">c. RAG button</h3>
         <p>
@@ -259,7 +259,7 @@ export default function BotsPage() {
           developer.
         </p>
 
-        <img src="/bots/rag.png" alt="bots" />
+        <img src="/v0/bots/rag.png" alt="bots" />
 
         <p>
           -&gt; <u>Supported Modes of Additional Source Information</u>: This allows the developer to control whether
@@ -312,7 +312,7 @@ export default function BotsPage() {
         <h3 id="options-button">d. Options button</h3>
         <p>This optional but important section gives you more control over your bot, UI, upload settings, etc.</p>
 
-        <img src="/bots/options.png" alt="bots" />
+        <img src="/v0/bots/options.png" alt="bots" />
 
         <p>Here is a breakdown of each sub-option:</p>
         <ul>
@@ -320,7 +320,7 @@ export default function BotsPage() {
             <strong>Controls</strong>: Allows developers more configuration options by offering settings like logs,
             validation, model pull repository selection, download controls, pattern redaction, and classifier tests.
             <br />
-            <img src="/bots/controls.png" alt="bots" />
+            <img src="/v0/bots/controls.png" alt="bots" />
           </li>
           <p>
             <strong>Control Configuration Options</strong> includes many Safety and Security features of Model HQ:
@@ -362,20 +362,20 @@ export default function BotsPage() {
             <strong>UI</strong>: Allows for fast and easy customization of the UI, bot name, icons, color, and other
             visual elements.
             <br />
-            <img src="/bots/ui.png" alt="bots" />
+            <img src="/v0/bots/ui.png" alt="bots" />
           </li>
           <li>
             <strong>Upload</strong>: Already have a bot zip file? Upload it here to automatically install it in Model
             HQ.
             <br />
-            <img src="/bots/upload.png" alt="bots" />
+            <img src="/v0/bots/upload.png" alt="bots" />
           </li>
           <li>
             <strong>JSON Editor</strong>: Want a simple way to create or edit a bot? Use the built-in JSON editor.
             Templates are available to guide you. If you already have a JSON file, upload it via the{" "}
             <strong>Upload</strong> button.
             <br />
-            <img src="/bots/editor.png" alt="bots" />
+            <img src="/v0/bots/editor.png" alt="bots" />
           </li>
         </ul>
 
@@ -476,20 +476,20 @@ export default function BotsPage() {
         <p>
           Custom bots can be exported to share with others easily.
           <br />
-          <img src="/bots/export.png" alt="bots" />
+          <img src="/v0/bots/export.png" alt="bots" />
         </p>
 
         <ul>
           <li>
             <strong>Build</strong>: Packages all config and source files into a zip (no executable code).
             <br />
-            <img src="/bots/build.png" alt="bots" />
+            <img src="/v0/bots/build.png" alt="bots" />
           </li>
           <li>
             <strong>Meta</strong>: Add metadata such as description and author before publishing. Requires a ModelHQ API
             server for publishing.
             <br />
-            <img src="/bots/meta.png" alt="bots" />
+            <img src="/v0/bots/meta.png" alt="bots" />
           </li>
           <li>
             <strong>Peer to Peer Sharing</strong>: Use the zip file to upload the custom bot to another AI PC.

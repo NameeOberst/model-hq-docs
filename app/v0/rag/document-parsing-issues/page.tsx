@@ -101,7 +101,7 @@ export default function TroubleshootingDocumentParsingPage() {
           <strong>In Chat or Bots</strong>, in the Dialogue section, select the icon beneath the chat box '⚙️'
         </p>
 
-        <img src="/chat/ocr.png" alt="activateOCR" />
+        <img src="/v0/chat/ocr.png" alt="activateOCR" />
 
         <p>Once in <strong>RAG + Generation Config Options</strong>, go to:</p>
 
@@ -110,7 +110,7 @@ export default function TroubleshootingDocumentParsingPage() {
           will be accessed via OCR and a previously locked PDF document will now be searchable.
         </p>
 
-        <img src="/chat/pdfParsing.png" alt="pdfParsing" />
+        <img src="/v0/chat/pdfParsing.png" alt="pdfParsing" />
 
         <p></p>
 

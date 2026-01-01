@@ -47,7 +47,7 @@ export default function ConfigsPage() {
           To begin, click on the <strong>configure</strong> button ( ❃ ) from the main menu present in the top right
           side.
           <br />
-          <img src="/configs/configure.png" alt="configure" />
+          <img src="/v0/configs/configure.png" alt="configure" />
         </p>
 
         <p>&nbsp;</p>
@@ -56,7 +56,7 @@ export default function ConfigsPage() {
         <p>
           After launching the configure section, the interface displays the following key options:
           <br />
-          <img src="/configs/configureInterface.png" alt="configure interface" />
+          <img src="/v0/configs/configureInterface.png" alt="configure interface" />
         </p>
 
         <p>It includes:</p>
@@ -102,7 +102,7 @@ export default function ConfigsPage() {
         <p>
           App button is basically provides Model HQ Application Settings options.
           <br />
-          <img src="/configs/app.png" alt="app configuration" />
+          <img src="/v0/configs/app.png" alt="app configuration" />
         </p>
 
         <p>It's faciliates you with the following options:</p>
@@ -181,7 +181,7 @@ export default function ConfigsPage() {
         <p>
           Allows fast and easy customization of the UI, bot name, icons, color, and other visual elements.
           <br />
-          <img src="/configs/ui.png" alt="ui configuration" />
+          <img src="/v0/configs/ui.png" alt="ui configuration" />
         </p>
 
         <p>
@@ -197,7 +197,7 @@ export default function ConfigsPage() {
         <p>
           Select the default models, and the corresponding model settings like max_output, temperature, etc,.
           <br />
-          <img src="/configs/models.png" alt="models configuration" />
+          <img src="/v0/configs/models.png" alt="models configuration" />
         </p>
 
         <p>Let's go one-by-one with all the features:</p>
@@ -296,7 +296,7 @@ export default function ConfigsPage() {
         <p>
           A specialized button to configure the RAG settings.
           <br />
-          <img src="/configs/rag.png" alt="rag configuration" />
+          <img src="/v0/configs/rag.png" alt="rag configuration" />
         </p>
 
         <ul>
@@ -383,7 +383,7 @@ export default function ConfigsPage() {
         <p>
           DB helps you to manage resources on local Model HQ DB.
           <br />
-          <img src="/configs/db.png" alt="database configuration" />
+          <img src="/v0/configs/db.png" alt="database configuration" />
         </p>
 
         <p>
@@ -404,7 +404,7 @@ export default function ConfigsPage() {
           configuration options by offering settings like logs, validation, model pull repository selection, download
           controls, pattern redaction, and classifier tests.
           <br />
-          <img src="/configs/controls.png" alt="controls configuration" />
+          <img src="/v0/configs/controls.png" alt="controls configuration" />
         </p>
 
         <p>
@@ -449,14 +449,14 @@ export default function ConfigsPage() {
         <p>
           The template buttons ask you to build a new template or to edit/view the existing one.
           <br />
-          <img src="/configs/templates.png" alt="templates configuration" />
+          <img src="/v0/configs/templates.png" alt="templates configuration" />
         </p>
 
         <p>
           Hit <code>&gt;</code> to proceed with your choice. For demonstration, we are going with <code>build new</code>{" "}
           option.
           <br />
-          <img src="/configs/templatesNext.png" alt="templates next step" />
+          <img src="/v0/configs/templatesNext.png" alt="templates next step" />
         </p>
 
         <p>Here you will a lot of options. Play with it.</p>
@@ -480,7 +480,7 @@ export default function ConfigsPage() {
         </ul>
 
         <p>
-          <img src="/configs/credentials.png" alt="credentials" />
+          <img src="/v0/configs/credentials.png" alt="credentials" />
           <br />
           To access any of these external APIs, including access to models such as <code>OpenAI</code> and <code>Anthropic</code>, a user must enter the API key prior to usage. Credentials are stored encrypted in local machines only and no credential information is shared with LLMWare. Please do not save or transmit credential information unless as needed.
         </p>
@@ -495,7 +495,7 @@ export default function ConfigsPage() {
         <p>
           Reset the app or app configurations.
           <br />
-          <img src="/configs/reset.png" alt="reset configuration" />
+          <img src="/v0/configs/reset.png" alt="reset configuration" />
         </p>
 
         <ul>

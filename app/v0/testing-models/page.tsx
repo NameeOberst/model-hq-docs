@@ -41,12 +41,12 @@ export default function TestingModelsPage() {
           <li>
             From the <strong>main menu</strong>, click on <strong>Models</strong>.
             <br />
-            <img src="/test/models.png" alt="models" />
+            <img src="/v0/test/models.png" alt="models" />
           </li>
           <li>
             Then, click on the <strong>Test</strong> button.
             <br />
-            <img src="/test/test.png" alt="test" />
+            <img src="/v0/test/test.png" alt="test" />
           </li>
         </ol>
 
@@ -58,7 +58,7 @@ export default function TestingModelsPage() {
           After clicking <strong>Test</strong>, you will be prompted to select a model.
         </p>
 
-        <img src="/test/selectModel.png" alt="selectModel" />
+        <img src="/v0/test/selectModel.png" alt="selectModel" />
 
         <p></p>
 
@@ -88,7 +88,7 @@ export default function TestingModelsPage() {
           Once a model is selected, you will be taken to the <strong>Test Options</strong> interface.
         </p>
 
-        <img src="/test/testOptions.png" alt="testOptions" />
+        <img src="/v0/test/testOptions.png" alt="testOptions" />
 
         <p></p>
 
@@ -115,12 +115,12 @@ export default function TestingModelsPage() {
           <li>
             Enter a query in the provided text area.
             <br />
-            <img src="/test/sandboxPrompt.png" alt="sandbox" />
+            <img src="/v0/test/sandboxPrompt.png" alt="sandbox" />
           </li>
           <li>
             Click <strong>{">"}</strong> to run the test.
             <br />
-            <img src="/test/sandboxResults.png" alt="sandbox" />
+            <img src="/v0/test/sandboxResults.png" alt="sandbox" />
           </li>
         </ol>
 
@@ -138,12 +138,12 @@ export default function TestingModelsPage() {
           <li>
             Select <strong>Standard Testing</strong>.
             <br />
-            <img src="/test/standardTesting.png" alt="standard" />
+            <img src="/v0/test/standardTesting.png" alt="standard" />
           </li>
           <li>
             Tests will run automatically using preloaded sample data in Model HQ.
             <br />
-            <img src="/test/standardResults.png" alt="standardResults" />
+            <img src="/v0/test/standardResults.png" alt="standardResults" />
           </li>
         </ol>
 
@@ -153,13 +153,13 @@ export default function TestingModelsPage() {
           <li>
             Select <strong>Custom Testing</strong>.
             <br />
-            <img src="/test/customTesting.png" alt="customTesting" />
+            <img src="/v0/test/customTesting.png" alt="customTesting" />
           </li>
           <li>Upload your dataset (JSON or CSV).</li>
           <li>
             Click <strong>{">"}</strong> to begin testing.
             <br />
-            <img src="/test/customResults.png" alt="customResults" />
+            <img src="/v0/test/customResults.png" alt="customResults" />
           </li>
         </ol>
 
@@ -210,7 +210,7 @@ export default function TestingModelsPage() {
           </li>
         </ul>
 
-        <img src="/test/mapper.png" alt="mapper" />
+        <img src="/v0/test/mapper.png" alt="mapper" />
 
         <p>&nbsp;</p>
 
@@ -220,7 +220,7 @@ export default function TestingModelsPage() {
           The <strong>Generate Sample</strong> feature allows you to automatically create test cases.
         </p>
 
-        <img src="/test/generateSample.png" alt="generateSample" />
+        <img src="/v0/test/generateSample.png" alt="generateSample" />
 
         <blockquote>
           <p>
@@ -238,18 +238,18 @@ export default function TestingModelsPage() {
             <br />
             <em>"Write 10 samples about U.S. states asking for their capitals."</em>
             <br />
-            <img src="/test/samplePrompt.png" alt="samplePrompt" />
+            <img src="/v0/test/samplePrompt.png" alt="samplePrompt" />
           </li>
           <li>
             Click <strong>{">"}</strong> to generate samples in JSON format.
             <br />
-            <img src="/test/generatedSample.png" alt="generatedSample" />
+            <img src="/v0/test/generatedSample.png" alt="generatedSample" />
           </li>
           <li>Once generated, download the dataset.</li>
           <li>
             The generated samples are already mapped and ready to use.
             <br />
-            <img src="/test/mappedSample.png" alt="mappedSample" />
+            <img src="/v0/test/mappedSample.png" alt="mappedSample" />
           </li>
           <li>
             Click <strong>{">"}</strong> to begin testing with the generated dataset.
@@ -271,7 +271,7 @@ export default function TestingModelsPage() {
               <li>
                 If already available locally, it will load directly.
                 <br />
-                <img src="/test/loadModel.png" alt="loadModel" />
+                <img src="/v0/test/loadModel.png" alt="loadModel" />
               </li>
             </ul>
           </li>

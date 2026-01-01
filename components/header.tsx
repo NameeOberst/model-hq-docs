@@ -292,18 +292,20 @@ export function Header() {
         className={`sticky top-0 z-40 flex h-16 shrink-0 items-center gap-2 border-b bg-background px-2 sm:px-4 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
           }`}
       >
-        <SidebarTrigger className="-ml-1" />
-        <Separator orientation="vertical" className="mr-2 h-4" />
-        <div className="flex flex-1 items-center justify-between gap-2">
-          <div className="flex items-center gap-2 min-w-0">
+        <SidebarTrigger className="-ml-1 flex-shrink-0" />
+        <Separator orientation="vertical" className="mr-2 h-4 flex-shrink-0" />
+        <div className="flex flex-1 items-center justify-between gap-2 min-w-0">
+          <div className="flex items-center gap-2 min-w-0 flex-shrink">
             <h1 className="text-base sm:text-lg font-semibold truncate">Model HQ</h1>
-            <span className="hidden sm:inline text-sm text-muted-foreground">Documentation</span>
+            <span className="hidden md:inline text-sm text-muted-foreground whitespace-nowrap">Documentation</span>
           </div>
-          <div className="flex items-center gap-2">
-            {/* Theme Toggle */}
-            <ThemeToggle />
-            {/* Version Toggle */}
-            <div className="flex items-center gap-1 border rounded-md p-0.5">
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* Theme Toggle - hidden on mobile, will be in sidebar instead */}
+            <div className="hidden md:block">
+              <ThemeToggle />
+            </div>
+            {/* Version Toggle - hide on very small screens */}
+            <div className="hidden sm:flex items-center gap-1 border rounded-md p-0.5">
               <Button
                 variant={searchVersion === 'v0' ? 'default' : 'ghost'}
                 size="sm"
@@ -321,10 +323,10 @@ export function Header() {
                 v1
               </Button>
             </div>
-            {/* Search Input */}
+            {/* Search Input - responsive width */}
             <div 
               className={`relative transition-all duration-300 ease-in-out ${
-                isSearchFocused ? 'w-[300px] sm:w-[400px]' : 'w-[200px] sm:w-[280px]'
+                isSearchFocused ? 'w-[180px] sm:w-[300px] md:w-[400px]' : 'w-[120px] sm:w-[200px] md:w-[280px]'
               }`} 
               ref={searchRef}
             >
@@ -372,7 +374,7 @@ export function Header() {
 
                 {/* Search Results Dropdown */}
                 {showResults && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-background border rounded-md shadow-lg z-50 max-h-96 overflow-y-auto">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-background border rounded-md shadow-lg z-[60] max-h-96 overflow-y-auto">
                     <SearchResult 
                       results={searchResults} 
                       onResultClick={handleResultClick}

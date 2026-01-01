@@ -47,7 +47,7 @@ export default function ChatPage() {
         <p>
           Click on the <strong>Chat</strong> button from the main menu to get started.
           <br />
-          <img src="/chat/chat.png" alt="chat" />
+          <img src="/v0/chat/chat.png" alt="chat" />
         </p>
 
         <p>&nbsp;</p>
@@ -63,7 +63,7 @@ export default function ChatPage() {
           Once you have selected a model, click the <code>&gt;</code> button to proceed.
         </p>
 
-        <img src="/chat/next1.png" alt="chatNext" />
+        <img src="/v0/chat/next1.png" alt="chatNext" />
 
         <h4>Available Model Options:</h4>
         <ul>
@@ -85,7 +85,7 @@ export default function ChatPage() {
           </li>
         </ul>
 
-        <img src="/chat/next2.png" alt="chatNext" />
+        <img src="/v0/chat/next2.png" alt="chatNext" />
 
         <p>&nbsp;</p>
 
@@ -101,7 +101,7 @@ export default function ChatPage() {
           internet speed.
         </p>
 
-        <img src="/chat/download.png" alt="download" />
+        <img src="/v0/chat/download.png" alt="download" />
 
         <p>
           Once the model download is complete, it will be automatically loaded (this typically takes less than a
@@ -124,7 +124,7 @@ export default function ChatPage() {
         <p>
           Once your model is loaded, you will be taken to the <strong>Chat Interface</strong>.
           <br />
-          <img src="/chat/chatInterface.png" alt="chat" />
+          <img src="/v0/chat/chatInterface.png" alt="chat" />
         </p>
 
         <p>
@@ -151,7 +151,7 @@ export default function ChatPage() {
           </strong>{" "}
           button. Check the result below:
           <br />
-          <img src="/chat/test1.png" alt="chat" />
+          <img src="/v0/chat/test1.png" alt="chat" />
         </p>
 
         <p>
@@ -177,7 +177,7 @@ export default function ChatPage() {
         <p>
           The <strong>Info</strong> button displays the current configuration settings for your chat model.
           <br />
-          <img src="/chat/info.png" alt="chat" />
+          <img src="/v0/chat/info.png" alt="chat" />
         </p>
 
         <p>This provides clarity on which model is in use and the configuration parameters currently applied.</p>
@@ -204,7 +204,7 @@ export default function ChatPage() {
           For example, the <strong>temperature</strong> setting controls the randomness of the model's output.
         </p>
 
-        <img src="/chat/config.png" alt="chat" />
+        <img src="/v0/chat/config.png" alt="chat" />
 
         <p>
           Once you have modified the configuration, click{" "}
@@ -218,7 +218,7 @@ export default function ChatPage() {
           To see this in action, we asked, <em>"What is an Apple?"</em> using the same model but with different
           configuration settings.
           <br />
-          <img src="/chat/test2.png" alt="chat" />
+          <img src="/v0/chat/test2.png" alt="chat" />
         </p>
 
         <p>&nbsp;</p>
@@ -230,7 +230,7 @@ export default function ChatPage() {
         <p>
           The <strong>Source</strong> button enables you to load external documents or use Wikipedia to enhance your model's responses.
           <br />
-          <img src="/chat/sources.png" alt="chat" />
+          <img src="/v0/chat/sources.png" alt="chat" />
         </p>
 
         <p>You have several options here:</p>
@@ -257,7 +257,7 @@ export default function ChatPage() {
           and match score.
         </p>
 
-        <img src="/chat/test3.png" alt="chat" />
+        <img src="/v0/chat/test3.png" alt="chat" />
 
         <blockquote>
           <p>
@@ -270,7 +270,7 @@ export default function ChatPage() {
         <p>
           To remove the current source, simply click the <strong>Source</strong> button again.
           <br />
-          <img src="/chat/sourceOff1.png" alt="chat" />
+          <img src="/v0/chat/sourceOff1.png" alt="chat" />
         </p>
 
         <p>
@@ -278,7 +278,7 @@ export default function ChatPage() {
           available during the current Model HQ session.
         </p>
 
-        <img src="/chat/loadedSources.png" alt="chat" />
+        <img src="/v0/chat/loadedSources.png" alt="chat" />
 
         <h4>2. Saved Sources</h4>
 
@@ -298,14 +298,14 @@ export default function ChatPage() {
           For example, we asked about the Spiral Theory. The chatbot responded with an in-depth answer along with source references.
         </p>
 
-        <img src="/chat/test4.png" alt="chat" />
+        <img src="/v0/chat/test4.png" alt="chat" />
 
-        <img src="/chat/wikiSources.png" alt="chat" />
+        <img src="/v0/chat/wikiSources.png" alt="chat" />
 
         <p>
           To stop using Wikipedia, click the Source button again.
           <br />
-          <img src="/chat/sourceOff2.png" alt="chat" />
+          <img src="/v0/chat/sourceOff2.png" alt="chat" />
         </p>
 
         <p>&nbsp;</p>
@@ -315,7 +315,7 @@ export default function ChatPage() {
         <p>
           The <strong>Save</strong> button lets you export your chat session as a <code>.md</code> (Markdown) file.
           <br />
-          <img src="/chat/save.png" alt="chat" />
+          <img src="/v0/chat/save.png" alt="chat" />
         </p>
 
         <p>
@@ -323,7 +323,7 @@ export default function ChatPage() {
           others will display plain text. Below image shows the exported chat in a text editor i.e. as a plain text.
         </p>
 
-        <img src="/chat/savedFile.png" alt="chat" />
+        <img src="/v0/chat/savedFile.png" alt="chat" />
 
         <p>&nbsp;</p>
 

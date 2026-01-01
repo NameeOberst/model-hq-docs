@@ -1,3 +1,4 @@
+import type { ComponentType } from "react"
 import {
   Bot,
   MessageSquare,
@@ -10,9 +11,29 @@ import {
   Terminal,
   Code2,
   FlaskConical,
+  BookOpen,
+  BrainCircuit,
+  Library,
+  FileSearch,
+  Server,
+  Camera,
+  Stethoscope,
 } from "lucide-react"
 
-export const v0NavigationData = [
+type NavSubItem = {
+  title: string
+  url: string
+  icon?: ComponentType<{ className?: string }>
+}
+
+type NavItem = {
+  title: string
+  url: string
+  icon: ComponentType<{ className?: string }>
+  items?: NavSubItem[]
+}
+
+export const v0NavigationData: NavItem[] = [
   {
     title: "Chat",
     url: "/v0/chat",
@@ -81,9 +102,46 @@ export const v0NavigationData = [
     url: "/v0/shutdown",
     icon: Power,
   },
+  {
+    title: "Cookbooks",
+    url: "/cookbooks/v0",
+    icon: BookOpen,
+    items: [
+      { 
+        title: "Clinical Trial Screening Automation", 
+        url: "/cookbooks/v0/clinical-trial-screening-autmation",
+        icon: Stethoscope,
+      },
+      { 
+        title: "Document Review and Analysis Tool", 
+        url: "/cookbooks/v0/document-review-and-analysis-tool",
+        icon: FileSearch,
+      },
+      { 
+        title: "Hybrid Inferencing", 
+        url: "/cookbooks/v0/hybrid-inferencing",
+        icon: Server,
+      },
+      { 
+        title: "Personalized Bot", 
+        url: "/cookbooks/v0/personalized-bot",
+        icon: BrainCircuit,
+      },
+      { 
+        title: "Photo to Email Automation", 
+        url: "/cookbooks/v0/photo-to-email-automation",
+        icon: Camera,
+      },
+      { 
+        title: "RAG Bot", 
+        url: "/cookbooks/v0/rag-bot",
+        icon: Library,
+      },
+    ],
+  },
 ]
 
-export const v0CodeDocumentation = [
+export const v0CodeDocumentation: NavItem[] = [
   {
     title: "Getting Started with SDK",
     url: "/v0/getting-started-with-model-hq-sdk",

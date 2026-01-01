@@ -46,7 +46,7 @@ export default function MultiDocAgentPage() {
           at once, without the user having to load each document one-by-one.
         </p>
 
-        <img src="/agent/batchRun.png" alt="batch run" />
+        <img src="/v0/agent/batchRun.png" alt="batch run" />
 
         <p>
           We will use the <strong>Contract Analyzer</strong> example we covered in Agents to provide an example of a
@@ -66,7 +66,7 @@ export default function MultiDocAgentPage() {
           <strong>Upload Documents for Batch Processing</strong> page.
         </p>
 
-        <img src="/agent/uploadDocs.png" alt="batch run" />
+        <img src="/v0/agent/uploadDocs.png" alt="batch run" />
 
         <p>&nbsp;</p>
 
@@ -75,7 +75,7 @@ export default function MultiDocAgentPage() {
           HQ package that can be found under <code>c:\users\{"{user name}"}\llmware_data\sample_files\agreements</code>
         </p>
 
-        <img src="/agent/filePath.png" alt="batch run" />
+        <img src="/v0/agent/filePath.png" alt="batch run" />
 
         <p>&nbsp;</p>
 
@@ -91,7 +91,7 @@ export default function MultiDocAgentPage() {
           the results:
         </p>
 
-        <img src="/agent/final.png" alt="batch run" />
+        <img src="/v0/agent/final.png" alt="batch run" />
 
         <p>&nbsp;</p>
 

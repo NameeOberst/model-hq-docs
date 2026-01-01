@@ -46,7 +46,7 @@ export default function ToolsPage() {
         <p>
           To begin, click on the <strong>Tools</strong> button (🔧 ) from the main menu present in the top right side.
           <br />
-          <img src="/tools/tools.png" alt="tools" />
+          <img src="/v0/tools/tools.png" alt="tools" />
         </p>
 
         <p>&nbsp;</p>
@@ -55,7 +55,7 @@ export default function ToolsPage() {
         <p>
           After launching the Tools section, the interface displays the following key options:
           <br />
-          <img src="/tools/toolsInterface.png" alt="tools interface" />
+          <img src="/v0/tools/toolsInterface.png" alt="tools interface" />
         </p>
 
         <div className="overflow-x-auto">
@@ -129,7 +129,7 @@ export default function ToolsPage() {
           <br />
         </p>
         <p>
-          <img src="/tools/backend.png" alt="backend" />
+          <img src="/v0/tools/backend.png" alt="backend" />
         </p>
 
         <p>The backend interface includes two main options:</p>
@@ -149,7 +149,7 @@ export default function ToolsPage() {
           Selecting this option opens a separate CLI window allowing you to run commands directly.
         </p>
         <p>
-          <img src="/tools/cli.png" alt="cli" />
+          <img src="/v0/tools/cli.png" alt="cli" />
         </p>
         <p>
           By selecting to open the App in a command-line terminal, a second instance of the App will be created, exposed
@@ -186,7 +186,7 @@ export default function ToolsPage() {
           You can then use any device to access the App, provided that it has corporate network access to that IP address.
           Try with a smart phone, tablet or another PC.
           <br />
-          <img src="/tools/share.png" alt="share" />
+          <img src="/v0/tools/share.png" alt="share" />
         </p>
 
         <blockquote data-type="warning">
@@ -200,7 +200,7 @@ export default function ToolsPage() {
         <p>
           Confirm the operation by clicking on the <code>&gt;</code> button:
           <br />
-          <img src="/tools/shareConform.png" alt="share confirm" />
+          <img src="/v0/tools/shareConform.png" alt="share confirm" />
         </p>
 
         <p>&nbsp;</p>
@@ -226,7 +226,7 @@ export default function ToolsPage() {
           Click Upload Docs and choose your file and then click on the <code>&gt;</code> button. All documents will be
           parsed into flat text chunks.
           <br />
-          <img src="/tools/textParser.png" alt="text parser" />
+          <img src="/v0/tools/textParser.png" alt="text parser" />
         </p>
 
         <h4 id="configure">Configure (⚙️):</h4>
@@ -234,7 +234,7 @@ export default function ToolsPage() {
           Click Update Text Chunk Size to define how large each text segment should be during parsing. This impacts how
           text is tokenized for downstream use in models.
           <br />
-          <img src="/tools/settings.png" alt="settings" />
+          <img src="/v0/tools/settings.png" alt="settings" />
         </p>
 
         <blockquote data-type="tip">
@@ -260,7 +260,7 @@ export default function ToolsPage() {
         <p>
           Select your preferred package and it will be downloaded into your local workspace.
           <br />
-          <img src="/tools/sampleDocs.png" alt="sample docs" />
+          <img src="/v0/tools/sampleDocs.png" alt="sample docs" />
         </p>
 
         <p>&nbsp;</p>
@@ -269,7 +269,7 @@ export default function ToolsPage() {
         <p>
           Click on System Info to view hardware and software configurations detected by Model HQ.
           <br />
-          <img src="/tools/systemInfo.png" alt="system info" />
+          <img src="/v0/tools/systemInfo.png" alt="system info" />
         </p>
 
         <blockquote data-type="important">

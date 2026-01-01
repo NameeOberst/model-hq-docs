@@ -36,7 +36,7 @@ export default function AgentBuilderPage() {
       </div>
 
       <div className="prose prose-gray max-w-none">
-        <img src="/agent/builder.png" alt="create_agents" />
+        <img src="/v0/agent/builder.png" alt="create_agents" />
 
         <h2 id="building-the-process">Building the Process</h2>
         <p>To define each step in the agent workflow:</p>
@@ -93,7 +93,7 @@ export default function AgentBuilderPage() {
           The <strong>Inputs</strong> section lets you configure or update the user inputs defined earlier during setup.
         </p>
 
-        <img src="/agent/inputs.png" alt="create_agents" />
+        <img src="/v0/agent/inputs.png" alt="create_agents" />
 
         <p>Supported input types:</p>
         <ul>
@@ -253,7 +253,7 @@ export default function AgentBuilderPage() {
         <h2 id="load">Load</h2>
         <p>Use this option to import an existing agent process. This will override your current session.</p>
 
-        <img src="/agent/load.png" alt="create_agents" />
+        <img src="/v0/agent/load.png" alt="create_agents" />
 
         <p>&nbsp;</p>
 
@@ -265,16 +265,16 @@ export default function AgentBuilderPage() {
           view helps you verify the structure and ensure all steps have been defined as expected.
         </p>
 
-        <img src="/agent/finalDemo.png" alt="create_agents" />
+        <img src="/v0/agent/finalDemo.png" alt="create_agents" />
 
         <p>
           Click on the <code>Run</code> button to proceed. Now you&apos;ll be asked to add a text or attach a file to
           process your created agent.
         </p>
-        <img src="/agent/runNext.png" alt="create_agents" />
+        <img src="/v0/agent/runNext.png" alt="create_agents" />
 
         <p>Once done, you agent will start working and give you the output like below:</p>
-        <img src="/agent/finalOutput.png" alt="create_agents" />
+        <img src="/v0/agent/finalOutput.png" alt="create_agents" />
         <p>&nbsp;</p>
 
         <h2 id="reset">Reset (🗑️)</h2>
