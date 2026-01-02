@@ -177,7 +177,7 @@ The Configure panel exposes generation and retrieval parameters, for example:
 
 These values can be adjusted to control creativity, response length, and the degree to which retrieved context influences output.
 
-For full configuration options, please refer to [Chat Configuration](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/chat-configuration.md)
+For full configuration options, please refer to [Chat Configuration](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/chatConfiguration.md)
 
 ### 2.6 Info
 The Info button displays the current configuration settings for your chat model.  
