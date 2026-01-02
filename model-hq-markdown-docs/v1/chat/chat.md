@@ -50,7 +50,7 @@ Other useful controls:
 ![chat](chat/04_AniDemo.gif)
 
 ### 2.1 Model selector
-The Model control is used to select which model will power the Chat session. The control lists available models by size and name.
+The Model selector dropdown menu is used to select which model will power the Chat session. The dropdown menu lists available models by size and name. If the model selected is not yet downloaded on the user's device, it will download the model at this time.
 
 ![config](chat/05_modelsExpanded.png)
 
@@ -59,7 +59,7 @@ Guidance:
 - Large models are recommended when higher fidelity or complex reasoning is required; sufficient RAM/VRAM should be available.
 
 > [!TIP]
-> Every model has trade-offs. It is advisable to choose a model that balances latency, cost, and quality for the intended use case.
+> Every model has trade-offs. It is advisable to choose a model that balances latency, accuracy and quality for the intended use case.
 
 ### 2.2 Sources (RAG / document chat)
 
@@ -150,7 +150,7 @@ Here's a quick results after adding a prompt:
 ![chat](chat/09_promptDemo.png)
 
 > [!TIP]
-> Prompts are particularly useful when used with RAG, since they steer how the model incorporates retrieved context into a final answer.
+> Once the prompts are set here, the model will refer to this prompt as a set part of its instructions. For example, if you would like the model to provide answers in bullet points, or answer in French (for models that are multi-lingual), providing a set prompt will save the time of always having to enter this prompt in the Chat mode. Also, prompts can be particularly useful when used with RAG, since they steer how the model incorporates retrieved context into a final answer.
 
 
 ### 2.4 Web search
@@ -160,9 +160,11 @@ Web Search can be enabled when live or time-sensitive information is required. T
 
 Supported Web Search services:
 - Wikipedia
-- Tavily
-- Serp API
-- News API
+- Tavily (requires API key)
+- Serp API (requires API key)
+- News API (requires API key)
+
+For services requiring API keys such as NewsAPI, Serp and Tavily, go to **Integrations** on the side nav, select the service and enter the API key for the service. When the API key is entered, you may test the connection by selecting the **Test** button in Integrations.
 
 Behavior:
 - Web results are retrieved at query time and can be blended with document-based retrieval to form answers.
@@ -170,19 +172,19 @@ Behavior:
 
 ### 2.5 Configure
 The Configure panel exposes generation and retrieval parameters, for example:
-- Temperature, max tokens, top-p, repetition penalty, chat memory, etc,.
+- Temperature, max tokens, top-p, repetition penalty, chat memory, etc.
 - Retrieval options: number of results, similarity threshold, chunk size.
 
 These values can be adjusted to control creativity, response length, and the degree to which retrieved context influences output.
 
-For full configuration options, please refere [Chat Configuration](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/chat-configuration.md)
+For full configuration options, please refer to [Chat Configuration](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/chat-configuration.md)
 
 ### 2.6 Info
 The Info button displays the current configuration settings for your chat model.  
 
 ![chat](chat/11_info.png)
 
-This provides clarity on which model is in use and the configuration parameters currently applied.
+This provides information on which model is in use and the configuration parameters currently applied.
 
 
 ### 2.7 Save / export chat
