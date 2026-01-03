@@ -1,4 +1,5 @@
 import type { SearchResult } from "./search-result";
+import { v1SearchData } from "./v1-search-data";
 
 const searchData: SearchResult[] = [
   // Pages
@@ -1059,6 +1060,9 @@ const searchData: SearchResult[] = [
     type: "cookbook",
     parentPage: "Cookbooks",
   },
+  
+  // V1 Documentation
+  ...v1SearchData,
 ];
 
 export default searchData;

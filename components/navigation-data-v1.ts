@@ -1,8 +1,10 @@
-// V1 Navigation Data - Coming Soon
-// This file will be populated as v1 documentation is developed
+// V1 Navigation Data
 
 import type { ComponentType } from "react"
-import { BookOpen } from "lucide-react"
+import {
+  MessageSquare,
+  BookOpen,
+} from "lucide-react"
 
 type NavSubItem = {
   title: string
@@ -18,13 +20,17 @@ type NavItem = {
 }
 
 export const v1NavigationData: NavItem[] = [
-  // Uncomment when v1 cookbooks are ready
-  // {
-  //   title: "Cookbooks",
-  //   url: "/cookbooks/v1",
-  //   icon: BookOpen,
-  //   items: [],
-  // },
+  {
+    title: "Chat",
+    url: "/v1/chat",
+    icon: MessageSquare,
+    items: [
+      { title: "Chat Overview", url: "/v1/chat" },
+      { title: "Chat Configuration", url: "/v1/chat/chat-configuration" },
+      { title: "Document Parsing Issues", url: "/v1/chat/document-parsing-issues" },
+      { title: "Error Handling", url: "/v1/chat/error-handling" },
+    ],
+  },
 ]
 
 export const v1CodeDocumentation: NavItem[] = []

@@ -27,7 +27,7 @@ export function Header() {
   const [showBorder, setShowBorder] = useState(true)
   const [showAiModal, setShowAiModal] = useState(false)
   const [aiQuery, setAiQuery] = useState("")
-  const [searchVersion, setSearchVersion] = useState<'v0' | 'v1'>('v0')
+  const [searchVersion, setSearchVersion] = useState<'v0' | 'v1'>('v1')
   const { setIsHeaderVisible } = useHeaderVisibility()
   const router = useRouter()
   const pathname = usePathname()
