@@ -3,6 +3,7 @@
 import type { ComponentType } from "react"
 import {
   MessageSquare,
+  Database,
   BookOpen,
 } from "lucide-react"
 
@@ -29,6 +30,15 @@ export const v1NavigationData: NavItem[] = [
       { title: "Chat Configuration", url: "/v1/chat/chat-configuration" },
       { title: "Document Parsing Issues", url: "/v1/chat/document-parsing-issues" },
       { title: "Error Handling", url: "/v1/chat/error-handling" },
+    ],
+  },
+  {
+    title: "Models",
+    url: "/v1/models",
+    icon: Database,
+    items: [
+      { title: "Models Overview", url: "/v1/models" },
+      { title: "Model Configuration", url: "/v1/models/model-configuration" },
     ],
   },
 ]

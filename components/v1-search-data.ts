@@ -1,7 +1,7 @@
 import type { SearchResult } from "./search-result";
 
 export const v1SearchData: SearchResult[] = [
-  // V1 Chat Documentation
+  // V1 Chat Documentation - Pages
   {
     title: "Chat (v1)",
     url: "/v1/chat",
@@ -25,6 +25,442 @@ export const v1SearchData: SearchResult[] = [
     url: "/v1/chat/document-parsing-issues",
     type: "page",
     description: "Troubleshooting document parsing and limitations in v1",
+  },
+  
+  // V1 Chat - Headings
+  {
+    title: "Launching the Chat Interface (v1)",
+    url: "/v1/chat#1-launching-the-chat-interface",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Chat Interface Overview (v1)",
+    url: "/v1/chat#2-chat-interface-overview",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Model Selector (v1)",
+    url: "/v1/chat#21-model-selector",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Sources - RAG / Document Chat (v1)",
+    url: "/v1/chat#22-sources-rag-document-chat",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Prompts (v1)",
+    url: "/v1/chat#23-prompts",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Web Search (v1)",
+    url: "/v1/chat#24-web-search",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Configure Chat (v1)",
+    url: "/v1/chat#25-configure",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Chat Info (v1)",
+    url: "/v1/chat#26-info",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Save / Export Chat (v1)",
+    url: "/v1/chat#27-save-export-chat",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+  {
+    title: "Containers as Sources (v1)",
+    url: "/v1/chat#221-containers-as-sources",
+    type: "heading",
+    parentPage: "Chat (v1)",
+  },
+
+  // V1 Chat Configuration - Headings
+  {
+    title: "Opening Configuration Panel (v1)",
+    url: "/v1/chat/chat-configuration#1-opening-the-configuration-panel",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Configuration Options (v1)",
+    url: "/v1/chat/chat-configuration#2-configuration-options",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Configuration Parameters Overview (v1)",
+    url: "/v1/chat/chat-configuration#3-configuration-parameters-overview",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Use Memory in Chat (v1)",
+    url: "/v1/chat/chat-configuration#31-use-memory-in-chat",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Memory Apply Rule (v1)",
+    url: "/v1/chat/chat-configuration#32-memory-apply-rule",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Memory Apply Role (v1)",
+    url: "/v1/chat/chat-configuration#33-memory-apply-role",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "context_top_n (v1)",
+    url: "/v1/chat/chat-configuration#34-context_top_n",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "context_target_size (v1)",
+    url: "/v1/chat/chat-configuration#35-context_target_size",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "max_output (v1)",
+    url: "/v1/chat/chat-configuration#36-max_output",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "temperature (v1)",
+    url: "/v1/chat/chat-configuration#37-temperature",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Query Strategy (v1)",
+    url: "/v1/chat/chat-configuration#38-query-strategy",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Sample in Generation (v1)",
+    url: "/v1/chat/chat-configuration#39-sample-in-generation",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Table Only Mode (v1)",
+    url: "/v1/chat/chat-configuration#310-table-only-mode",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Interpret CSV as DB Table (v1)",
+    url: "/v1/chat/chat-configuration#311-interpret-csv-as-db-table",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "PDF Parsing Options (v1)",
+    url: "/v1/chat/chat-configuration#312-pdf-parsing-options",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Show Search Results and Context (v1)",
+    url: "/v1/chat/chat-configuration#313-show-search-results-and-context",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Recommended Configurations by Use Case (v1)",
+    url: "/v1/chat/chat-configuration#4-recommended-configurations-by-use-case",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Factual Q&A Configuration (v1)",
+    url: "/v1/chat/chat-configuration#41-factual-qa-high-accuracy",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Creative Writing Configuration (v1)",
+    url: "/v1/chat/chat-configuration#42-creative-writing-assistance",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Data Analysis Configuration (v1)",
+    url: "/v1/chat/chat-configuration#43-data-analysis-with-csv",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  {
+    title: "Exploratory Research Configuration (v1)",
+    url: "/v1/chat/chat-configuration#44-exploratory-research",
+    type: "heading",
+    parentPage: "Chat Configuration (v1)",
+  },
+  
+  // V1 Models Documentation - Pages
+  {
+    title: "Models (v1)",
+    url: "/v1/models",
+    type: "page",
+    description: "Explore and manage models in Model HQ v1",
+  },
+  {
+    title: "Model Configuration (v1)",
+    url: "/v1/models/model-configuration",
+    type: "page",
+    description: "Configure model settings and test models in v1",
+  },
+
+  // V1 Models - Headings
+  {
+    title: "Launching the Models Interface (v1)",
+    url: "/v1/models#1-launching-the-models-interface",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Models Interface Overview (v1)",
+    url: "/v1/models#2-models-interface-overview",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Model Card (v1)",
+    url: "/v1/models#21-model-card-",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Download Models (v1)",
+    url: "/v1/models#22-download",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Test Models (v1)",
+    url: "/v1/models#test",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Test Type (v1)",
+    url: "/v1/models#test-type",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "File Upload (v1)",
+    url: "/v1/models#file-upload",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Choose File / Browse (v1)",
+    url: "/v1/models#choose-file-browse",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Action Buttons (v1)",
+    url: "/v1/models#action-buttons",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "My Models (v1)",
+    url: "/v1/models#24-my-models",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "All Models (v1)",
+    url: "/v1/models#all",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Refresh Models (v1)",
+    url: "/v1/models#26-refresh",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Models Config (v1)",
+    url: "/v1/models#27-models-config-",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Troubleshoot Models (v1)",
+    url: "/v1/models#28-troubleshoot",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Delete Models (v1)",
+    url: "/v1/models#29-delete",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Models Info (v1)",
+    url: "/v1/models#210-info",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+  {
+    title: "Models Interface Controls Summary (v1)",
+    url: "/v1/models#3-models-interface-controls-summary",
+    type: "heading",
+    parentPage: "Models (v1)",
+  },
+
+  // V1 Model Configuration - Headings
+  {
+    title: "Opening Model Configuration Panel (v1)",
+    url: "/v1/models/model-configuration#opening-the-configuration-panel",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Model Configuration Parameters (v1)",
+    url: "/v1/models/model-configuration#configuration-parameters-overview",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Model Visibility and Discovery (v1)",
+    url: "/v1/models/model-configuration#model-visibility-and-discovery",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Show Cached Models Only (v1)",
+    url: "/v1/models/model-configuration#show-cached-models-only",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Show Model Types (v1)",
+    url: "/v1/models/model-configuration#show-model-types",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Show NPU Models First (v1)",
+    url: "/v1/models/model-configuration#show-npu-models-first-if-available",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Model Naming and Catalog Size (v1)",
+    url: "/v1/models/model-configuration#model-naming-and-catalog-size",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Model Naming Convention (v1)",
+    url: "/v1/models/model-configuration#model-naming-convention",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Model Choices (v1)",
+    url: "/v1/models/model-configuration#model-choices",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Model Display Sorting (v1)",
+    url: "/v1/models/model-configuration#model-display-sorting",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Default Model Assignment by Size (v1)",
+    url: "/v1/models/model-configuration#default-model-assignment-by-size",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Small Model Default (v1)",
+    url: "/v1/models/model-configuration#small-model-default",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Medium Model Default (v1)",
+    url: "/v1/models/model-configuration#medium-model-default",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Large Model Default (v1)",
+    url: "/v1/models/model-configuration#large-model-default",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Generation Defaults (v1)",
+    url: "/v1/models/model-configuration#generation-defaults",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "max_output Configuration (v1)",
+    url: "/v1/models/model-configuration#max_output",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "temperature Configuration (v1)",
+    url: "/v1/models/model-configuration#temperature",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Sample in Generation Configuration (v1)",
+    url: "/v1/models/model-configuration#sample-in-generation",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Task-Specific Default Models (v1)",
+    url: "/v1/models/model-configuration#task-specific-default-models",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "Chat Model Default (v1)",
+    url: "/v1/models/model-configuration#chat-model",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
+  },
+  {
+    title: "RAG Model Default (v1)",
+    url: "/v1/models/model-configuration#rag-model",
+    type: "heading",
+    parentPage: "Model Configuration (v1)",
   },
   
   // Cookbooks V1 (placeholder for future content)

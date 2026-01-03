@@ -310,7 +310,7 @@ export default function ExploringChatInModelHqPage() {
           <li>Prompts can be used to instruct how web results should be cited or weighted against local documents.</li>
         </ul>
 
-        <h3 id="25-configure">2.5 Configure</h3>
+        <h3 id="25-configure">2.5 Configure (⚙️)</h3>
 
         <p>
           The Configure panel exposes generation and retrieval parameters, for example:

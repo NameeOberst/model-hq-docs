@@ -674,15 +674,28 @@ ${referencesJson},
   }
 
   private codeToJsx(section: Section, indent: string): string {
-    const escaped = section.content
-      .replace(/`/g, '\\`')
-      .replace(/\$/g, '\\$')
-      .replace(/{/g, '\\{')
-      .replace(/}/g, '\\}');
+    // Check if content contains curly braces (common in JSON, code examples)
+    const hasCurlyBraces = section.content.includes('{') || section.content.includes('}');
     
-    return `${indent}<pre className="bg-muted p-4 rounded-lg overflow-x-auto mb-4">
+    if (hasCurlyBraces) {
+      // Use template literal syntax for content with curly braces
+      const escaped = section.content
+        .replace(/`/g, '\\`')
+        .replace(/\$/g, '\\$');
+      
+      return `${indent}<pre className="bg-muted p-4 rounded-lg overflow-x-auto mb-4">
+          <code className="text-sm">{\`${escaped}\`}</code>
+        </pre>`;
+    } else {
+      // Use regular escaping for content without curly braces
+      const escaped = section.content
+        .replace(/`/g, '\\`')
+        .replace(/\$/g, '\\$');
+      
+      return `${indent}<pre className="bg-muted p-4 rounded-lg overflow-x-auto mb-4">
           <code className="text-sm">${escaped}</code>
         </pre>`;
+    }
   }
 
   private blockquoteToJsx(section: Section, indent: string): string {

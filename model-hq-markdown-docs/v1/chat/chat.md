@@ -170,7 +170,7 @@ Behavior:
 - Web results are retrieved at query time and can be blended with document-based retrieval to form answers.
 - Prompts can be used to instruct how web results should be cited or weighted against local documents.
 
-### 2.5 Configure
+### 2.5 Configure (⚙️)
 The Configure panel exposes generation and retrieval parameters, for example:
 - Temperature, max tokens, top-p, repetition penalty, chat memory, etc.
 - Retrieval options: number of results, similarity threshold, chunk size.
