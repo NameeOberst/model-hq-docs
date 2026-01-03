@@ -9,19 +9,19 @@ Key configuration areas include:
 
 These values can be adjusted to control creativity, response length, and the degree to which retrieved context influences output. Understanding these parameters allows users to optimize Model HQ for specific workflows, whether prioritizing accuracy, speed, or contextual richness.
 
-## Opening the configuration panel
+## 1. Opening the configuration panel
 
 The configuration panel can be accessed by clicking the "⚙️" button located beneath the chat input box.
 
 ![openChatConfig](chat/chatConfig/chatConfig.png)
 
-## Configuration options
+## 2. Configuration options
 
 Once opened, the configuration panel presents a comprehensive set of options that control how memory, retrieval, and text generation behave in a Retrieval-Augmented Generation (RAG) setup.
 
 ![config](chat/chatConfig/config.png)
 
-## Configuration parameters overview
+## 3. Configuration parameters overview
 
 The table below provides a quick reference of all available configuration parameters, their types, default values, and available options:
 
@@ -46,7 +46,7 @@ The table below provides a quick reference of all available configuration parame
 
 The following sections describe each configuration parameter in detail:
 
-### Use Memory in Chat
+### 3.1 Use Memory in Chat
 
 **Options:** ON / OFF  
 **Default:** ON
@@ -58,7 +58,7 @@ This setting determines whether the conversation history is included as context 
 
 When memory is enabled, the model can reference earlier statements, pronouns, and context from the conversation, providing more coherent and contextually aware responses.
 
-### Memory Apply Rule
+### 3.2 Memory Apply Rule
 
 **Options:** All / maximum possible, Last / minimum  
 **Default:** All / maximum possible  
@@ -71,7 +71,7 @@ This parameter controls the extent of conversation history that is included in t
 
 The choice between these options involves a trade-off between contextual richness and computational efficiency. Longer histories consume more tokens but provide better continuity.
 
-### Memory Apply Role
+### 3.3 Memory Apply Role
 
 **Options:** Both, User, Assistant  
 **Default:** Both  
@@ -85,7 +85,7 @@ This setting determines which participant's messages are included when construct
 
 In most standard chat scenarios, the **Both** option is recommended to maintain natural conversation flow and full contextual awareness.
 
-### context_top_n
+### 3.4 context_top_n
 
 **Type:** Integer  
 **Default:** 10  
@@ -100,7 +100,7 @@ When a query is processed with RAG enabled, the retrieval system searches throug
 
 The optimal value depends on document structure, query specificity, and the trade-off between comprehensiveness and precision.
 
-### context_target_size
+### 3.5 context_target_size
 
 **Type:** Integer (tokens)  
 **Default:** 3000  
@@ -122,7 +122,7 @@ The target size should be set based on:
 
 For example, if working with a model that has an 8K context window and expect responses of ~1000 tokens, setting `context_target_size` to 3000-4000 leaves room for conversation history and generation while providing substantial retrieved context.
 
-### max_output
+### 3.6 max_output
 
 **Type:** Integer (tokens)  
 **Default:** 2048  
@@ -146,7 +146,7 @@ Recommended values by use case:
 > [!NOTE]
 > Setting this value too low may result in truncated responses that end mid-sentence. Setting it too high may allow verbose outputs that could be more concise.
 
-### temperature
+### 3.7 temperature
 
 **Type:** Float  
 **Range:** 0.0 to 1.0  
@@ -178,7 +178,7 @@ At each step of generation, the model calculates probabilities for all possible 
 > [!TIP]
 > For RAG-based question answering, lower temperatures (0.0-0.3) are generally recommended to ensure responses stay grounded in the retrieved context.
 
-### Query Strategy
+### 3.8 Query Strategy
 
 **Options:** semantic, keyword-or, keyword-and, exact  
 **Default:** semantic
@@ -214,7 +214,7 @@ This setting determines the algorithm used to match user queries against indexed
 > [!NOTE]
 > For most conversational RAG applications, **semantic** search provides the best user experience by understanding intent rather than requiring precise keyword matching.
 
-### Sample in Generation
+### 3.9 Sample in Generation
 
 **Options:** ON / OFF  
 **Default:** ON
@@ -238,7 +238,7 @@ This setting controls whether probabilistic sampling is used during the text gen
 > [!TIP]
 > When sampling is ON, the temperature parameter controls the degree of randomness. When sampling is OFF, temperature has no effect.
 
-### Table Only Mode
+### 3.10 Table Only Mode
 
 **Options:** ON / OFF  
 **Default:** OFF
@@ -257,7 +257,7 @@ This specialized mode restricts retrieval operations to only table structures th
 > [!NOTE]
 > Model HQ's parsers automatically detect and preserve table structure during document ingestion. When Table Only Mode is enabled, these preserved table structures are the sole source for retrieval.
 
-### Interpret CSV as DB Table
+### 3.11 Interpret CSV as DB Table
 
 **Options:** ON / OFF  
 **Default:** OFF
@@ -277,7 +277,7 @@ This setting determines how CSV files are processed and made available for query
 > [!TIP]
 > When working with datasets, spreadsheets, or any CSV containing structured information, enabling this option significantly improves query accuracy and enables powerful data analysis capabilities.
 
-### PDF Parsing Options
+### 3.12 PDF Parsing Options
 
 **Options:** Digital (Fastest), OCR, Vision Model  
 **Default:** Digital (Fastest)
@@ -310,7 +310,7 @@ This setting controls the parsing method used to extract content from PDF files.
 > [!TIP]
 > For troubleshooting document parsing issues or handling special PDF types, refer to the [Document Parsing Issues guide](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/documentParsingIssues.md).
 
-### Show Search Results and Context
+### 3.13 Show Search Results and Context
 
 **Options:** ON / OFF  
 **Default:** OFF
@@ -333,30 +333,30 @@ This setting controls whether the retrieved document chunks and context that inf
 > [!NOTE]
 > Even when this option is OFF, the model still uses the retrieved context for generation—it simply isn't displayed to the user.
 
-## Recommended configurations by use case
+## 4. Recommended configurations by use case
 
 The optimal configuration varies based on the intended application. Below are recommended starting points for common scenarios:
 
-### Factual Q&A (High accuracy)
+### 4.1 Factual Q&A (High accuracy)
 - **Use Memory in Chat:** ON
 - **Temperature:** 0.0-0.3
 - **Query Strategy:** semantic
 - **Sample in Generation:** OFF
 - **Show Search Results and Context:** ON
 
-### Creative writing assistance
+### 4.2 Creative writing assistance
 - **Use Memory in Chat:** ON
 - **Temperature:** 0.7-0.9
 - **max_output:** 2048-4096
 - **Sample in Generation:** ON
 
-### Data analysis (with CSV)
+### 4.3 Data analysis (with CSV)
 - **Interpret CSV as DB Table:** ON
 - **Table Only Mode:** ON (if querying only tabular data)
 - **Temperature:** 0.0
 - **Query Strategy:** semantic
 
-### Exploratory research
+### 4.4 Exploratory research
 - **context_top_n:** 15-20
 - **context_target_size:** 4000-6000
 - **Query Strategy:** semantic

@@ -88,7 +88,7 @@ interface Section {
   title?: string;
   blockquoteType?: 'note' | 'tip' | 'warning' | 'important' | 'caution' | 'default';
   listType?: 'ordered' | 'unordered';
-  items?: string[];
+  items?: Array<string | { content: string; subItems?: string[] }>;
   tableData?: { headers: string[]; rows: string[][] };
   stepNumber?: number;
   cardStyle?: string;
@@ -102,6 +102,7 @@ class MarkdownParser {
   private lines: string[];
   private currentIndex: number = 0;
   private icons: Set<string> = new Set();
+  private version: 'v0' | 'v1' = CONFIG.DEFAULT_VERSION as 'v0' | 'v1';
 
   constructor(content: string) {
     this.lines = content.split('\n');
@@ -109,6 +110,7 @@ class MarkdownParser {
 
   parse(type: 'docs' | 'cookbook'): ParsedContent {
     const meta = this.extractMeta(type);
+    this.version = meta.version || (CONFIG.DEFAULT_VERSION as 'v0' | 'v1');
     const sections = this.parseSections();
     
     return {
@@ -233,7 +235,7 @@ class MarkdownParser {
       }
 
       // Tables
-      if (line.includes('|') && this.lines[this.currentIndex + 1]?.match(/^\|[\s\-:|]+\|$/)) {
+      if (line.includes('|') && this.lines[this.currentIndex + 1]?.trim().match(/^\|[\s\-:|]+\|$/)) {
         sections.push(this.parseTable());
         continue;
       }
@@ -303,7 +305,14 @@ class MarkdownParser {
     if (!match) return { type: 'raw', content: line };
     
     const alt = match[1];
-    const src = match[2];
+    let src = match[2];
+    
+    // Ensure image paths are absolute (start with /) for proper resolution from /public
+    // Only add leading slash if it's not already an absolute path or external URL
+    if (!src.startsWith('/') && !src.startsWith('http://') && !src.startsWith('https://')) {
+      // Prepend version path for v1/v0 images
+      src = `/${this.version}/${src}`;
+    }
     
     return { type: 'image', content: src, title: alt };
   }
@@ -392,7 +401,7 @@ class MarkdownParser {
   }
 
   private parseList(): Section {
-    const items: string[] = [];
+    const items: Array<string | { content: string; subItems?: string[] }> = [];
     const firstLine = this.lines[this.currentIndex];
     const isOrdered = /^\s*\d+\.\s/.test(firstLine);
     const listType: 'ordered' | 'unordered' = isOrdered ? 'ordered' : 'unordered';
@@ -400,17 +409,39 @@ class MarkdownParser {
     while (this.currentIndex < this.lines.length) {
       const line = this.lines[this.currentIndex];
       
-      // Check if it's a list item
-      if (line.match(/^[\s]*[-*+]\s/) || line.match(/^[\s]*\d+\.\s/)) {
-        const content = line.replace(/^[\s]*[-*+]\s/, '').replace(/^[\s]*\d+\.\s/, '').trim();
-        items.push(content);
+      // Check for top-level list item (no leading spaces or only 0-1 spaces)
+      if (line.match(/^[\s]{0,1}[-*+]\s/) || line.match(/^[\s]{0,1}\d+\.\s/)) {
+        const content = line.replace(/^[\s]{0,1}[-*+]\s/, '').replace(/^[\s]{0,1}\d+\.\s/, '').trim();
+        items.push({ content, subItems: [] });
         this.currentIndex++;
-      } else if (line.trim() === '' || line.startsWith('#') || line.startsWith('```')) {
+      }
+      // Check for nested list item (2+ leading spaces)
+      else if (line.match(/^[\s]{2,}[-*+]\s/) || line.match(/^[\s]{2,}\d+\.\s/)) {
+        const content = line.replace(/^[\s]+[-*+]\s/, '').replace(/^[\s]+\d+\.\s/, '').trim();
+        // Add to the last item's subItems
+        if (items.length > 0) {
+          const lastItem = items[items.length - 1];
+          if (typeof lastItem === 'object') {
+            if (!lastItem.subItems) {
+              lastItem.subItems = [];
+            }
+            lastItem.subItems.push(content);
+          }
+        }
+        this.currentIndex++;
+      }
+      else if (line.trim() === '' || line.startsWith('#') || line.startsWith('```') || line.startsWith('>')) {
         break;
-      } else {
+      }
+      else {
         // Continuation of previous item
         if (items.length > 0) {
-          items[items.length - 1] += ' ' + line.trim();
+          const lastItem = items[items.length - 1];
+          if (typeof lastItem === 'string') {
+            items[items.length - 1] = lastItem + ' ' + line.trim();
+          } else {
+            lastItem.content += ' ' + line.trim();
+          }
         }
         this.currentIndex++;
       }
@@ -430,6 +461,9 @@ class MarkdownParser {
     while (this.currentIndex < this.lines.length) {
       const line = this.lines[this.currentIndex];
       
+      // Check for table: current line has | AND next line is separator
+      const isTableStart = line.includes('|') && this.lines[this.currentIndex + 1]?.trim().match(/^\|[\s\-:|]+\|$/);
+      
       if (line.trim() === '' || 
           line.startsWith('#') || 
           line.startsWith('```') ||
@@ -437,7 +471,8 @@ class MarkdownParser {
           line.match(/^!\[.*?\]\(.*?\)/) ||
           line.match(/^[\s]*[-*+]\s/) ||
           line.match(/^[\s]*\d+\.\s/) ||
-          (line.includes('|') && this.lines[this.currentIndex + 1]?.match(/^\|[\s\-:|]+\|$/))) {
+          isTableStart ||
+          line.trim().toLowerCase().startsWith('<details')) {
         break;
       }
       
@@ -499,6 +534,7 @@ class DocsGenerator {
     
     const breadcrumbsJsx = this.generateBreadcrumbs(meta.breadcrumbs, meta.title);
     const contentJsx = this.generateContent(sections);
+    const ctaJsx = this.generateCTA();
 
     if (meta.version === 'v1') {
       // V1 layout with DocPageLayout wrapper
@@ -514,6 +550,8 @@ class DocsGenerator {
 
       <div className="prose prose-gray max-w-none">
 ${contentJsx}
+
+${ctaJsx}
       </div>
     </div>
     </DocPageLayout>
@@ -532,6 +570,8 @@ ${contentJsx}
 
       <div className="prose prose-gray max-w-none">
 ${contentJsx}
+
+${ctaJsx}
       </div>
     </div>
   )
@@ -665,8 +705,26 @@ ${referencesJson},
   private listToJsx(section: Section, indent: string): string {
     const tag = section.listType === 'ordered' ? 'ol' : 'ul';
     const items = section.items?.map(item => {
-      const processed = this.processInlineMarkdown(item);
-      return `\n          <li>${processed}</li>`;
+      if (typeof item === 'string') {
+        const processed = this.processInlineMarkdown(item);
+        return `\n          <li>${processed}</li>`;
+      } else {
+        const processed = this.processInlineMarkdown(item.content);
+        let result = `\n          <li>${processed}`;
+        
+        // Add nested list if subItems exist
+        if (item.subItems && item.subItems.length > 0) {
+          result += `\n            <ul>`;
+          for (const subItem of item.subItems) {
+            const processedSub = this.processInlineMarkdown(subItem);
+            result += `\n              <li>${processedSub}</li>`;
+          }
+          result += `\n            </ul>`;
+        }
+        
+        result += `</li>`;
+        return result;
+      }
     }).join('') || '';
     
     return `${indent}<${tag}>${items}
@@ -678,7 +736,10 @@ ${referencesJson},
     
     const { headers, rows } = section.tableData;
     
-    let jsx = `${indent}<table className="w-full border-collapse border border-border">
+    // Desktop table view
+    let jsx = `${indent}<div className="overflow-x-auto">
+        {/* Desktop Table View */}
+        <table className="hidden md:table w-full border-collapse border border-border">
           <thead>
             <tr className="bg-muted">`;
     
@@ -704,7 +765,35 @@ ${referencesJson},
     
     jsx += `
           </tbody>
-        </table>`;
+        </table>
+
+        {/* Mobile Card View */}
+        <div className="md:hidden space-y-4">`;
+    
+    // Generate cards for each row
+    for (const row of rows) {
+      jsx += `
+          <div className="border border-border rounded-lg p-4 bg-card">
+            <div className="space-y-3">`;
+      
+      for (let i = 0; i < headers.length; i++) {
+        const header = headers[i];
+        const cell = row[i] || '';
+        jsx += `
+              <div>
+                <h5 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">${this.escapeJsx(header)}</h5>
+                <p className="text-sm mt-1 break-words">${this.processInlineMarkdown(cell)}</p>
+              </div>`;
+      }
+      
+      jsx += `
+            </div>
+          </div>`;
+    }
+    
+    jsx += `
+        </div>
+      </div>`;
     
     return jsx;
   }
@@ -787,6 +876,18 @@ ${referencesJson},
       .replace(/}/g, '&#125;');
   }
 
+  private generateCTA(): string {
+    const indent = '        ';
+    return `${indent}<div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+          <p className="text-gray-600 dark:text-gray-400">
+            For further assistance or to share feedback, please contact us at{' '}
+            <a href="mailto:support@aibloks.com" className="text-blue-600 dark:text-blue-400 hover:underline">
+              support@aibloks.com
+            </a>
+          </p>
+        </div>`;
+  }
+
   private generateComponentName(title: string): string {
     return title
       .replace(/[^\w\s]/g, '')
@@ -823,7 +924,10 @@ class CookbookGenerator {
     const { sections } = this.content;
     
     // Add commonly used icons based on content
-    if (sections.some(s => s.type === 'list' && s.items?.some(i => i.toLowerCase().includes('check')))) {
+    if (sections.some(s => s.type === 'list' && s.items?.some(i => {
+      const text = typeof i === 'string' ? i : i.content;
+      return text.toLowerCase().includes('check');
+    }))) {
       this.usedIcons.add('CheckCircle');
     }
     if (sections.some(s => s.content?.toLowerCase().includes('download'))) {
@@ -918,6 +1022,7 @@ function CodeBlock({ children, title, language = "text" }: { children: string; t
     
     const breadcrumbsJsx = this.generateBreadcrumbs(meta.breadcrumbs, meta.title);
     const contentJsx = this.generateContent(sections);
+    const ctaJsx = this.generateCTA();
 
     return `export default function ${componentName}Page() {
   return (
@@ -931,6 +1036,8 @@ function CodeBlock({ children, title, language = "text" }: { children: string; t
 
       <div className="prose prose-gray dark:prose-invert max-w-none space-y-8">
 ${contentJsx}
+
+${ctaJsx}
       </div>
     </div>
   )
@@ -1182,12 +1289,42 @@ ${indent}</Card>`;
 
   private listToJsx(section: Section, indent: string): string {
     const items = section.items?.map(item => {
-      const processed = this.processInlineMarkdown(item);
-      return `
+      if (typeof item === 'string') {
+        const processed = this.processInlineMarkdown(item);
+        return `
 ${indent}  <li className="flex items-start gap-3">
 ${indent}    <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-300 mt-0.5 flex-shrink-0" />
 ${indent}    <span className="text-gray-800 dark:text-gray-200">${processed}</span>
 ${indent}  </li>`;
+      } else {
+        const processed = this.processInlineMarkdown(item.content);
+        let result = `
+${indent}  <li className="flex items-start gap-3">
+${indent}    <CheckCircle className="h-5 w-5 text-gray-600 dark:text-gray-300 mt-0.5 flex-shrink-0" />
+${indent}    <div className="text-gray-800 dark:text-gray-200">
+${indent}      <span>${processed}</span>`;
+        
+        // Add nested list if subItems exist
+        if (item.subItems && item.subItems.length > 0) {
+          result += `
+${indent}      <ul className="space-y-1 mt-2 ml-4">`;
+          for (const subItem of item.subItems) {
+            const processedSub = this.processInlineMarkdown(subItem);
+            result += `
+${indent}        <li className="flex items-start gap-2">
+${indent}          <CheckCircle className="h-4 w-4 text-gray-500 dark:text-gray-400 mt-0.5 flex-shrink-0" />
+${indent}          <span className="text-sm">${processedSub}</span>
+${indent}        </li>`;
+          }
+          result += `
+${indent}      </ul>`;
+        }
+        
+        result += `
+${indent}    </div>
+${indent}  </li>`;
+        return result;
+      }
     }).join('') || '';
     
     return `${indent}<ul className="space-y-2">${items}
@@ -1307,6 +1444,18 @@ ${indent}</Card>`;
       .replace(/>/g, '&gt;')
       .replace(/{/g, '&#123;')
       .replace(/}/g, '&#125;');
+  }
+
+  private generateCTA(): string {
+    const indent = '        ';
+    return `${indent}<div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+          <p className="text-center text-gray-600 dark:text-gray-400">
+            For further assistance or to share feedback, please contact us at{' '}
+            <a href="mailto:support@aibloks.com" className="text-blue-600 dark:text-blue-400 hover:underline">
+              support@aibloks.com
+            </a>
+          </p>
+        </div>`;
   }
 
   private generateComponentName(title: string): string {

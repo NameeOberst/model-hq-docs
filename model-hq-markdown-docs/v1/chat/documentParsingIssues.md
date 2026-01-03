@@ -10,24 +10,24 @@ However, some documents—particularly PDFs—may present unique challenges:
 
 When such files are encountered, additional preprocessing steps may be required before they can be ingested and indexed by Model HQ.
 
-## Handling documents that cannot be natively parsed
+## 1. Handling documents that cannot be natively parsed
 
 In some cases, a document cannot be parsed by Model HQ's native proprietary parsers due to being fully image-based or having restrictive permissions.
 
-### In Chat:
+### 1.1 In Chat
 When attempting to load such a document, the system will respond with:
 
 > [!IMPORTANT]
 > “Unfortunately, source could not be loaded.”
 
-### In Agents:
+### 1.2 In Agents
 The Parsing step within the workload will complete but return 0 text blocks parsed, indicating that no extractable text was found and the RAG Answer step will not return responses.
 
-## Fallback solution
+## 2. Fallback solution
 
 Model HQ includes an embedded OCR (Optical Character Recognition) capability that can be activated to process such documents. Enabling OCR allows Model HQ to detect and extract text from images, scanned pages, or restricted PDFs, making them fully searchable and usable in RAG and agent workflows.
 
-### How to activate OCR:
+### 2.1 How to activate OCR:
 **In Chat or Bots**, the icon beneath the chat box '⚙️' can be selected in the Dialogue section.
 
 ![activateOCR](chat/activateOcr/01_chatConfig.png)

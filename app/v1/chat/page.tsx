@@ -20,7 +20,7 @@ export default function ExploringChatInModelHqPage() {
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>Exploring Chat in Model HQ</BreadcrumbPage>
+            <BreadcrumbPage>Chat</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
@@ -64,9 +64,9 @@ export default function ExploringChatInModelHqPage() {
         <img src="chat/02_downloadingModel.png" alt="chatNext" />
 
         <blockquote data-type="note">
-            <p>- Download time depends on model size and network speed; small models commonly finish in under a minute, while larger models may take longer.
+            <p>1. Download time depends on model size and network speed; small models commonly finish in under a minute, while larger models may take longer.
 </p>
-            <p>- Once the download completes, the model will be loaded into memory automatically and the chat UI will become active.</p>
+            <p>2. Once the download completes, the model will be loaded into memory automatically and the chat UI will become active.</p>
         </blockquote>
 
         <blockquote data-type="tip">
@@ -115,7 +115,7 @@ export default function ExploringChatInModelHqPage() {
         <h3 id="21-model-selector">2.1 Model selector</h3>
 
         <p>
-          The Model control is used to select which model will power the Chat session. The control lists available models by size and name.
+          The Model selector dropdown menu is used to select which model will power the Chat session. The dropdown menu lists available models by size and name. If the model selected is not yet downloaded on the user's device, it will download the model at this time.
         </p>
 
         <img src="chat/05_modelsExpanded.png" alt="config" />
@@ -130,7 +130,7 @@ export default function ExploringChatInModelHqPage() {
         </ul>
 
         <blockquote data-type="tip">
-            <p>Every model has trade-offs. It is advisable to choose a model that balances latency, cost, and quality for the intended use case.</p>
+            <p>Every model has trade-offs. It is advisable to choose a model that balances latency, accuracy and quality for the intended use case.</p>
         </blockquote>
 
         <h3 id="22-sources-rag-document-chat">2.2 Sources (RAG / document chat)</h3>
@@ -275,7 +275,7 @@ export default function ExploringChatInModelHqPage() {
         <img src="chat/09_promptDemo.png" alt="chat" />
 
         <blockquote data-type="tip">
-            <p>Prompts are particularly useful when used with RAG, since they steer how the model incorporates retrieved context into a final answer.</p>
+            <p>Once the prompts are set here, the model will refer to this prompt as a set part of its instructions. For example, if you would like the model to provide answers in bullet points, or answer in French (for models that are multi-lingual), providing a set prompt will save the time of always having to enter this prompt in the Chat mode. Also, prompts can be particularly useful when used with RAG, since they steer how the model incorporates retrieved context into a final answer.</p>
         </blockquote>
 
         <h3 id="24-web-search">2.4 Web search</h3>
@@ -292,10 +292,14 @@ export default function ExploringChatInModelHqPage() {
 
         <ul>
           <li>Wikipedia</li>
-          <li>Tavily</li>
-          <li>Serp API</li>
-          <li>News API</li>
+          <li>Tavily (requires API key)</li>
+          <li>Serp API (requires API key)</li>
+          <li>News API (requires API key)</li>
         </ul>
+
+        <p>
+          For services requiring API keys such as NewsAPI, Serp and Tavily, go to <strong>Integrations</strong> on the side nav, select the service and enter the API key for the service. When the API key is entered, you may test the connection by selecting the <strong>Test</strong> button in Integrations.
+        </p>
 
         <p>
           Behavior:
@@ -313,7 +317,7 @@ export default function ExploringChatInModelHqPage() {
         </p>
 
         <ul>
-          <li>Temperature, max tokens, top-p, repetition penalty, chat memory, etc,.</li>
+          <li>Temperature, max tokens, top-p, repetition penalty, chat memory, etc.</li>
           <li>Retrieval options: number of results, similarity threshold, chunk size.</li>
         </ul>
 
@@ -322,7 +326,7 @@ export default function ExploringChatInModelHqPage() {
         </p>
 
         <p>
-          For full configuration options, please refere <a href="/chat/chat-configuration">Chat Configuration</a>
+          For full configuration options, please refer to <a href="/chat/chat-configuration">Chat Configuration</a>
         </p>
 
         <h3 id="26-info">2.6 Info</h3>
@@ -334,7 +338,7 @@ export default function ExploringChatInModelHqPage() {
         <img src="chat/11_info.png" alt="chat" />
 
         <p>
-          This provides clarity on which model is in use and the configuration parameters currently applied.
+          This provides information on which model is in use and the configuration parameters currently applied.
         </p>
 
         <h3 id="27-save-export-chat">2.7 Save / export chat</h3>
@@ -358,6 +362,15 @@ export default function ExploringChatInModelHqPage() {
         <p>
           If detailed troubleshooting or advanced configuration examples are required, the linked guides are available for reference.
         </p>
+
+        <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+          <p>
+            For further assistance or to share feedback, please contact us at{' '}
+            <a href="mailto:support@aibloks.com" className="text-blue-600 dark:text-blue-400 hover:underline">
+              support@aibloks.com
+            </a>
+          </p>
+        </div>
       </div>
     </div>
     </DocPageLayout>

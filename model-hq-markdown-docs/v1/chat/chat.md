@@ -19,8 +19,8 @@ When Chat is opened:
 ![chatNext](chat/02_downloadingModel.png)
 
 > [!NOTE]
-> - Download time depends on model size and network speed; small models commonly finish in under a minute, while larger models may take longer.
-> - Once the download completes, the model will be loaded into memory automatically and the chat UI will become active.
+> 1. Download time depends on model size and network speed; small models commonly finish in under a minute, while larger models may take longer.
+> 2. Once the download completes, the model will be loaded into memory automatically and the chat UI will become active.
 
 > [!TIP]
 > If a download error is encountered, then refere to [Error Handling in Chat]( https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/ERROR.md)

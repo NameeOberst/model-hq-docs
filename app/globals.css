@@ -110,7 +110,10 @@
 }
 
 .prose p,
-.prose li,
+.prose li {
+  @apply text-foreground/90;
+}
+
 .prose td,
 .prose th {
   @apply text-muted-foreground;
