@@ -38,4 +38,4 @@ Navigate to **PDF Parsing Options**, select **OCR** and click '>'. The document 
 
 ![pdfParsing](chat/activateOcr/02_activateOcr.png)
 
-**In Agents**, **OCR** can be selected in lieu of Parse Documents.
+**In Agents**, **OCR** can be selected in lieu of Parse Documents or Rag-Answer if in Visual editing mode (OCR available for Intel AI PC only - Jan 2026).
