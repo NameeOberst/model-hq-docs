@@ -170,7 +170,7 @@ The **My Models** view displays all models that have been downloaded and are cur
 ![models](models/05_myModels.png)
 
 ### 2.5 All
-This button will show all the models present in the model catalog along with their quantization/model type.
+This button will show all the models present in the model catalog that can be used for the user's device along with their quantization/model type. The number of models available in the Model Catalog will vary depending on the user's device platform.
 
 ![models](models/06_allModels.png)
 
