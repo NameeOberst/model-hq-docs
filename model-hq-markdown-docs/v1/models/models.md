@@ -122,7 +122,7 @@ This feature allows a user to run tests using user provided data.
 #### To CREATE A CUSTOM TEST
 
 
-**Generate Sample**
+**Generate Custom Test Samples**
 Automatically creates a sample test file. This can be found under: Models > [Select Model from Dropdown] > Test > Generate Sample
 
 The text box will prompt the user to specify the test sample they would like to create:
@@ -152,13 +152,19 @@ The model will download prior to testing unless the model has already been downl
 
   
 
-**Mapper**  
-Opens the field mapping interface for custom test files.
+**Generating Complex Custom Testing with Existing CSVs or JSON files: Custom Mapper**  
+For users with complex CSVs or JSON files they would like to use as a test, this feature:
 
 * Allows mapping of uploaded file columns to required fields
-* Useful when column names do not exactly match expected keys (`query`, `answer`, `context`)
+* Useful to quickly and exactly match expected keys for fast testing without having to re-create a complex CSV 
 * Prevents schema-related test failures
-* Enables use of existing datasets without reformatting
+* Enables use of existing datasets without reformatting and ease of use
+
+  This feature can be found in: Models > [select model] > Test > Mapper
+
+
+  [Insert screenshot here of Custom Mappings Screen]
+  
 
 Default mapping values:
 ```json
@@ -169,7 +175,39 @@ Default mapping values:
 }
 ```
 
-#### To USE A CUSTOM TEST: Choose file / Browse
+The Query value represents the TEST question.
+The Answer value represents the GOLD ANSWER or Corrent answer to the test question.
+The Conext value represents any other context or instructions to the model for running the test.
+
+Here, the user may use their specific CSV or JSON file to use as a custom dataset. For example, we used the Salesworkload CSV file that is included as part of the Test files that is included in Model HQ, that can be accessed via: C: Users\[user name]\llmware_data\sample_tables\salesworkload.csv
+
+[insert screenshot of file path]
+
+This is a sample CSV of a representative sales data for a retailer. To run a test of the model, we would like to see if the model can accurate determine the country of the physical store based on the city. 
+
+For this test, we will change the "query", "answer" and "context" values that are on the RIGHT-HAND side, to map the correct columns to the model map as shown and select "Apply Mappings":
+
+
+[insert screenshot here]
+
+The next screen will prompt the user to select a file.
+
+Here, the user must select the **Custom** button and select the file we will be using as the test set as shown and click ">" to start the test:
+
+[insert screen shot of the test options screen with the salesworkload csv file chosen]
+
+
+The model will run through each row of the test and provide the Response to the Query as well as other helpful information such as processing time and first token speed:
+
+[insert screenshot of the test here]
+
+
+**Stopping a Model Test**
+
+The model test can be stopped at any time by clicking "X".
+
+
+#### Recap: To USE A CUSTOM TEST: Choose file / Browse
 
 Used only when **Custom** test type is selected.
 
