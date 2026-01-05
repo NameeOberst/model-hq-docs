@@ -77,14 +77,14 @@ The download process will begin, and progress will be displayed. Download time v
 > Downloaded models are stored locally and can be managed through the **My Models** view.
 
 ### 2.3 Test
-Test allows you to test a model either pre-dowloaded or a new model.
+Model HQ's Test feature allows you to test a model once downloaded.
 
 > [!NOTE]
 > If you try to test a model that is not already downloaded, then it will download first.
 
 ![models](models/04_test.png)
 
-The test interface consists of several components that control how testing is performed:
+The test feature provides three different ways that a model can be tested depending on the user's preference:
 
 #### Test Type
 Defines the testing mode to be used.
@@ -102,14 +102,14 @@ Runs an interactive test session.
 * Default option for exploratory testing
 
 2. **Standard**
-Runs a predefined, system controlled test.
+Runs a predefined, system-controlled test using one of LLMWare's pre-made datasets which are largely designed to test a model's capability for RAG comprehension and answer generation.
 
 * Useful for repeatable validation checks
 * Requires no custom input files
 * Suitable for baseline validation
 
 3. **Custom**
-Runs tests using user provided data.
+This feature allows a user to run tests using user provided data.
 
 * Enables batch evaluation
 * Requires uploading a JSON or CSV file
