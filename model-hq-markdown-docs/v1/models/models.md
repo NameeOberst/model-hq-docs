@@ -117,31 +117,40 @@ This feature allows a user to run tests using user provided data.
 
 </details>
 
-#### File Upload
+#### HOW TO USE and CREATE A CUSTOM TEST FOR MODEL INFERENCING
 
-#### Choose file / Browse
-
-Used only when **Custom** test type is selected.
-
-* Upload a JSON or CSV file
-* CSV must include headers: `query`, `context`, `answer`
-* JSON must contain entries with keys: `query`, `context`, `answer`
-* Each row or entry represents one test case
-
-#### Action Buttons
-
-**Run Test (>)**  
-Initiates the selected test type using the current configuration.
-
-* Executes sandbox, standard, or custom test
-* Uses uploaded file if custom mode is selected
+#### To CREATE A CUSTOM TEST
 
 
 **Generate Sample**
-Automatically creates a sample test file.
+Automatically creates a sample test file. This can be found under: Models > [Select Model from Dropdown] > Test > Generate Sample
+
+The text box will prompt the user to specify the test sample they would like to create:
+
+[Insert ScreenShot of the Text Box - write 10 questions about the city of Las Vegas]
+
+Once the query is input, JSON Test set will be created:
+
+[Insert Screenshot of the JSON test set here]
+
+User may review, edit and modify the auto-generated test set directly on the screen if desired. After review, click ">" which will then prompt the user to either download the test set to be used at a later time or to run the test.
+
+[Insert screenshot of this page here]
+
+If the "RUN the TEST" option is selected, the model will be tested using the test set that was just created by the user. This test will provide the user with information about token usage, processing time and first token speed:
+
+[insert screenshot of this page here]
+
+Once the test is complete, the user has the option to either download the test results or to return home.
+
+
+
+The model will download prior to testing unless the model has already been downloaded and is in the user's cache.
 
 * Helps users understand the expected file format
 * Useful as a starting template for custom tests
+
+  
 
 **Mapper**  
 Opens the field mapping interface for custom test files.
@@ -159,6 +168,24 @@ Default mapping values:
  "context": "context"
 }
 ```
+
+#### To USE A CUSTOM TEST: Choose file / Browse
+
+Used only when **Custom** test type is selected.
+
+* Upload a JSON or CSV file
+* CSV must include headers: `query`, `context`, `answer`
+* JSON must contain entries with keys: `query`, `context`, `answer`
+* Each row or entry represents one test case
+
+#### Action Buttons
+
+**Run Test (>)**  
+Initiates the selected test type using the current configuration.
+
+* Executes sandbox, standard, or custom test
+* Uses uploaded file if custom mode is selected
+
 
 > [!IMPORTANT]
 > When using a custom dataset, the schema should be mapped to the expected fields: `query`, `answer`, and `context`. Note: `query` input is required, while `answer` and `context` are optional.
