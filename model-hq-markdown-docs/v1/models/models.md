@@ -11,13 +11,13 @@ The Models section enables users to:
 
 ## 1. Launching the Models interface
 
-To begin, the **Models** button can be selected from the main menu sidebar or the first screen interface.
+To begin, the **Models** button can be selected from the main menu sidebar or the first screen interface. The card on the main menu displays the total number of models that are available as well as provide the number of models that are cached and already downloaded on the user's device.
 
 ![models](models/01_models.png)
 
 ## 2. Models interface overview
 
-After launching the Models section, the interface will present a comprehensive set of tools for model management:
+After launching the Models section, the interface will present a comprehensive set of tools for model management, testing and download:
 
 ![models](models/02_modelsInterface.png)
 
