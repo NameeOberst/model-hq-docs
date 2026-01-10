@@ -13,7 +13,7 @@ These settings allow teams to balance quality, performance, and cost while ensur
 
 ## Opening the configuration panel
 
-The Model Configuration panel can be accessed by clicking the "⚙️" button in the Models interface.
+The Model Configuration panel can be accessed by clicking the "⚙️" button in the **Models** interface or alternatively can be accessed via "⚙️" on the upper right-hand side then "Models" .
 
 ![models](models/07_modelsConfig.png)
 

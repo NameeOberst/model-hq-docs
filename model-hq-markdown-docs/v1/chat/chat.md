@@ -23,7 +23,7 @@ When Chat is opened:
 > 2. Once the download completes, the model will be loaded into memory automatically and the chat UI will become active.
 
 > [!TIP]
-> If a download error is encountered, then refere to [Error Handling in Chat]( https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/ERROR.md)
+> If a download error is encountered, then refer to [Error Handling in Chat]( https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/ERROR.md)
 
 ## 2. Chat interface overview
 
