@@ -37,7 +37,7 @@ To load an existing bot, `load existing` can be selected (if not already selecte
 
 A window will be presented displaying Bot Info. If this is the desired bot, the `>` button can be clicked again to proceed.
 
-![bots](botsOverview/03_runningBot.png.png)
+![bots](botsOverview/03_runningBot.png)
 
 <details><summary>Bot Info example</summary>
 

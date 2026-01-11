@@ -381,6 +381,12 @@ Once the sequence is ready, the Next (`>`) button can be clicked. The interface 
 
 ![editBOt](editBot/09_demo2.png)
 
+Once the demo has been configured, running the bot presents an additional Demo option in the subsequent interface.
+
+![editBot](editBot/09_demo3.png)
+
+Selecting the Demo option initiates the predefined demo flow. The bot then executes the configured sequence step by step, displaying the conversation and behavior as described in the demo setup. This allows viewers to experience the intended functionality without providing manual input.
+
 ### 1.10 Meta
 The Meta section is used to add descriptive information about the bot before sharing or publishing it. This information helps users understand the purpose, ownership, and intended usage of the bot.
 
