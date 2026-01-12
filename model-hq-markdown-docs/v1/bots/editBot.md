@@ -152,8 +152,17 @@ Specialized agents can be added to the bot.
 > [!NOTE]
 > Custom agents can be created and added to the bot. Once an agent is created, it will be automatically listed here.
 
-### 1.4 RAG
-RAG configurations can be updated for the custom bot. This allows selection of sources and other context-related settings that can impact output quality, providing maximum control and flexibility for developers.
+### 1.4 Prompts
+This section allows the user to add prompts that will persistently be added to each chat and interaction with the bot. For example, if the user adds the prompt for the custom bot to answer only in French, the bot will do as instructed for every interaction.
+
+[add screenshot]
+
+The instruction above will result in a French-only answer by the bot as shown:
+
+[add screenshot]
+
+### 1.5 RAG
+RAG configurations can be updated for the custom bot. This allows selection of sources and other context-related settings that can impact output quality, providing maximum control and flexibility for users.
 
 ![editBot](editBot/05_rag.png)
 
@@ -232,11 +241,9 @@ RAG configurations can be updated for the custom bot. This allows selection of s
 
 ## Other optional configuration options
 
-### 1.5 Prompt
-This option allows a default system prompt to be added.
 
 ### 1.6 UI
-The UI panel enables fast and easy customization of the bot name, icons, colors, and other visual elements.
+The UI panel enables fast and easy customization of the bot name, icons, colors, and other visual elements. The custom bot will be displayed to the user with the specific UI choices when accessed.
 
 ![bots](editBot/07_ui.png)
 
@@ -256,10 +263,10 @@ The Controls panel provides additional configuration options including logs, val
 - **Validate on Every Load of the Model or Skip Validation**
   Determines the frequency of the model safety hash check.
 
-- **Pattern Redaction**
+- **Safety Feature: Pattern Redaction**
   Allows automatic redaction of various forms of personally identifiable information including US Social Security numbers, ABA routing numbers, email addresses, credit card information, driver's license numbers, passport information, dates, IBAN information, Indian PAN numbers, URLs, cryptocurrency addresses, or phone numbers.
 
-- **Classifier Tests**
+- **Safety Feature: Classifier Tests**
   By selecting any of the available options such as prompt injection detection, toxic detection, language detection, bias detection, or malicious URL detection, Model HQ will automatically run a model to detect any of the selected forms of safety checks before displaying the inference results.
 
 ## Additional configuration options
@@ -409,6 +416,8 @@ If a bot needs to be removed or the configuration needs to be reset, the Delete 
 ## Cookbook Demos
   [add demo of persistent prompts to bots]
   [add demo of adding files to bots]
+  [add demo of agent feature]
+  [add demo of Demo feature]
 
 ## Conclusion
 This document covered the process of editing and configuring bots in Model HQ, from model selection and file attachment to RAG configuration, UI customization, and safety controls. Each configuration option provides developers with granular control over bot behavior, sources, and user experience. Once configured, bots can be tested locally, shared with others, or deployed for production use.
