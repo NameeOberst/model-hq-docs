@@ -1,24 +1,34 @@
-# Building a bot
+# Building a custom bot
 This document describes the process of creating a custom bot in Model HQ.
 
-## 1. Building a bot
+## 1. Building a custom bot
 To build a bot, the **build new** option can be selected from the bots interface, followed by clicking the `>` button.
 
 ![buildBot](buildBot/01_buildBot.png)
 
-## 2. Configuring a bot
+Instructions for how to bot can be found by expanding the instruction section:
+
+[insert screenshot]
+
+The user can also see the current default configuration by expanding the Bot details section:
+
+[insert screenshot]
+
+
+## 2. Configuring a custom bot
 After selecting build new, an interface with multiple configuration options will be presented. The options provided here are the same as those used when editing an existing bot.
 
 ![buildBot](buildBot/02_configureBot.png)
 
 All configuration options are detailed in [Editing a Bot](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/bots/editBot.md).
 
-When any configuration option is selected for the first time, a prompt to name the bot will be displayed.
+At this point, the User should select the Model they would like to use with this custom bot. When any configuration option is selected for the first time, a prompt to name the bot will be displayed. User should name the bot, and follow instructions set out in [Editing a Bot](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/bots/editBot.md).
+
 
 ![buildBot](buildBot/03_nameBot.png)
 
-### Instructions to build a bot
-BizBot Builder enables the design of custom bot interaction applications:
+### Instructions to build a custom bot
+Bot Builder enables the design of custom bot interaction applications. Please see for detailed directions [Editing a Bot](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/bots/editBot.md):
 1. **Models** — configure models and generation parameters.
 2. **Files** — attach dedicated file resources (e.g., Documents, Images, Tables).
 3. **RAG** — configure available information sources.
@@ -140,9 +150,9 @@ When configuration is complete, the bot template can be run locally, exported, o
 
 Once, you start configuring it, the values will get reflected in the schema.
 
-## Hands on: Quick Create a Bot with Us
+## Hands on: Quick Create a Custom Bot with Us
 
-<DISCUSS WITH NAMEE/NAMEE TO DO>
+Link to Cookbook on Create a Custom Bot.
 
 ## Conclusion
 <ai should write conclusion>
