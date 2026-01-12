@@ -1,5 +1,5 @@
 # Building a custom bot
-This document describes the process of creating a custom bot in Model HQ.
+This document describes the process of creating a custom bot in Model HQ that can be used as a standalone bot or to be used as part of an agent workflow.
 
 ## 1. Building a custom bot
 To build a bot, the **build new** option can be selected from the bots interface, followed by clicking the `>` button.
