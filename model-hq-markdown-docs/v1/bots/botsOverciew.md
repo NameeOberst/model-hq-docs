@@ -1,5 +1,5 @@
 # Exploring Bots in Model HQ
-After completing the initial setup, users will be directed to the **Main Menu**. This document describes the Bots feature, which allows users to create custom Chat and RAG bots for either AI PC/edge device use cases (Fast Start Chatbot and Model HQ Biz Bot) or via API deployment (Model HQ API Server Biz Bot).
+After completing the initial setup, users will be directed to the **Main Menu**. This document describes the Bots feature, which allows users to create custom Chat and RAG bots for either AI PC/edge device use cases (for either standalone or bots to be incorporated into an agent workflow) or via API deployment (Model HQ API Server Biz Bot).
 
 ## 1. Launching the bots interface
 The Bots interface can be accessed by clicking the **Bots** button from the main menu.
