@@ -136,14 +136,13 @@ When configuration is complete, the bot template can be run locally, exported, o
   "preload_active_source": ""
 }
 ```
-
-<details>
+</details>
 
 Once, you start configuring it, the values will get reflected in the schema.
 
 ## Hands on: Quick Create a Bot with Us
 
-<DISCUSS WITH NAMEE/NAMEE TO DO> -> AI SHOULD NOT TOUCH THIS
+<DISCUSS WITH NAMEE/NAMEE TO DO>
 
 ## Conclusion
 <ai should write conclusion>

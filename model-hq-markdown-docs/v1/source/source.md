@@ -1,0 +1,287 @@
+# Source
+
+After completing the initial setup, users will be directed to the **Main Menu**. This interface provides access to several powerful features. In this section, the **Source** (or RAG Source) feature will be described, which stands for **Retrieval-Augmented Generation** and is <AI TO COMPLETE>.
+
+RAG combines retrieval-based techniques with generative AI to enable models to answer questions more accurately by retrieving relevant information from external sources or documents. With RAG in Model HQ, knowledge bases can be created that can be queried in the chat section or via a custom bot by uploading documents. The RAG section is used exclusively to create the knowledge base.
+
+## 1. Launching the source interface
+To begin, the **RAG** button in the main menu can be selected to launch the source interface. 
+
+![source](source/01_source.png)
+
+&nbsp;
+
+## 2. Understanding the source interface
+The source interface typically provides two options, but when accessed for the first time, only one option will be visible: `build new`, as shown below:
+
+![source](source/02_sourceInterface.png)
+
+Key elements of the interface:
+
+- **RAG Sources Options**
+  - **Build New**: A new RAG source can be created using the available template.
+  - **Load Existing**: Previously created RAG sources can be loaded and reused.
+
+The second option (`load existing`) becomes available only when at least one source has been created. The following sections describe how sources are created.
+
+## 3. Creating a source
+Since there are no existing sources initially, the **Next ( > )** button can be clicked to build a new source. To create a source at any time, the **Build New** option should be selected.
+
+![source](source/03_standardSource.png)
+
+When creating a new source, the basic source settings are configured first before any data is uploaded.
+
+### 3.1 Source configuration
+- **Source Name**
+  A unique name to identify the source. This name will be used when selecting sources across bots and workflows.
+
+- **Encrypt Source**
+  When enabled, the source will be encrypted at rest on disk. This is recommended for sensitive or confidential data.
+
+- **Source Type**
+  The type of source to be built can be selected from:
+  - **Standard**: Used for multi-format documents such as PDF, PPTX, DOCX, XLSX, PNG, and JPEG.
+  - **Dataset**: Used for structured data sources such as CSV or JSON files.
+
+The following sections will first describe how a **Standard Source** is created, followed by the creation of a **Dataset Source**.
+
+> [!NOTE]
+> Standard Source and Dataset Source both are completely different from one another and thus they have different interfaces.
+
+## 4. Creating a standard source
+After creating and naming a Standard source, the RAG Builder – Source view will be displayed. This page represents the active source and provides actions to manage documents and test retrieval.
+
+![source](source/03_standardSource.png)
+
+From this interface, documents can be added, searches can be performed within the source, RAG responses can be tested, the indexed library can be viewed, links can be managed, and the source can be deleted.
+
+The following subsections describe each of these functions in detail.
+
+### 4.0 RAG Builder
+
+![source](source/04_standardSourceOptions.png)
+
+### 4.1 Uploading documents
+The `Add Docs` button can be clicked to upload files into the source. This action opens the document upload interface.
+
+![source](source/05_standardSourceUploadDocs.png)
+
+Supported file types such as `.pdf`, `.pptx`, `.docx`, `.xlsx`, `.csv`, `.txt`, `.md`, `.wav`, `.png`, `.jpg`, and `.zip` archives can be browsed and uploaded. Multiple files can be uploaded to the same source.
+
+After selecting files, the Save + Exit button can be clicked to process the documents and return to the source view.
+
+#### 4.1.1 Parsing configuration
+The **Configure (⚙️)** icon can be clicked from the upload screen to control how documents are parsed and indexed.
+
+![source](source/06_standardSourceConfigure.png)
+
+The following configuration options are available:
+
+| Configuration Option | Description | Default | Recommended Use |
+|---------------------|-------------|---------|-----------------|
+| **PDF Parsing Options** | Controls how PDF files are processed | Digital (Fastest) | Digital is faster and suitable for text-based PDFs. OCR should be used for scanned or image-heavy PDFs. |
+| **Image Parsing Options** | Controls how image files are processed | OCR | OCR focuses on extracting text, while Vision Model provides richer descriptions for image-based content. |
+| **Text Chunk Size** | Defines how documents are split during indexing | 400-600 tokens | Smaller chunks improve retrieval precision, while larger chunks retain more context. |
+| **Interpret CSV as DB Table** | Treats CSV files as structured tables | OFF | When enabled, CSV files are treated as structured tables instead of plain text, allowing more accurate data queries. |
+
+> [!TIP]  
+> Text chunk size determines how the document is segmented into smaller pieces during parsing. Choosing the right size is important—too small may lose context, while too large could reduce processing performance or exceed model input limits.
+
+These options can be updated at any time and will apply to documents processed after the change.
+
+If any issues are encountered related to document parsing, the [Document Parsing Issues]() guide can be consulted.
+
+### 4.2 Search
+The **Search** feature is a core component of the RAG interface, enabling content within documents to be queried efficiently and effectively.
+
+![source](source/07_standardSourceSearch.png)
+
+Unlike basic search tools, the RAG-powered search is augmented with semantic understanding. This enables:
+- Natural language questions to be asked (e.g., "What are the key findings of the clinical study?")
+- Precise and relevant answers to be retrieved from uploaded content
+- Large volumes of unstructured data to be navigated quickly
+
+The query can be entered in the query field, and one of the following search strategies can be selected:
+
+- **Semantic**
+  Semantic search is a technique that aims to improve search accuracy by understanding the meaning (semantics) behind the words in a query, rather than matching exact keywords only.
+
+- **keyword-or**
+  Results that contain any of the keywords will be found.
+  - Logic used: OR logic.
+  - Example:
+  ```
+  Search: dog OR cat
+  → Returns results with either "dog", "cat", or both.
+  ```
+
+- **keyword-and**
+  Results that contain all of the keywords will be found.
+  - Logic used: AND logic.
+  - Example:
+  ```
+  Search: dog AND cat
+  → Returns results that contain both "dog" and "cat".
+  ```
+
+- **exact**
+  Results that contain the exact phrase in the same order will be found.
+  - Example:
+  ```
+  Search: "artificial intelligence"
+  → Only returns results with the full phrase "artificial intelligence", not just "artificial" or "intelligence" separately.
+  ```
+
+| Type            | Matches                                                             | Example Query                  |
+|-----------------|---------------------------------------------------------------------|--------------------------------|
+| Semantic Search | Related meanings or concepts, even if exact words are not present  | `benefits of eating apples` → matches “health advantages of apples” |
+| Keyword-OR      | Any of the words                                                    | `apple OR orange`              |
+| Keyword-AND     | All the words                                                       | `apple AND orange`             |
+| Exact Search    | Exact phrase (in the same order)                                    | `"apple orange juice"`         |
+
+### 4.3 Test
+The **Test** option allows the RAG setup to be evaluated by running prompt-based queries against it using different AI models.
+
+![source](source/08_standardSourceTest.png)
+
+This is an essential step to ensure that the RAG source responds accurately and effectively to real-world questions.
+
+Sample questions can be entered and different models can be compared to see how they interpret and respond to document content. Based on the responses, the model that delivers the most accurate or relevant results can be selected.
+
+Testing a RAG Source requires the following inputs:
+
+- **Select Test Document**
+  Either all documents can be selected or any one uploaded document (via "add-docs" button) can be chosen for testing purposes.
+
+- **Question**
+  A question related to the document content should be entered to test the model's response.
+
+- **Model Selection**
+  A model can be selected based on specific needs, or multiple models can be tested to compare their performance.
+
+- **context_top_n**
+  Increase or decrease the number of top text chunks use to create context for model.
+
+  > [!TIP]
+  > Context Top N refers to selecting the top N most relevant pieces of information (e.g., text chunks) from a larger context based on similarity to a query, and it's important because it ensures the model focuses on the most pertinent data to generate accurate and relevant responses. Choosing this will give you the number of results you indicate which is particularly important if you selected the "Compare" feature for the source, and would like to see individual results.
+
+- **context_target_size**
+  Select the target token size for the context. If target size not reached with selected top_n, then will add more text chunks to reach target size.
+
+  > [!TIP]
+  > Context target size is the predefined maximum amount of text (in tokens) that can be included in a model’s input, and it balances the trade-off between including enough relevant information and staying within the model’s processing limits to ensure efficient and coherent responses.
+
+### 4.4 Other options
+#### 4.4.1 Library
+The source can be exported to the library in the local database.
+
+#### 4.4.2 Download
+The source can be exported to text (markdown file) and downloaded.
+
+#### 4.4.3 Links
+If the source contains links (e.g., from a web search), this option will return a list of only the links found in the search-based source.
+
+#### 4.4.4 Delete
+The source can be deleted from the system.
+
+## 5. Creating a dataset source
+To create a dataset source, the source creation process should be started again. This time, two options will be visible: load existing and build new, as mentioned earlier.
+
+When `build new` is selected, a similar interface will be presented. The name of the source can be entered, the encryption type can be chosen, and in the source type field, dataset can be selected before clicking next.
+
+![source](source/09_datasetSource.png)
+
+### 5.1 Adding a dataset
+Once the above form is completed, a file upload prompt will be presented. This file should have a well-defined row-column structure and will be used as the source of the dataset. Supported types: `.csv`, `.json`.
+
+![source](source/10_datasetSourceUploadDocs.png)
+
+### 5.1.1 Master schema
+If any previous dataset source exists, that dataset can be used to set a master schema for the current dataset being created.
+
+![source](source/10_datasetSourceMaster.png)
+
+### 5.2 Mapping
+Once a file is added, the schema will be auto-fetched and mapping will be performed automatically. However, the mapping can be cross-checked for more precision and updated as needed.
+
+![source](source/11_datasetSourceMapping.png)
+
+### 5.3 Confirm the dataset schema
+In this window, confirmation of the dataset schema will be requested. Dataset details (including dataset analysis and instructions to set up the dataset) created so far will be provided.
+
+![source](source/12_datasetSourceConfirm.png)
+
+### 5.4 Dataset configuration setup
+This is a 3-step process in which three configuration questions will be presented. One or multiple fields from the provided dataset should be selected for each step.
+
+**Step 1: RAG/Retrieval Columns**
+"Which columns have the text to be used for RAG/Retrieval processes?"
+
+<ai to explain>
+
+**Step 2: ID Column**
+"Which column(s), if any, represent a unique identifier for each row, e.g., reference number?"
+
+<ai to explain>
+
+**Step 3: KPI Definition**
+"Define the main performance indicators for the dataset"
+
+<ai to explain>
+
+Once these steps are completed, confirmation of the dataset configuration will be requested again.
+
+![source](source/13_datasetSourceConfirmConfig.png)
+
+### 5.5.0 RAG Builder
+
+![source](source/14_datasetSourceOptions.png)
+
+### 5.6 Search
+The search functionality for dataset sources operates identically to the standard source search described in section [4.2]().
+
+### 5.7 Configure
+This option allows the Dataset Configuration setup to be reconfigured.
+
+### 5.8 Train (BETA)
+The **Train** option allows a target variable to be defined that can be predicted or fitted using a machine learning model.
+
+![source](source/15_datasetSourceTrain.png)
+
+In this step, the **train variable** (for example, a `y` column) that represents the output the model should learn to predict can be specified.
+
+* **Train Variable**
+  The name of the column to be used as the training target should be entered.
+
+  * If the column already exists in the dataset, it will be used directly.
+  * If the column name does not exist, it will be added to the schema.
+  * If the field is left blank, the training configuration will be ignored.
+
+After clicking next, confirmation will be requested again to configure and train an ML model on this dataset.
+
+### 5.9 Predict
+The **Predict** option is used to define the features and objective used during model prediction and feature analysis.
+
+![source](source/16_datasetSourcePredict.png)
+
+This screen allows the intended prediction objective to be described and features that should participate in training to be selected.
+
+* **Describe Model Objective**
+  A high-level description of the model and its primary prediction goal can optionally be provided. This helps document the intent of the model and improves clarity during review and collaboration.
+
+* **Numerical Features**
+  Numerical columns that should be included as training features can be selected.
+
+  * Enabling a feature marks it as usable during model training and prediction.
+  * Only selected features will be considered during feature analysis and model execution.
+
+Once the required features are selected, the **Next ( > )** button can be clicked to continue, or the **Home** button can be used to exit the flow.
+
+## 6. Load existing source
+This option allows RAG functionality to be quickly accessed for sources that have been previously created.
+
+Sources can be configured and deleted as needed from this interface.
+
+## Conclusion
+
+This document described the Source (RAG) feature in Model HQ, including how to launch the source interface, create standard and dataset sources, configure parsing options, perform searches, and test RAG responses. Sources provide the foundation for knowledge base creation in Model HQ, enabling document-based context retrieval for chat sessions and custom bots. Standard sources support multi-format documents such as PDFs, presentations, and images, while dataset sources are optimized for structured data like CSV and JSON files. Once created, sources can be tested with different models, configured with various retrieval parameters, and reused across multiple workflows. Understanding how to create and configure sources effectively enables more accurate, context-aware AI responses throughout Model HQ.
