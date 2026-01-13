@@ -52,7 +52,10 @@ If the user selects the Demo Mode when accessing the bot, the bot will automatic
 
 [insert screenshot of the prompts running]
 
-<details><summary>The initial schema for bot will be</summary>
+
+### Checking Bot's JSON Schema
+
+<details><summary>The bot's JSON schema can be found by selecting the "JSON Editor" button once a bot is selected. An example of a bot is</summary>
 
 ```
 {
@@ -163,11 +166,12 @@ If the user selects the Demo Mode when accessing the bot, the bot will automatic
 ```
 </details>
 
-Once, you start configuring it, the values will get reflected in the schema.
+The JSON schema reflects the Bot's configurations and specifications, and can also be modified directly here.
 
-## Hands on: Quick Create a Custom Bot with Us
+## Hands on: Create a Custom Bot with Us
 
 Link to Cookbook on Create a Custom Bot.
 
 ## Conclusion
-<ai should write conclusion>
+
+It is very easy and intuitive to build a custom bot with many configuration and demo options. Please see more in Overview and Editing Bots. 
