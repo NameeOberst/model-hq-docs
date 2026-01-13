@@ -88,7 +88,10 @@ To add multiple files or sources, the **`+`** icon can be clicked and used repea
 > [!CAUTION]
 > If no files are selected, the bot will behave as a normal chatbot. Sources can still be added later from the [chat interface](https://github.com/RS-labhub/ModelHQ-Docs/blob/master/chat/CHAT.md#source-button-enabling-rag--chatting-with-documents), but they will not persist after restarting or be packaged with the bot for use by others if shared.
 
+[!TIP]
+To query a file that has been included with the bot, the user will select the **Source** button under the chat interface then in Loaded Sources, select the desired file that has been appended with the bot.
 
+[add screenshots here]
 
 ### 1.3 Agents
 Specialized agents can be added to the bot.
