@@ -81,17 +81,17 @@ Featured bot-specific options:
 > [!NOTE]
 > You can enable/disable this feature while editing a bot, read more [here]()
 
-<DESCRIPTION- NAMEE TO FILL>  -> AI SHOULD NOT TOUCH THIS
+DESCRIPTION- NAMEE TO FILL
 
 #### 2.2.2 Summarize website
-<INTRO- NAMEE TO FILL>  -> AI SHOULD NOT TOUCH THIS
+INTRO- NAMEE TO FILL
 
 ![bots](botsOverview/06_summarizeWebsite.png)
 
 > [!NOTE]
 > This feature can be enabled or disabled while editing a bot. See [Editing a Bot](https://github.com/BloksAdmin/model-hq-docs/blob/master/v1/bots/editBot) for details.
 
-<DESCRIPTION- NAMEE TO FILL>  -> AI SHOULD NOT TOUCH THIS
+DESCRIPTION- NAMEE TO FILL
 
 ### 2.3 Edit
 The Edit control allows existing bots to be modified. The editing process for a bot is the same as creating a new bot.
@@ -111,4 +111,3 @@ The Share control allows bots to be exported and shared with others. When the Sh
 The Upload control allows bots to be imported from a zip file. The zip file should be one that was previously shared using the Share feature.
 
 ## Conclusion
-<ai should write conclusion>
