@@ -110,7 +110,7 @@ For example, in an air-gapped environment, only local formats (ov, onnx, gguf) m
 This setting prioritizes NPU-optimized models in model selection lists when NPU hardware is detected.
 
 * **ON:** Models that support NPU acceleration appear at the top of selection lists, making them easier to discover and select. This is recommended for:
-  - Devices with dedicated NPU hardware (e.g., Intel Core Ultra processors)
+  - Devices with dedicated NPU hardware (e.g., Intel Core Ultra processors or Qualcomm)
   - Workflows optimized for NPU inference
   - Scenarios where NPU performance benefits are prioritized
 
@@ -183,8 +183,7 @@ This setting controls how models are ordered in selection lists based on their p
   - Edge devices or resource-constrained environments
   - Users who prefer efficient, lightweight models
   - Battery-powered or mobile deployments
-  - Battery-powered or mobile deployments
-
+ 
 ## Default model assignment by size
 
 These settings define the default models to be used for small, medium, and large model categories. These size-based defaults serve as fallbacks when task-specific models are not explicitly configured.
@@ -283,7 +282,7 @@ This setting enables or disables probabilistic sampling during text generation s
 
 * **ON:** The model uses sampling to select tokens based on probability distributions, producing more diverse and natural outputs. This is the standard mode for most applications.
 
-* **OFF:** The model uses greedy decoding, always selecting the highest-probability token. This produces highly deterministic and repeatable outputs.
+* **OFF:** The model selects the highest-probability tokens. This produces highly deterministic and repeatable outputs.
 
 This global setting can be overridden in specific contexts when different behavior is required for particular tasks.
 
@@ -302,7 +301,7 @@ These settings define which models are used by default for specific task types. 
 This setting defines the default model used for standard chat interactions.
 
 The Chat Model is invoked when:
-- Users engage in conversational interactions without RAG
+- Users engage in conversational interactions 
 - No specialized task type is detected
 - General-purpose dialogue is required
 
@@ -330,6 +329,8 @@ RAG models should be selected for their ability to:
 - Generate responses that accurately reflect source material
 - Avoid hallucination when factual grounding is required
 
+- Generally higher parameter models (i.e. Phi-4) excel at this task.
+
 ### Vision Model
 
 **Type:** Dropdown (model selection)  
@@ -342,15 +343,9 @@ The Vision Model is invoked when:
 - Visual content needs to be interpreted or described
 - Image-based questions are posed
 
-Requirements for vision models:
-- Multimodal capabilities (vision + language)
-- Ability to process image inputs
-- Strong visual understanding and description capabilities
-
 Common use cases include:
 - Image captioning and description
 - Visual question answering
-- OCR and text extraction from images
 - Diagram and chart interpretation
 
 ### Table Reading Model
@@ -385,11 +380,6 @@ The Summarizer Model is invoked for:
 - Multi-document synthesis
 - Extractive and abstractive summarization tasks
 
-Ideal characteristics:
-- Ability to condense information while retaining key points
-- Strong comprehension of source material
-- Capability to generate coherent, concise summaries
-- Handling of various document lengths and types
 
 ### Text2SQL Model
 
@@ -404,16 +394,6 @@ The Text2SQL Model is designed for:
 - Generating syntactically correct and semantically accurate queries
 - Supporting various SQL dialects
 
-This model is critical for:
-- Natural language database interaction
-- CSV-to-database query workflows
-- Analytics and reporting automation
-- Non-technical user access to structured data
-
-Selection criteria:
-- Strong understanding of SQL syntax and semantics
-- Ability to map natural language to database operations
-- Knowledge of common SQL patterns and best practices
 
 ### Overall Default
 
