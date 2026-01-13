@@ -39,11 +39,10 @@ A window will be presented displaying Bot Info. If this is the desired bot, the 
 
 [screenshot]
 
-<details><summary>Bot Info example</summary>
 
 **Launching Bot: Demo Bot Example**
 
-Once the bot is selected, user is able to get a description of the Bot as well as other details such as whether a source such as a document is appended to the bot for queries. In this example, the bot has an example Employment Agreement that is attached so the user can query the document.
+Once the bot is selected, user is able to get a description of the Bot as well as other details such as whether a source such as a document is appended to the bot for queries. In this example, the bot has an example Employment Agreement that is attached so the user can query the document by accessing it as a source.
 
 **Demo Mode**
 
@@ -54,20 +53,29 @@ Bots that have been created with a demo will be able to be pre-viewed with a Dem
 
 
 **Bot with Agents**
-Author: llmware
-Created Date: 2025-07-06_135720
-Capabilities: ['File Upload', 'Library Connection', 'Tables', 'Images', 'Sources', 'Wikipedia']
 
-</details>
+Users have the ability to incorporate agents into custom bots. To add pre-created agents into a bot, select a bot, then "Agents".
 
-The bot interface will then be presented. The Bots interface is similar to the Chat interface, but with specialized capabilities.
+[screenshot]
+
+Once "Agents" is selected, the user will have the option to pick the agents they would like incorporated into the bot (note: the following is an example only and the agent list will vary depending on the user's agents).
+
+[screenshot]
+
+The User will select ONE root agent as shown below. The ROOT AGENT is the only agent that will have access to all of the other information in the chat and also with any other agents in the bot so that this agent can consolidate or have a holistic view of the interactions that took place amont other agents in this bot interaction.
+
+[Screenshot]
+
+Once incorporated, the user may select the Agent now shown below the chat box and run the agent.
+
+[screenshot]
 
 ![bots](botsOverview/04_runningBotInterface.png)
 
 > [!IMPORTANT]
 > If the model used in the bot is not pre-downloaded, it will be downloaded automatically. This typically takes 1-2 minutes depending on internet connectivity.
 
-The bot interface includes standard chat options:
+In addition to above, the bot interface includes standard chat options:
 1. Model
 2. Source
 3. Prompts
@@ -82,25 +90,6 @@ Featured bot-specific options:
 - Cloud API Agent
 - Summarize Website
 
-#### 2.2.1 Cloud API agent
-<INTRO- NAMEE TO FILL> -> AI SHOULD NOT TOUCH THIS
-
-![bots](botsOverview/05_cloudAPI.png)
-
-> [!NOTE]
-> You can enable/disable this feature while editing a bot, read more [here]()
-
-DESCRIPTION- NAMEE TO FILL
-
-#### 2.2.2 Summarize website
-INTRO- NAMEE TO FILL
-
-![bots](botsOverview/06_summarizeWebsite.png)
-
-> [!NOTE]
-> This feature can be enabled or disabled while editing a bot. See [Editing a Bot](https://github.com/BloksAdmin/model-hq-docs/blob/master/v1/bots/editBot) for details.
-
-DESCRIPTION- NAMEE TO FILL
 
 ### 2.3 Edit
 The Edit control allows existing bots to be modified. The editing process for a bot is the same as creating a new bot.
