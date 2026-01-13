@@ -37,12 +37,22 @@ To load an existing bot, `load existing` can be selected (if not already selecte
 
 A window will be presented displaying Bot Info. If this is the desired bot, the `>` button can be clicked again to proceed.
 
-![bots](botsOverview/03_runningBot.png)
+[screenshot]
 
 <details><summary>Bot Info example</summary>
 
-**Launching Bot with Agents**
-Description: This bot is an example of integrating custom Agents into a Bot. The bot is designed to run on the NPU, while the Agent processes run on CPU, or the option to use a cloud-based service - all can be run concurrently. To use the Anthropic service, you will need a separate Anthropic subscription, and provide your Anthropic API key in Credentials (on the configuration panel).
+**Launching Bot: Demo Bot Example**
+
+Once the bot is selected, user is able to get a description of the Bot as well as other details such as whether a source such as a document is appended to the bot for queries. In this example, the bot has an example Employment Agreement that is attached so the user can query the document without having to separately upload it.
+
+**Demo Mode**
+
+Bots that have been created with a demo will be able to be pre-viewed with a Demo Mode. In the Demo Bot example, when the user selects Demo Mode, the Demo Bot will automatically launch the conversation turns that the creator pre-set, as shown in the Description section. In addition, if there is a YouTube video of the bot in action or a related tutorial by LLMWare, the Video section will link to the specific video.
+
+[screenshot of description ]
+
+
+
 
 **Bot with Agents**
 Author: llmware
