@@ -37,6 +37,21 @@ Bot Builder enables the design of custom bot interaction applications. Please se
 
 When configuration is complete, the bot template can be run locally, exported, or shared.
 
+### Instructions to add a Demo feature to a custom bot
+The user is able to create a short demo with the custom bot so that the when the bot is shared with others, it is easy to show and demo. To create a demo, when creating a new bot, once the bot has been named and the model selected, select "Demo."
+
+[Insert screenshot]
+
+Once the Demo button is selected, the bot creator will be asked to build an input list. This is the list of queries or prompts the bot will automatically run in Demo Mode to showcase its capabilities. To add each prompt, select the "+" button, and type in each row the specific prompt for the demo, as shown below, and press ">" when finished.
+
+[Insert screenshot]
+
+The next screen will ask for a short demo description and a video link to share if any. Press ">" when finished. Once complete, when this bot is selected, the user will be given Demo Mode as an option. 
+
+If the user selects the Demo Mode when accessing the bot, the bot will automatically run through the prompts as shown.
+
+[insert screenshot of the prompts running]
+
 <details><summary>The initial schema for bot will be</summary>
 
 ```
