@@ -70,25 +70,11 @@ Once incorporated, the user may select the Agent now shown below the chat box an
 
 [screenshot]
 
-![bots](botsOverview/04_runningBotInterface.png)
+
 
 > [!IMPORTANT]
 > If the model used in the bot is not pre-downloaded, it will be downloaded automatically. This typically takes 1-2 minutes depending on internet connectivity.
 
-In addition to above, the bot interface includes standard chat options:
-1. Model
-2. Source
-3. Prompts
-4. Web Search (requires internet)
-
-Other useful controls:
-- Configure — adjust generation and retrieval parameters.
-- Info — inspect the active model and session settings.
-- Save / Download — export the session transcript.
-
-Featured bot-specific options:
-- Cloud API Agent
-- Summarize Website
 
 
 ### 2.3 Edit
@@ -109,3 +95,4 @@ The Share control allows bots to be exported and shared with others. When the Sh
 The Upload control allows bots to be imported from a zip file. The zip file should be one that was previously shared using the Share feature.
 
 ## Conclusion
+This section is designed to give users a high-level overview of the Bots section of Model HQ. Please see our documentation for Building and Editing Bots for more information.
