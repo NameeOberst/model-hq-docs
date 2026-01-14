@@ -2,7 +2,7 @@
 
 There can be a number of reasons why a document cannot be parsed so that the information can be accessed via RAG. One of the most common reasons is if security or authentication has been placed on the document or if the document is password protected. In this case, the document cannot be parsed, and the contents may need to be accessed through a vision model.
 
-Another common scenario involves PDFs with many images embedded within them that make parsing very difficult. For these PDFs, **OCR** is recommended if possible.
+Another common scenario involves PDFs with many images embedded within them that make parsing very difficult. For these PDFs, **OCR** or **Vision Model** is recommended.
 
 Another common error is encountered with PPTx documents that are created via conversions from Canva or other services. In this case, the file parser does not recognize the PPTx as such and will reject the document, and an error stating `"Unfortunately, source could not be loaded"` will be displayed. In this case, it is recommended to convert this PPTx document to a PDF format to attempt to parse it digitally, or OCR or Vision can be used, depending on the content and length of the document.
 
