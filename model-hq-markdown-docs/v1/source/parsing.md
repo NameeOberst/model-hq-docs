@@ -17,11 +17,11 @@ In short: *Parsing is how Model HQ ensures documents are cleanly understood befo
 
 Model HQ provides multiple parsing modes to ensure accuracy and speed across different types of documents.
 
-- **Native Parser (Default)**
-  The **native parser** is the fastest option and works extremely well for the majority of text-based documents. It is optimized for performance and should be used as the primary method whenever possible.
+- **Digital (Default)**
+  The **Digital parser** is the fastest option and works extremely well for the majority of text-based documents. It is optimized for performance and should be used as the primary method whenever possible. Digital parser does not work for image-based documents - OCR or Vision Model parsings are recommended for these types of documents.
 
 - **OCR Parsing**
-  Some documents may be **image-based** (such as scanned PDFs or files with embedded text as images). In these cases, Optical Character Recognition (OCR) parsing is required to accurately extract text.
+  Some documents may be **image-based** (such as scanned PDFs or files with embedded text as images). Image-based documents cannot be parsed by the Digital Parser, and the user should select OCR for these documents. In these cases, Optical Character Recognition (OCR) parsing is required to accurately extract text.
 
 - **Vision Model Parsing**
   For documents that include **many images, complex layouts, or require multimodal understanding**, a Vision model can be used. This option leverages advanced AI vision capabilities to interpret both text and visual content.
@@ -29,11 +29,11 @@ Model HQ provides multiple parsing modes to ensure accuracy and speed across dif
 
 ## How to select parsing options for RAG use cases for chat interfaces
 1. In Chat or Bot: The ⚙ icon below the chat box can be clicked.
-2. In the **RAG + Generation Config Options**, selection can be made between:
-   - **Native Parser** (default, fastest)
+2. In the **RAG + Generation Config Options** under "PDF Parsing Options", selection can be made among:
+   - **Digital** (default, fastest)
    - **OCR** (for image-based documents)
    - **Vision Model** (for documents rich in images or requiring visual context)
 
 ## Conclusion
 
-This document described what parsing is and how Model HQ uses different parsing methods to extract and structure information from uploaded documents. Parsing is the critical first step that transforms raw document content into machine-readable format, enabling AI models to accurately search, analyze, and answer questions about the content. Model HQ provides three parsing options—Native Parser for standard text-based documents, OCR for image-based or scanned documents, and Vision Model for complex layouts with multimodal content. The appropriate parsing method can be selected based on document type and content complexity to ensure optimal accuracy and performance.  
+This document described what parsing is and how Model HQ uses different parsing methods to extract and structure information from uploaded documents. Parsing is the critical first step that transforms raw document content into machine-readable format, enabling AI models to accurately search, analyze, and answer questions about the content. Model HQ provides three parsing options—Digital Parser for standard text-based documents, OCR for image-based or scanned documents, and Vision Model for complex layouts with multimodal content. The appropriate parsing method can be selected based on document type and content complexity to ensure optimal accuracy and performance.  
