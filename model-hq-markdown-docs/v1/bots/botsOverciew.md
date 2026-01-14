@@ -92,7 +92,7 @@ The Share control allows bots to be exported and shared with others. When the Sh
 
 ### 2.5 Upload
 
-The Upload control allows bots to be imported from a zip file. The zip file should be one that was previously shared using the Share feature.
+The Upload control allows bots to be imported from a zip file that is shared by another Model HQ user via email or other method of sharing files. The zip file should be one that was previously shared using the Share feature.
 
 ## Conclusion
 This section is designed to give users a high-level overview of the Bots section of Model HQ. Please see our documentation for Building and Editing Bots for more information.
