@@ -1,11 +1,13 @@
 # Source
 
-After completing the initial setup, users will be directed to the **Main Menu**. This interface provides access to several powerful features. In this section, the **Source** (or RAG Source) feature will be described, which stands for **Retrieval-Augmented Generation** and is <AI TO COMPLETE>.
+After completing the initial setup, users will be directed to the **Main Menu**. This interface provides access to several powerful features. In this section, the **Source** (or RAG Source) feature will be described. RAG, which stands for **Retrieval-Augmented Generation**, is a feature within Model HQ to help users search their documents or other knowledge bases.
 
-RAG combines retrieval-based techniques with generative AI to enable models to answer questions more accurately by retrieving relevant information from external sources or documents. With RAG in Model HQ, knowledge bases can be created that can be queried in the chat section or via a custom bot by uploading documents. The RAG section is used exclusively to create the knowledge base.
+The Source section is used to create, test and interact with user-created knowledge bases. Once created, the user-created Source can be later incorporated into Chat, Bot or Agents as a knowledge base.
+
+RAG combines retrieval-based techniques with generative AI to enable models to answer questions more accurately by retrieving relevant information from external sources or documents. With RAG in Model HQ, knowledge bases can be created that can be queried in the chat section or via a custom bot (to be used either standalone or in an Agent workflow) by uploading documents or other information that the model can use when searching for information. 
 
 ## 1. Launching the source interface
-To begin, the **RAG** button in the main menu can be selected to launch the source interface. 
+To begin, the **Source** button in the main menu can be selected to launch the source interface. 
 
 ![source](source/01_source.png)
 
@@ -19,8 +21,8 @@ The source interface typically provides two options, but when accessed for the f
 Key elements of the interface:
 
 - **RAG Sources Options**
-  - **Build New**: A new RAG source can be created using the available template.
-  - **Load Existing**: Previously created RAG sources can be loaded and reused.
+  - **Build New**: A new source can be created using the available template.
+  - **Load Existing**: Previously created sources can be loaded and reused.
 
 The second option (`load existing`) becomes available only when at least one source has been created. The following sections describe how sources are created.
 
@@ -32,13 +34,13 @@ Since there are no existing sources initially, the **Next ( > )** button can be 
 When creating a new source, the basic source settings are configured first before any data is uploaded.
 
 ### 3.1 Source configuration
-- **Source Name**
+- **Source Name:**
   A unique name to identify the source. This name will be used when selecting sources across bots and workflows.
 
-- **Encrypt Source**
+- **Encrypt Source:**
   When enabled, the source will be encrypted at rest on disk. This is recommended for sensitive or confidential data.
 
-- **Source Type**
+- **Source Type:**
   The type of source to be built can be selected from:
   - **Standard**: Used for multi-format documents such as PDF, PPTX, DOCX, XLSX, PNG, and JPEG.
   - **Dataset**: Used for structured data sources such as CSV or JSON files.
@@ -68,7 +70,9 @@ The `Add Docs` button can be clicked to upload files into the source. This actio
 
 Supported file types such as `.pdf`, `.pptx`, `.docx`, `.xlsx`, `.csv`, `.txt`, `.md`, `.wav`, `.png`, `.jpg`, and `.zip` archives can be browsed and uploaded. Multiple files can be uploaded to the same source.
 
-After selecting files, the Save + Exit button can be clicked to process the documents and return to the source view.
+Users may upload multiple files by selecting a file, then clicking ">" and continuing to do so until all the desired files are added to the source.
+
+After selecting the complete set of files, the Save + Exit button can be clicked to process the documents and return to the source view.
 
 #### 4.1.1 Parsing configuration
 The **Configure (⚙️)** icon can be clicked from the upload screen to control how documents are parsed and indexed.
@@ -140,11 +144,11 @@ The query can be entered in the query field, and one of the following search str
 | Exact Search    | Exact phrase (in the same order)                                    | `"apple orange juice"`         |
 
 ### 4.3 Test
-The **Test** option allows the RAG setup to be evaluated by running prompt-based queries against it using different AI models.
+The **Test** option allows the Source that is created to be evaluated by running prompt-based queries against it using different AI models.
 
 ![source](source/08_standardSourceTest.png)
 
-This is an essential step to ensure that the RAG source responds accurately and effectively to real-world questions.
+This is an essential step to ensure that the RAG source responds accurately and effectively to real-world questions and meets the user's usage goals.
 
 Sample questions can be entered and different models can be compared to see how they interpret and respond to document content. Based on the responses, the model that delivers the most accurate or relevant results can be selected.
 
@@ -164,6 +168,33 @@ Testing a RAG Source requires the following inputs:
 
   > [!TIP]
   > Context Top N refers to selecting the top N most relevant pieces of information (e.g., text chunks) from a larger context based on similarity to a query, and it's important because it ensures the model focuses on the most pertinent data to generate accurate and relevant responses. Choosing this will give you the number of results you indicate which is particularly important if you selected the "Compare" feature for the source, and would like to see individual results.
+  >
+  > **Example of Testing a Source**
+  >
+  > We created a Source called Testing011426 which consisted of an Employment Ageement (in PDF format - provided as a sample document with Model HQ in C:\Users\[user name]\llmware_data\Agreements) and a Screenshot of a financial table.
+  > [Rohan, include this file as example - in email]
+  >
+  > [screenshot]
+  >
+  > We are able to ask the Source questions about both the Employment Agreement as well as the Financial Table because they are in the same Source.
+  >
+  > Example of Financial Table Query:
+  >
+  > [screenshot]
+  >
+  > Example of Financial Table Answer:
+  >
+  > [Screenshot]
+  >
+  > Example of Employment Agreement Query:
+  >
+  > [screenshot]
+  >
+  > Example of Employment Agreement Answer:
+  >
+  > [screenshot]
+  >
+  
 
 - **context_target_size**
   Select the target token size for the context. If target size not reached with selected top_n, then will add more text chunks to reach target size.
