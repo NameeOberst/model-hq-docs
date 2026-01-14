@@ -96,7 +96,7 @@ These options can be updated at any time and will apply to documents processed a
 If any issues are encountered related to document parsing, the [Document Parsing Issues]() guide can be consulted.
 
 ### 4.2 Search
-The **Search** feature is a core component of the RAG interface, enabling content within documents to be queried efficiently and effectively.
+The **Search** feature is a core component of the RAG interface, enabling the source content to be queried efficiently and effectively.
 
 ![source](source/07_standardSourceSearch.png)
 
@@ -108,7 +108,7 @@ Unlike basic search tools, the RAG-powered search is augmented with semantic und
 The query can be entered in the query field, and one of the following search strategies can be selected:
 
 - **Semantic**
-  Semantic search is a technique that aims to improve search accuracy by understanding the meaning (semantics) behind the words in a query, rather than matching exact keywords only.
+  Semantic search is a technique that aims to improve search accuracy by understanding the meaning (semantics) behind the words in a query, rather than matching exact keywords only. Users may use natural language to use this semantic search feature to query their source.
 
 - **keyword-or**
   Results that contain any of the keywords will be found.
@@ -129,7 +129,7 @@ The query can be entered in the query field, and one of the following search str
   ```
 
 - **exact**
-  Results that contain the exact phrase in the same order will be found.
+  Results that contain the exact word or phrase in the same order will be found.
   - Example:
   ```
   Search: "artificial intelligence"
