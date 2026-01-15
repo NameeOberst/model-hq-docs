@@ -112,6 +112,8 @@ Defines the testing mode to be used.
   - Requires uploading a JSON or CSV file
   - Designed for structured testing and benchmarking
 
+</details>
+
 Learn more about Testing a model in [How to Use and Create Test for Model Inferencing](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/models/customTest.md)
 
 ### 2.4 My Models
