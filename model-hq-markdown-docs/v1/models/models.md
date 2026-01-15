@@ -84,6 +84,34 @@ Model HQ's Test feature allows you to test a model once downloaded.
 
 ![models](models/04_test.png)
 
+The test interface consists of several components that control how testing is performed:
+
+#### Test Type
+Defines the testing mode to be used.
+1. Sandbox
+2. Standard
+3. Custom
+
+<details><summary> Find the explanation of each section of here </summary>
+
+1. **Sandbox**
+  Runs an interactive test session.
+  - Best for quick experimentation
+  - Allows manual prompts and real time inspection
+  - Default option for exploratory testing
+
+2. **Standard**
+  Runs a predefined, system controlled test.
+  - Useful for repeatable validation checks
+  - Requires no custom input files
+  - Suitable for baseline validation
+
+3. **Custom**
+  Runs tests using user provided data.
+  - Enables batch evaluation
+  - Requires uploading a JSON or CSV file
+  - Designed for structured testing and benchmarking
+
 Learn more about Testing a model in [How to Use and Create Test for Model Inferencing](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/models/customTest.md)
 
 ### 2.4 My Models
