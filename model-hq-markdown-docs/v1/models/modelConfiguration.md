@@ -11,13 +11,13 @@ This configuration system enables users to:
 
 These settings allow teams to balance quality, performance, and cost while ensuring predictable behavior across workflows. Proper configuration enables Model HQ to automatically select the appropriate model for each task while providing advanced users with full control when needed.
 
-## Opening the configuration panel
+## 1. Opening the configuration panel
 
 The Model Configuration panel can be accessed by clicking the "⚙️" button in the **Models** interface or alternatively can be accessed via "⚙️" on the upper right-hand side then "Models" .
 
 ![models](models/07_modelsConfig.png)
 
-## Configuration parameters overview
+## 2. Configuration parameters overview
 
 The table below provides a quick reference of all available configuration parameters:
 
@@ -55,11 +55,11 @@ The table below provides a quick reference of all available configuration parame
 > [!NOTE]
 > Some parameters interact with each other. For example, enabling **CPU Only Mode** will override **Enable NPU Optimized Models**.
 
-## Model visibility and discovery
+## 3. Model visibility and discovery
 
 These settings control which models appear in selection lists and how they are filtered based on format, provider, and availability.
 
-### Show Cached Models Only
+### 3.1 Show Cached Models Only
 
 **Options:** ON / OFF  
 **Default:** OFF
@@ -79,7 +79,7 @@ This setting restricts model selection to only those models that are already ava
 
 When enabled, this setting ensures that users only see models that are immediately accessible, preventing confusion or delays caused by unexpected downloads.
 
-### Show Model Types
+### 3.2 Show Model Types
 
 **Options:** ov, onnx, gguf, openai, anthropic, google  
 **Default:** All selected
@@ -102,7 +102,7 @@ By selectively enabling only the formats and providers that are relevant to the 
 
 For example, in an air-gapped environment, only local formats (ov, onnx, gguf) might be enabled, while cloud-based providers are hidden. Conversely, in a cloud-focused deployment, only provider-based options (openai, anthropic, google) might be shown.
 
-### Show NPU Models First (if Available)
+### 3.3 Show NPU Models First (if Available)
 
 **Options:** ON / OFF  
 **Default:** OFF
@@ -119,11 +119,11 @@ This setting prioritizes NPU-optimized models in model selection lists when NPU 
 > [!NOTE]
 > This setting only affects display order when NPU-capable hardware is detected. On systems without NPU support, this setting has no effect.
 
-## Model naming and catalog size
+## 4. Model naming and catalog size
 
 These settings control how models are presented and labeled in the user interface.
 
-### Model Naming Convention
+### 4.1 Model Naming Convention
 
 **Options:** Short Name / Full Name  
 **Default:** Short Name
@@ -144,7 +144,7 @@ This setting determines how model names are displayed throughout the interface.
 
 The choice between these options is primarily aesthetic and does not affect functionality—it only changes how model names are rendered in the UI.
 
-### Model Choices
+### 4.2 Model Choices
 
 **Options:** Top Models Only / Full Catalog  
 **Default:** Top Models Only
@@ -166,7 +166,7 @@ This setting determines the size and scope of the selectable model list.
 > [!TIP]
 > Start with "Top Models Only" and switch to "Full Catalog" only when specific requirements demand access to specialized models.
 
-### Model Display Sorting
+### 4.3 Model Display Sorting
 
 **Options:** Largest to Smallest / Smallest to Largest  
 **Default:** Largest to Smallest
@@ -184,11 +184,11 @@ This setting controls how models are ordered in selection lists based on their p
   - Users who prefer efficient, lightweight models
   - Battery-powered or mobile deployments
  
-## Default model assignment by size
+## 5. Default model assignment by size
 
 These settings define the default models to be used for small, medium, and large model categories. These size-based defaults serve as fallbacks when task-specific models are not explicitly configured.
 
-### Small Model Default
+### 5.1 Small Model Default
 
 **Type:** Dropdown (model selection)  
 **Example:** `llama-3.2-3b-instruct-ov`
@@ -203,7 +203,7 @@ Small models are typically characterized by:
 
 The selected model should balance capability with efficiency, providing acceptable quality while maintaining fast response times.
 
-### Medium Model Default
+### 5.2 Medium Model Default
 
 **Type:** Dropdown (model selection)  
 **Example:** `mistral-7b-instruct-v0.3-ov`
@@ -218,7 +218,7 @@ Medium models are typically characterized by:
 
 This is often the most frequently used size category, providing strong performance across a wide range of tasks without requiring excessive resources.
 
-### Large Model Default
+### 5.3 Large Model Default
 
 **Type:** Dropdown (model selection)  
 **Example:** `phi-4-ov`
@@ -234,11 +234,11 @@ Large models are typically characterized by:
 > [!NOTE]
 > Ensure that sufficient RAM/VRAM is available before configuring large models as defaults, as they may not run on all hardware configurations.
 
-## Generation defaults
+## 6. Generation defaults
 
 These settings define default parameters for text generation that apply across all models unless explicitly overridden at the request level.
 
-### max_output
+### 6.1 max_output
 
 **Type:** Integer (tokens)  
 **Default:** 2048  
@@ -257,7 +257,7 @@ This global default can be overridden in specific contexts (such as the Chat Con
 > [!TIP]
 > For detailed information about this parameter, refer to the [Chat Configuration](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/chatConfiguration.md) documentation.
 
-### temperature
+### 6.2 temperature
 
 **Type:** Float  
 **Default:** 0.3  
@@ -273,7 +273,7 @@ This setting serves as the global default temperature across all generation task
 > [!TIP]
 > For comprehensive guidance on temperature settings, refer to the [Chat Configuration](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/chatConfiguration.md) documentation.
 
-### Sample in Generation
+### 6.3 Sample in Generation
 
 **Options:** ON / OFF  
 **Default:** ON
@@ -289,11 +289,11 @@ This global setting can be overridden in specific contexts when different behavi
 > [!TIP]
 > For detailed information about sampling behavior, refer to the [Chat Configuration](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/chat/chatConfiguration.md) documentation.
 
-## Task-specific default models
+## 7. Task-specific default models
 
 These settings define which models are used by default for specific task types. When a task-specific model is not defined, the system falls back to the size-based defaults (Small, Medium, Large) or the Overall Default.
 
-### Chat Model
+### 7.1 Chat Model
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -310,7 +310,7 @@ Selection criteria:
 - Typically a medium or large model for quality responses
 - Should balance response quality with acceptable latency
 
-### RAG Model
+### 7.2 RAG Model
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -331,7 +331,7 @@ RAG models should be selected for their ability to:
 
 - Generally higher parameter models (i.e. Phi-4) excel at this task.
 
-### Vision Model
+### 7.3 Vision Model
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -348,7 +348,7 @@ Common use cases include:
 - Visual question answering
 - Diagram and chart interpretation
 
-### Table Reading Model
+### 7.4 Table Reading Model
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -367,7 +367,7 @@ This model should be selected for its ability to:
 - Perform calculations or aggregations when needed
 - Handle various table formats (simple, complex, nested)
 
-### Summarizer Model
+### 7.5 Summarizer Model
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -381,7 +381,7 @@ The Summarizer Model is invoked for:
 - Extractive and abstractive summarization tasks
 
 
-### Text2SQL Model
+### 7.6 Text2SQL Model
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -395,7 +395,7 @@ The Text2SQL Model is designed for:
 - Supporting various SQL dialects
 
 
-### Overall Default
+### 7.7 Overall Default
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -409,7 +409,7 @@ The Overall Default ensures:
 
 This should typically be set to a well-rounded, general-purpose model that can handle diverse tasks adequately, even if not optimally.
 
-### Dataset Analyzer Model
+### 7.8 Dataset Analyzer Model
 
 **Type:** Dropdown (model selection)  
 **Default:** Varies by installation
@@ -423,11 +423,11 @@ The Dataset Analyzer Model is optimized for:
 - Statistical analysis and profiling
 - Anomaly detection in datasets
 
-## Automation and hardware controls
+## 8. Automation and hardware controls
 
 These settings manage how Model HQ automatically selects models and utilizes available hardware resources.
 
-### Auto Select Models
+### 8.1 Auto Select Models
 
 **Options:** ON / OFF  
 **Default:** ON
@@ -456,7 +456,7 @@ This setting enables or disables automatic model selection based on task type, h
 > [!NOTE]
 > Even when Auto Select is ON, users can manually override model selection in specific interfaces when needed.
 
-### Enable NPU Optimized Models
+### 8.2 Enable NPU Optimized Models
 
 **Options:** ON / OFF  
 **Default:** OFF
@@ -474,7 +474,7 @@ This setting controls whether NPU-optimized models can be used for inference whe
 > [!IMPORTANT]
 > If this setting is enabled on systems without NPU support, a warning may be displayed, and the system will automatically fall back to CPU/GPU execution. Ensure that NPU drivers and software are properly installed for optimal performance.
 
-### CPU Only Mode
+### 8.3 CPU Only Mode
 
 **Options:** ON / OFF  
 **Default:** OFF
@@ -490,11 +490,11 @@ This setting restricts all model execution to CPU only, disabling GPU and NPU ac
 
 * **OFF:** The system can utilize available hardware acceleration (GPU, NPU) when appropriate and configured. This is the recommended mode for production use when hardware acceleration is available.
 
-## Provider-specific defaults
+## 9. Provider-specific defaults
 
 These settings define the preferred models to use when connecting to external AI providers (OpenAI, Anthropic, Google Gemini).
 
-### OpenAI Default
+### 9.1 OpenAI Default
 
 **Type:** Dropdown (OpenAI model selection)  
 **Default:** gpt-4 (or latest available)  
@@ -515,7 +515,7 @@ Common options include:
 > [!NOTE]
 > A valid OpenAI API key must be configured in the Integrations section for this provider to function. Usage is subject to OpenAI's pricing and rate limits.
 
-### Anthropic Default
+### 9.2 Anthropic Default
 
 **Type:** Dropdown (Anthropic model selection)  
 **Default:** claude-3 (or latest available)  
@@ -536,7 +536,7 @@ Common options include:
 > [!NOTE]
 > A valid Anthropic API key must be configured in the Integrations section for this provider to function. Usage is subject to Anthropic's pricing and rate limits.
 
-### Gemini Default
+### 9.3 Gemini Default
 
 **Type:** Dropdown (Google Gemini model selection)  
 **Default:** gemini-pro (or latest available)  
@@ -557,11 +557,11 @@ Common options include:
 > [!NOTE]
 > A valid Google API key must be configured in the Integrations section for this provider to function. Usage is subject to Google's pricing and rate limits.
 
-## Resource limits
+## 10. Resource limits
 
 These settings control resource allocation for model storage and execution, helping manage disk space and memory usage.
 
-### Max Model Size
+### 10.1 Max Model Size
 
 **Type:** Integer (GB or based on system memory)  
 **Default:** Auto-configured based on available RAM
@@ -584,7 +584,7 @@ Considerations:
 - Leave headroom for system operations and other applications
 - Consider peak memory usage during inference, not just model loading
 
-### Max Model Local Cache Size
+### 10.2 Max Model Local Cache Size
 
 **Type:** Integer (GB or based on available storage)  
 **Default:** Auto-configured based on available disk space
