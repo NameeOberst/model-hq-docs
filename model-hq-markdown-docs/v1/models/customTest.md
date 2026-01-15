@@ -1,7 +1,7 @@
 # How to Use and Create a Custom Test for Model Inferencing
 This document describes how the Custom Test feature may be used to validate model inference in Model HQ. It explains the available test types, how files are uploaded and mapped, and how to generate or run custom test sets. Guidance is presented in an indirect, professional tone and is intended for users who wish to perform repeatable or batch evaluations of models.
 
-[customTest](customTest/01_test.png)
+![customTest](customTest/01_test.png)
 
 ## 1. Overview
 ### 1.1 Test Type
@@ -88,17 +88,17 @@ Models > [Select Model from Dropdown] > Test > Generate Sample
 
 The interface will prompt for a sample query and will create a JSON test set based on that input. The generated set may be reviewed and edited prior to running or downloading.
 
-[customTest](customTest/02_customTestQuestion.png)
+![customTest](customTest/02_customTestQuestion.png)
 
-[customTest](customTest/03_customTestEditor.png)
+![customTest](customTest/03_customTestEditor.png)
 
 After review, selecting ">" will present options to download the sample test or to run it immediately.
 
-[customTest](customTest/04_customTestSet.png)
+![customTest](customTest/04_customTestSet.png)
 
 When the test is executed, the interface reports metrics such as token usage, total processing time, and first-token latency.
 
-[customTest](customTest/05_customTestAndRun.png)
+![customTest](customTest/05_customTestAndRun.png)
 
 Upon completion, results may be downloaded or the user may return to the main view. The selected model will be downloaded automatically prior to the test if it is not already present in the local cache.
 
@@ -130,17 +130,17 @@ Default mapping values:
 
 An example workflow is to select the appropriate columns from a provided CSV (for example, a local sales dataset), apply the mappings, and then run the test set.
 
-[customTest](customTest/06_customTestFilePath.png)
+![customTest](customTest/06_customTestFilePath.png)
 
 After mappings are applied, the user selects the Custom test file and initiates the run by selecting ">".
 
-[customTest](customTest/07_customTestMapping.png)
+![customTest](customTest/07_customTestMapping.png)
 
-[customTest](customTest/08_customTestChosenFile.png)
+![customTest](customTest/08_customTestChosenFile.png)
 
 During execution, the model processes each row and returns the model response along with timing metrics such as processing time and first-token speed.
 
-[customTest](customTest/09_customTestResults.png)
+![customTest](customTest/09_customTestResults.png)
 
 ### 2.3 Stopping a model test
 - A running test may be stopped at any time by selecting the cancel control (X).
