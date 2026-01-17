@@ -350,7 +350,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <CollapsedSectionWithHover
                     icon={V1Icon}
                     title="Model HQ v1 Docs"
-                    items={navigationData.v1.length > 0 ? navigationData.v1 : [{ title: "Coming soon...", url: "#", icon: Info }]}
+                    items={navigationData.v1}
                     pathname={pathname}
                   />
                 </SidebarMenu>

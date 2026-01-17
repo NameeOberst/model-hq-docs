@@ -13,8 +13,7 @@ Parsing can be thought of as **translating a messy document into a clean, machin
 
 In short: *Parsing is how Model HQ ensures documents are cleanly understood before any AI tasks—like answering questions, summarizing, or running analysis—are applied.*  
 
-## Document parsing options
-
+## 1. Document parsing options
 Model HQ provides multiple parsing modes to ensure accuracy and speed across different types of documents.
 
 - **Digital (Default)**
@@ -27,7 +26,7 @@ Model HQ provides multiple parsing modes to ensure accuracy and speed across dif
   For documents that include **many images, complex layouts, or require multimodal understanding**, a Vision model can be used. This option leverages advanced AI vision capabilities to interpret both text and visual content.
 
 
-## How to select parsing options for RAG use cases for chat interfaces
+## 2. How to select parsing options for RAG use cases for chat interfaces
 1. In Chat or Bot: The ⚙ icon below the chat box can be clicked.
 2. In the **RAG + Generation Config Options** under "PDF Parsing Options", selection can be made among:
    - **Digital** (default, fastest)
@@ -35,5 +34,4 @@ Model HQ provides multiple parsing modes to ensure accuracy and speed across dif
    - **Vision Model** (for documents rich in images or requiring visual context)
 
 ## Conclusion
-
 This document described what parsing is and how Model HQ uses different parsing methods to extract and structure information from uploaded documents. Parsing is the critical first step that transforms raw document content into machine-readable format, enabling AI models to accurately search, analyze, and answer questions about the content. Model HQ provides three parsing options—Digital Parser for standard text-based documents, OCR for image-based or scanned documents, and Vision Model for complex layouts with multimodal content. The appropriate parsing method can be selected based on document type and content complexity to ensure optimal accuracy and performance.  

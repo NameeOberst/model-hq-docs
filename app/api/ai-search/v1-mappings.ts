@@ -5,9 +5,8 @@ export const V1_BASE_URL = 'https://model-hq-docs.vercel.app';
 export const V1_BASE_IMAGE_URL = 'https://model-hq-docs.vercel.app/v1';
 
 // Exact path mappings for V1 documentation
-// TODO: Add V1-specific documentation paths as they become available
 export const V1_EXACT_MAPPINGS: Record<string, string> = {
-  // Code Documentation - V1 (TODO: Add V1 API documentation paths)
+  // Code Documentation - V1 (TODO: Add V1 API documentation paths when available)
   'model-hq-code-documentation/v1/api-reference/API.md': '/v1/api-reference',
   'model-hq-code-documentation/v1/getting-started-with-SDK/GETTING_STARTED.md': '/v1/getting-started-with-model-hq-sdk',
   'model-hq-code-documentation/v1/hello-world/HELLO_WORD.md': '/v1/hello-world',
@@ -27,45 +26,53 @@ export const V1_EXACT_MAPPINGS: Record<string, string> = {
   'video-tutorials/': '/resources/video-tutorials',
   'blogs-and-partner-solutions/': '/resources/blogs-and-partner-solutions',
   
-  // Chat - V1 (TODO: Add V1 chat documentation)
+  // Chat - V1
   'chat/v1/': '/v1/chat',
   'chat/v1/README.md': '/v1/chat',
-  'chat/v1/changing-chat-model': '/v1/chat/changing-chat-model',
+  'chat/v1/chat.md': '/v1/chat',
+  'chat/v1/chatConfiguration.md': '/v1/chat/chat-configuration',
+  'chat/v1/documentParsingIssues.md': '/v1/chat/document-parsing-issues',
+  'chat/v1/error.md': '/v1/chat/error-handling',
+  'chat/v1/chat-configuration': '/v1/chat/chat-configuration',
+  'chat/v1/document-parsing-issues': '/v1/chat/document-parsing-issues',
   'chat/v1/error-handling': '/v1/chat/error-handling',
   
-  // Agents - V1 (TODO: Add V1 agent documentation)
-  'agent/v1/': '/v1/agent',
-  'agent/v1/README.md': '/v1/agent',
-  'agent/v1/SERVICE.md': '/v1/agent/create-new-agent#service-table',
-  'agent/v1/create-new-agent': '/v1/agent/create-new-agent',
-  'agent/v1/agent-builder-menu': '/v1/agent/agent-builder-menu',
-  'agent/v1/edit-agent': '/v1/agent/edit-agent',
-  'agent/v1/multi-docs-agent': '/v1/agent/multi-docs-agent',
-  'agent/v1/openAI-and-anthropic': '/v1/agent/openAI-and-anthropic',
-  
-  // Bots - V1 (TODO: Add V1 bots documentation)
-  'bots/v1/': '/v1/bots',
-  
-  // RAG - V1 (TODO: Add V1 RAG documentation)
-  'rag/v1/': '/v1/rag',
-  'rag/v1/PARSING.md': '/v1/rag/rag-parsing',
-  'rag/v1/rag-parsing': '/v1/rag/rag-parsing',
-  'rag/v1/document-parsing-issues': '/v1/rag/document-parsing-issues',
-  'rag/v1/error-handling': '/v1/rag/error-handling',
-  
-  // Models & Testing - V1 (TODO: Add V1 models documentation)
+  // Models - V1
   'models/v1/': '/v1/models',
-  'test/v1/': '/v1/testing-models',
+  'models/v1/README.md': '/v1/models',
+  'models/v1/models.md': '/v1/models',
+  'models/v1/modelConfiguration.md': '/v1/models/model-configuration',
+  'models/v1/customTest.md': '/v1/models/custom-test',
+  'models/v1/model-configuration': '/v1/models/model-configuration',
+  'models/v1/custom-test': '/v1/models/custom-test',
   
-  // Configs & Tools - V1 (TODO: Add V1 configs documentation)
-  'tools/v1/': '/v1/tools',
-  'configure/v1/': '/v1/configs',
+  // Bots - V1
+  'bots/v1/': '/v1/bots',
+  'bots/v1/README.md': '/v1/bots',
+  'bots/v1/botsOverview.md': '/v1/bots',
+  'bots/v1/buildBot.md': '/v1/bots/build-bot',
+  'bots/v1/editBot.md': '/v1/bots/edit-bot',
+  'bots/v1/build-bot': '/v1/bots/build-bot',
+  'bots/v1/edit-bot': '/v1/bots/edit-bot',
   
-  // Share & Shutdown - V1 (TODO: Add V1 share/shutdown documentation)
-  'share/v1/': '/v1/share-your-app',
+  // Source (RAG) - V1
+  'source/v1/': '/v1/source',
+  'source/v1/README.md': '/v1/source',
+  'source/v1/source.md': '/v1/source',
+  'source/v1/parsing.md': '/v1/source/parsing-in-source',
+  'source/v1/error.md': '/v1/source/error-handling',
+  'source/v1/parsing-in-source': '/v1/source/parsing-in-source',
+  'source/v1/error-handling': '/v1/source/error-handling',
+  'rag/v1/': '/v1/source',
+  'rag/v1/README.md': '/v1/source',
+  
+  // Shutdown - V1
   'shutdown/v1/': '/v1/shutdown',
+  'shutdown/v1/README.md': '/v1/shutdown',
+  'shutdown/v1/shutdown.md': '/v1/shutdown',
   
-  // Cookbooks V1 (TODO: Add V1 cookbooks)
+  // Cookbooks V1 (TODO: Add V1 cookbooks when available)
+  'cookbooks/v1/': '/cookbooks/v1',
   'cookbooks/v1/personalized-bot': '/cookbooks/v1/personalized-bot',
   'cookbooks/v1/rag-bot': '/cookbooks/v1/rag-bot',
   'cookbooks/v1/document-review-and-analysis-tool': '/cookbooks/v1/document-review-and-analysis-tool',
@@ -80,17 +87,13 @@ export const V1_EXACT_MAPPINGS: Record<string, string> = {
 // Folder mappings for V1 documentation
 export const V1_FOLDER_MAPPINGS: Record<string, string> = {
   'gettingStarted': '/start-here/getting-started',
-  'agent': '/v1/agent',
-  'bots': '/v1/bots',
-  'chat': '/v1/chat',
-  'configure': '/v1/configs',
-  'models': '/v1/models',
-  'rag': '/v1/rag',
-  'share': '/v1/share-your-app',
-  'shutdown': '/v1/shutdown',
   'systemConfiguration': '/start-here/system-configuration',
-  'test': '/v1/testing-models',
-  'tools': '/v1/tools',
+  'chat': '/v1/chat',
+  'models': '/v1/models',
+  'bots': '/v1/bots',
+  'source': '/v1/source',
+  'rag': '/v1/source',
+  'shutdown': '/v1/shutdown',
   'cookbooks': '/cookbooks',
   'video-tutorials': '/resources/video-tutorials',
   'blogs-and-partner-solutions': '/resources/blogs-and-partner-solutions',
@@ -98,11 +101,10 @@ export const V1_FOLDER_MAPPINGS: Record<string, string> = {
 };
 
 // Available documentation pages for V1
-// TODO: Update these URLs as V1 documentation is added
 export const V1_AVAILABLE_PAGES = `
 About & Overview:
-- About Model HQ (What is Model HQ, Features, Overview): ${V1_BASE_URL}/
-- Getting Started: ${V1_BASE_URL}/start-here/getting-started
+- About Model HQ (What is Model HQ, Features, Overview): /start-here/about-model-hq
+- Getting Started: /start-here/getting-started
 
 Code & API Documentation (V1):
 - API Reference (Complete API documentation with all endpoints): ${V1_BASE_URL}/v1/api-reference
@@ -110,50 +112,39 @@ Code & API Documentation (V1):
 - Hello World (Basic inference and stream examples): ${V1_BASE_URL}/v1/hello-world
 
 System & Setup:
-- System Configuration: ${V1_BASE_URL}/start-here/system-configuration
+- System Configuration: /start-here/system-configuration
 
 Supported Models:
-- Intel Supported Models: ${V1_BASE_URL}/supported-models/intel
-- Qualcomm Supported Models: ${V1_BASE_URL}/supported-models/qualcomm
+- Intel Supported Models: /supported-models/intel
+- Qualcomm Supported Models: /supported-models/qualcomm
 
 Learning Resources:
-- Video Tutorials: ${V1_BASE_URL}/resources/video-tutorials
-- Blogs & Partner Solutions: ${V1_BASE_URL}/resources/blogs-and-partner-solutions
+- Video Tutorials: /resources/video-tutorials
+- Blogs & Partner Solutions: /resources/blogs-and-partner-solutions
 
 Chat (V1):
-- Chat Overview: ${V1_BASE_URL}/v1/chat
-- Changing Chat Models: ${V1_BASE_URL}/v1/chat/changing-chat-model
-- Chat Error Handling: ${V1_BASE_URL}/v1/chat/error-handling
+- Chat Overview (Launching interface, model selector, sources, prompts, web search): ${V1_BASE_URL}/v1/chat
+- Chat Configuration (Memory, context, temperature, query strategy, PDF parsing): ${V1_BASE_URL}/v1/chat/chat-configuration
+- Document Parsing Issues (Handling unparsable documents, OCR activation): ${V1_BASE_URL}/v1/chat/document-parsing-issues
+- Chat Error Handling (Model download errors, troubleshooting): ${V1_BASE_URL}/v1/chat/error-handling
 
-Agents (V1):
-- Agents Overview (includes list of all available services): ${V1_BASE_URL}/v1/agent
-- Available Services List: ${V1_BASE_URL}/v1/agent/create-new-agent#service-table
-- Create New Agent: ${V1_BASE_URL}/v1/agent/create-new-agent
-- Agent Builder Menu: ${V1_BASE_URL}/v1/agent/agent-builder-menu
-- Edit Agents: ${V1_BASE_URL}/v1/agent/edit-agent
-- Batch Run (Multi-Docs): ${V1_BASE_URL}/v1/agent/multi-docs-agent
-- OpenAI/Anthropic Models: ${V1_BASE_URL}/v1/agent/openAI-and-anthropic
+Models (V1):
+- Models Overview (Download, test, my models, all models, refresh, troubleshoot): ${V1_BASE_URL}/v1/models
+- Model Configuration (Visibility, naming, defaults, generation, task-specific, automation): ${V1_BASE_URL}/v1/models/model-configuration
+- Custom Test (Creating custom tests, test types, sample generation, mapper): ${V1_BASE_URL}/v1/models/custom-test
 
 Bots (V1):
-- Bots: ${V1_BASE_URL}/v1/bots
+- Bots Overview (Building, loading, demo mode, agents integration): ${V1_BASE_URL}/v1/bots
+- Build Bot (Creating custom bots, configuration, demo features, JSON schema): ${V1_BASE_URL}/v1/bots/build-bot
+- Edit Bot (Models, files, agents, prompts, RAG, UI, controls, JSON editor): ${V1_BASE_URL}/v1/bots/edit-bot
 
-RAG (V1):
-- RAG Overview: ${V1_BASE_URL}/v1/rag
-- RAG Parsing: ${V1_BASE_URL}/v1/rag/rag-parsing
-- Document Parsing Issues: ${V1_BASE_URL}/v1/rag/document-parsing-issues
-- RAG Error Handling: ${V1_BASE_URL}/v1/rag/error-handling
+Source / RAG (V1):
+- Source Overview (Creating knowledge bases, standard vs dataset sources): ${V1_BASE_URL}/v1/source
+- Parsing in Source (Document parsing options, RAG configuration): ${V1_BASE_URL}/v1/source/parsing-in-source
+- Source Error Handling (Troubleshooting source issues): ${V1_BASE_URL}/v1/source/error-handling
 
-Models & Testing (V1):
-- Models: ${V1_BASE_URL}/v1/models
-- Testing Models: ${V1_BASE_URL}/v1/testing-models
-
-Configs & Tools (V1):
-- Tools: ${V1_BASE_URL}/v1/tools
-- Configs: ${V1_BASE_URL}/v1/configs
-
-Share & Shutdown (V1):
-- Share Your App: ${V1_BASE_URL}/v1/share-your-app
-- Shutdown: ${V1_BASE_URL}/v1/shutdown
+Shutdown (V1):
+- Shutdown (Proper shutdown procedures, preventing background processes): ${V1_BASE_URL}/v1/shutdown
 
 Cookbooks (V1):
 - Personalized Bot: ${V1_BASE_URL}/cookbooks/v1/personalized-bot
@@ -166,44 +157,76 @@ Cookbooks (V1):
 
 // Image mappings for V1
 export const V1_AVAILABLE_IMAGES = `
-Main Interface:
-- Main Menu: ![Main Menu](${V1_BASE_IMAGE_URL}/main_menu.png)
-- Landing Interface or setup options or entry page or getting started: ![Landing Interface](${V1_BASE_IMAGE_URL}/getting-started/landing_interface.png)
-- System Config: ![Laptop Config](${V1_BASE_IMAGE_URL}/laptop_config.png)
+Main Interface & Setup:
+- Main Menu Dashboard: ![Main Menu Dashboard](${V1_BASE_IMAGE_URL}/main_menu.png)
+- Landing Interface (Initial Setup Screen): ![Landing Interface](${V1_BASE_IMAGE_URL}/getting-started/landing_interface.png)
+- System Configuration (Laptop Settings): ![System Configuration](${V1_BASE_IMAGE_URL}/laptop_config.png)
 
-Agents (V1):
-- Agent Builder: ![Agent Builder](${V1_BASE_IMAGE_URL}/agent/v1/agentBuilder.png)
-- Agent Interface: ![Agent Interface](${V1_BASE_IMAGE_URL}/agent/v1/agentInterface.png)
-- Create New Agent: ![New Agent](${V1_BASE_IMAGE_URL}/agent/v1/agentNew.png)
-- Agent Process: ![Agent Process](${V1_BASE_IMAGE_URL}/agent/v1/agentProcess.png)
-- Service Examples: ![Service 1](${V1_BASE_IMAGE_URL}/agent/v1/service1.png)
+Chat Interface (V1):
+- Main Menu - Chat Button Location: ![Main Menu Chat Button](/v1/chat/01_mainMenu.png)
+- Model Download Progress Indicator: ![Downloading Model](/v1/chat/02_downloadingModel.png)
+- Complete Chat Interface Layout: ![Chat Interface Overview](/v1/chat/03_chatInterface.png)
+- Interactive Chat Demo (Animated): ![Chat Demo Animation](/v1/chat/04_AniDemo.gif)
+- Model Selection Dropdown Menu: ![Model Selector Dropdown](/v1/chat/05_modelsExpanded.png)
+- Source/RAG Document Upload Interface: ![Apply Source Documents](/v1/chat/06_applySource.png)
+- Source RAG Query Demo: ![Source Query Example](/v1/chat/07_sourceDemo.png)
+- Prompt Configuration Panel: ![Configure System Prompts](/v1/chat/08_promptConfig.png)
+- Prompt Usage Demonstration: ![Prompt in Action](/v1/chat/09_promptDemo.png)
+- Web Search Integration Options: ![Web Search Configuration](/v1/chat/10_webSearch.png)
+- Chat Session Information Panel: ![Chat Info Display](/v1/chat/11_info.png)
+- Export/Download Chat Transcript: ![Download Chat History](/v1/chat/12_download.png)
 
-Chat (V1):
-- Chat Interface: ![Chat Interface](${V1_BASE_IMAGE_URL}/chat/v1/chatInterface.png)
-- Change Models: ![Change Models](${V1_BASE_IMAGE_URL}/chat/v1/changeModels.png)
-- Model Config: ![Model Config](${V1_BASE_IMAGE_URL}/chat/v1/modelConfig.png)
+Models Management (V1):
+- Main Menu - Models Card: ![Models Section Card](/v1/models/01_models.png)
+- Models Interface Dashboard: ![Models Management Interface](/v1/models/02_modelsInterface.png)
+- Expanded Model Details Card: ![Model Card Information](/v1/models/03_modelCard.png)
+- Model Download Interface: ![Download Model Process](/v1/models/04_downloadModel.png)
+- Model Testing Interface: ![Test Model Functionality](/v1/models/04_test.png)
+- My Downloaded Models View: ![My Models Library](/v1/models/05_myModels.png)
+- Complete Model Catalog View: ![All Available Models](/v1/models/06_allModels.png)
+- Troubleshooting Tools Interface: ![Model Troubleshoot Panel](/v1/models/08_troubleshoot.png)
+- Models Storage Information: ![Models Info & Storage](/v1/models/09_info.png)
 
-Bots (V1):
-- Bots Interface: ![Bots](${V1_BASE_IMAGE_URL}/bots/v1.png)
+Bots Creation & Management (V1):
+- Main Menu - Bots Section: ![Bots Main Menu Button](/v1/bots/01_bots.png)
+- Bots Management Interface: ![Bots Dashboard Interface](/v1/bots/02_botsInterface.png)
+- Bot Details Information Panel: ![Bot Configuration Info](/v1/bots/03_botInfo.png)
+- Demo Bot Execution Example: ![Demo Bot in Action](/v1/bots/04_demoBotdemo.png)
+- Edit Bot Configuration Options: ![Edit Bot Settings](/v1/bots/05_demoBotEdit.png)
+- Bot Feature Selection Menu: ![Bot Options Menu](/v1/bots/06_demoBotOptions.png)
+- Bot Agent Integration Panel: ![Bot Agent Configuration](/v1/bots/07_demoBotAgent.png)
+- Run Bot Execution Interface: ![Execute Bot Process](/v1/bots/08_demoBotRun.png)
+- Bot Editor Interface: ![Bot Editor Dashboard](/v1/bots/09_editBot.png)
+- Share Bot Export Options: ![Share Bot Configuration](/v1/bots/10_share.png)
+- Upload Bot Import Interface: ![Upload/Import Bot](/v1/bots/11_uploadBot.png)
 
-RAG (V1):
-- RAG Interface: ![RAG](${V1_BASE_IMAGE_URL}/rag/v1.png)
-- PDF Parsing: ![PDF Parsing](${V1_BASE_IMAGE_URL}/chat/v1/pdfParsing.png)
-- OCR: ![OCR](${V1_BASE_IMAGE_URL}/chat/v1/ocr.png)
+Source / RAG Knowledge Base (V1):
+- Main Menu - Source/RAG Section: ![Source Main Menu Button](/v1/source/01_source.png)
+- Source Builder Interface: ![Source Management Interface](/v1/source/02_sourceInterface.png)
+- Standard Source Configuration: ![Create Standard Source](/v1/source/03_standardSource.png)
+- Source Actions & Options Menu: ![Source Options Panel](/v1/source/04_standardSourceOptions.png)
+- Document Upload Interface: ![Upload Documents to Source](/v1/source/05_standardSourceUploadDocs.png)
+- Parsing Configuration Settings: ![Configure Document Parsing](/v1/source/06_standardSourceConfigure.png)
+- Source Search Query Interface: ![Search Source Documents](/v1/source/07_standardSourceSearch.png)
+- Source Testing & Validation: ![Test Source Responses](/v1/source/08_standardSourceTest.png)
+- Sample Document Examples: ![Sample Source Documents](/v1/source/09_sampleDoc.png)
+- Financial Table Query Example: ![Query Financial Data](/v1/source/10_finanQuery.png)
+- Financial Query Results: ![Financial Query Results](/v1/source/11_finanResult.png)
+- Employment Agreement Query: ![Query Employment Document](/v1/source/12_employQuery.png)
+- Employment Query Results: ![Employment Query Results](/v1/source/13_employResult.png)
+- Dataset Source Configuration: ![Create Dataset Source](/v1/source/14_datasetSource.png)
 
-Models (V1):
-- Models Interface: ![Models](${V1_BASE_IMAGE_URL}/models/v1.png)
+Shutdown & System Control (V1):
+- Shutdown Power Button Location: ![Shutdown Button Interface](/v1/shutdown/01_shutdown.png)
+- Auto-Restart Configuration: ![Unintended Shutdown Settings](/v1/shutdown/02_unintended.png)
 
-Shutdown (V1):
-- Shutdown: ![Shutdown](${V1_BASE_IMAGE_URL}/shutdown/v1.png)
-
-Model HQ SDK Or Code Documentation or Getting Started with SDK (V1):
-- ![Tools Location](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/menu.png)
-- ![Tools Interface](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/tools.png)
-- ![Initiate Backend](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/backend.png)
-- ![Launching Backend](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/launch.png)
-- ![Backend Configure](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/backend.png)
-- ![Download SDK](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/download.png)
-- ![Inside Downloaded SDK Files](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/files.png)
-- ![Closing Backend](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/close.png)
+Model HQ SDK & Code Documentation (V1):
+- Tools Menu Location: ![SDK Tools Menu Location](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/menu.png)
+- Tools Interface Dashboard: ![SDK Tools Interface](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/tools.png)
+- Backend Server Initialization: ![Initialize Backend Server](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/backend.png)
+- Backend Launch Process: ![Launch Backend Server](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/launch.png)
+- Backend Configuration Panel: ![Configure Backend Settings](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/backend.png)
+- SDK Download Interface: ![Download SDK Package](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/download.png)
+- SDK File Structure: ![SDK Downloaded Files](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/files.png)
+- Backend Shutdown Process: ![Close Backend Server](${V1_BASE_IMAGE_URL}/getting-started-with-sdk/v1/close.png)
 `;

@@ -41,8 +41,8 @@ export default function VideoTutorialsPage() {
         {/* Header */}
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-2 sm:gap-3 mb-4">
-            <div className="p-2 sm:p-3 bg-red-100 rounded-full bg-gradient-to-br from-red-50 to-rose-100 dark:from-red-950 dark:to-rose-700">
-              <Play className="h-6 w-6 sm:h-8 sm:w-8 text-red-300" />
+            <div className="p-2 sm:p-3 bg-red-100 rounded-full bg-gradient-to-br from-red-500 to-rose-700 dark:from-red-950 dark:to-rose-700">
+              <Play className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
             </div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100">Video Tutorials</h1>
           </div>

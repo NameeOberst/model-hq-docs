@@ -1,5 +1,4 @@
 # Source
-
 After completing the initial setup, users will be directed to the **Main Menu**. This interface provides access to several powerful features. In this section, the **Source** (or RAG Source) feature will be described. RAG, which stands for **Retrieval-Augmented Generation**, is a feature within Model HQ to help users search their documents or other knowledge bases.
 
 The Source section is used to create, test and interact with user-created knowledge bases. Once created, the user-created Source can be later incorporated into Chat, Bot or Agents as a knowledge base.
@@ -168,32 +167,19 @@ Testing a RAG Source requires the following inputs:
 
   > [!TIP]
   > Context Top N refers to selecting the top N most relevant pieces of information (e.g., text chunks) from a larger context based on similarity to a query, and it's important because it ensures the model focuses on the most pertinent data to generate accurate and relevant responses. Choosing this will give you the number of results you indicate which is particularly important if you selected the "Compare" feature for the source, and would like to see individual results.
-  >
+
   > **Example of Testing a Source**
-  >
   > We created a Source called Testing011426 which consisted of an Employment Ageement (in PDF format - provided as a sample document with Model HQ in C:\Users\[user name]\llmware_data\Agreements) and a Screenshot of a financial table.
-  > [Rohan, include this file as example - in email]
-  >
-  > [screenshot]
-  >
+  > ![source](source/09_sampleDoc.png)
   > We are able to ask the Source questions about both the Employment Agreement as well as the Financial Table because they are in the same Source.
-  >
   > Example of Financial Table Query:
-  >
-  > [screenshot]
-  >
+  > ![source](source/10_finanQuery.png)
   > Example of Financial Table Answer:
-  >
-  > [Screenshot]
-  >
+  > ![source](source/11_finanResult.png)
   > Example of Employment Agreement Query:
-  >
-  > [screenshot]
-  >
+  > ![source](source/12_employQuery.png)
   > Example of Employment Agreement Answer:
-  >
-  > [screenshot]
-  >
+  > ![source](source/13_employResult.png)
   
 
 - **context_target_size**
@@ -216,9 +202,11 @@ If the source contains links (e.g., from a web search), this option will return 
 The source can be deleted from the system.
 
 ## 5. Creating a dataset source
-To create a dataset source, the source creation process should be started again. This time, two options will be visible: load existing and build new, as mentioned earlier. This steps needed to create a dataset source can be found under Datasets. [add link here]
+To create a dataset source, the source creation process should be started again. 
 
+![source](source/14_datasetSource.png)
 
+Learn more about creating a dataset source in [Datasets](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/models/datasets.md)
 
 ## 6. Load existing source
 This option allows RAG functionality to be quickly accessed for sources that have been previously created.
@@ -226,5 +214,4 @@ This option allows RAG functionality to be quickly accessed for sources that hav
 Sources can be configured and deleted as needed from this interface.
 
 ## Conclusion
-
 This document described the Source (RAG) feature in Model HQ, including how to launch the source interface, create standard and dataset sources, configure parsing options, perform searches, and test RAG responses. Sources provide the foundation for knowledge base creation in Model HQ, enabling document-based context retrieval for chat sessions and custom bots. Standard sources support multi-format documents such as PDFs, presentations, and images, while dataset sources are optimized for structured data like CSV and JSON files. Once created, sources can be tested with different models, configured with various retrieval parameters, and reused across multiple workflows. Understanding how to create and configure sources effectively enables more accurate, context-aware AI responses throughout Model HQ.

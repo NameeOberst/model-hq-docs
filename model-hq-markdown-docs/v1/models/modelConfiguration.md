@@ -606,7 +606,6 @@ Setting an appropriate cache size helps:
 > Regularly review cached models using the **My Models** and **Info** functions in the Models interface to identify models that can be removed to free up space.
 
 ## Conclusion
-
 The Model Configuration panel serves as the foundation of Model HQ's model orchestration system. By centralizing control over model selection, execution behavior, and resource usage, it ensures predictable performance, efficient hardware utilization, and seamless task execution across the platform.
 
 These defaults act as both safeguards and accelerators, reducing friction for typical workflows while enabling advanced multi-model capabilities for sophisticated use cases. Regular review and adjustment of these settings based on usage patterns and resource constraints will help maintain optimal system performance over time.

@@ -5,6 +5,10 @@ import {
   MessageSquare,
   Database,
   BookOpen,
+  Bot,
+  FileSearch,
+  Power,
+  FlaskConical,
 } from "lucide-react"
 
 type NavSubItem = {
@@ -39,7 +43,33 @@ export const v1NavigationData: NavItem[] = [
     items: [
       { title: "Models Overview", url: "/v1/models" },
       { title: "Model Configuration", url: "/v1/models/model-configuration" },
+      { title: "Create Custom Test", url: "/v1/models/custom-test" },
     ],
+  },
+  {
+    title: "Bots",
+    url: "/v1/bots",
+    icon: Bot,
+    items: [
+      { title: "Bots Overview", url: "/v1/bots" },
+      { title: "Building a Bot", url: "/v1/bots/build-bot" },
+      { title: "Editing a Bot", url: "/v1/bots/edit-bot" },
+    ],
+  },
+  {
+    title: "Source",
+    url: "/v1/source",
+    icon: FileSearch,
+    items: [
+      { title: "Source Overview", url: "/v1/source" },
+      { title: "Parsing in Source", url: "/v1/source/parsing-in-source" },
+      { title: "Error Handling", url: "/v1/source/error-handling" },
+    ],
+  },
+  {
+    title: "Shutdown",
+    url: "/v1/shutdown",
+    icon: Power,
   },
 ]
 

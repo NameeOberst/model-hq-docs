@@ -6,15 +6,6 @@ To build a bot, the **build new** option can be selected from the bots interface
 
 ![buildBot](buildBot/01_buildBot.png)
 
-Instructions for how to bot can be found by expanding the instruction section:
-
-[insert screenshot]
-
-The user can also see the current default configuration by expanding the Bot details section:
-
-[insert screenshot]
-
-
 ## 2. Configuring a custom bot
 After selecting build new, an interface with multiple configuration options will be presented. The options provided here are the same as those used when editing an existing bot.
 
@@ -23,7 +14,6 @@ After selecting build new, an interface with multiple configuration options will
 All configuration options are detailed in [Editing a Bot](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/bots/editBot.md).
 
 At this point, the User should select the Model they would like to use with this custom bot. When any configuration option is selected for the first time, a prompt to name the bot will be displayed. User should name the bot, and follow instructions set out in [Editing a Bot](https://github.com/BloksAdmin/model-hq-docs/tree/master/v1/bots/editBot.md).
-
 
 ![buildBot](buildBot/03_nameBot.png)
 
@@ -40,18 +30,15 @@ When configuration is complete, the bot template can be run locally, exported, o
 ### Instructions to add a Demo feature to a custom bot
 The user is able to create a short demo with the custom bot so that the when the bot is shared with others, it is easy to show and demo. To create a demo, when creating a new bot, once the bot has been named and the model selected, select "Demo."
 
-[Insert screenshot]
+![buildBot](buildBot/04_demo.png)
 
 Once the Demo button is selected, the bot creator will be asked to build an input list. This is the list of queries or prompts the bot will automatically run in Demo Mode to showcase its capabilities. To add each prompt, select the "+" button, and type in each row the specific prompt for the demo, as shown below, and press ">" when finished.
 
-[Insert screenshot]
+![buildBot](buildBot/05_demoInputs.png)
 
 The next screen will ask for a short demo description and a video link to share if any. Press ">" when finished. Once complete, when this bot is selected, the user will be given Demo Mode as an option. 
 
-If the user selects the Demo Mode when accessing the bot, the bot will automatically run through the prompts as shown.
-
-[insert screenshot of the prompts running]
-
+If the user selects the Demo Mode when accessing the bot, the bot will automatically run through the prompts as shown [here](https://github.com/BloksAdmin/model-hq-docs/tree/master/model-hq-markdown-docs/v1/bots/botsOverciew.md#222-demo-mode).
 
 ### Checking Bot's JSON Schema
 
@@ -169,9 +156,9 @@ If the user selects the Demo Mode when accessing the bot, the bot will automatic
 The JSON schema reflects the Bot's configurations and specifications, and can also be modified directly here.
 
 ## Hands on: Create a Custom Bot with Us
+Jump into this quick, hands-on tutorial and create your very first custom bot—no long setup, just results.
 
-Link to Cookbook on Create a Custom Bot.
+[Create Your Custom Bot Now](link to cookbook here)
 
 ## Conclusion
-
-It is very easy and intuitive to build a custom bot with many configuration and demo options. Please see more in Overview and Editing Bots. 
+Building a custom bot in Model HQ provides a flexible and powerful way to create specialized AI applications tailored to your specific needs. By configuring models, attaching relevant files, setting up RAG connections, and customizing the UI, you can create bots that serve as standalone applications or integrate seamlessly into larger agent workflows. Whether you're building a simple Q&A bot or a complex multi-source information assistant, the Bot Builder interface gives you the control and customization options needed to bring your vision to life. Once configured, your custom bot can be tested locally, exported for deployment, or shared with your team—making it easy to iterate and scale your AI solutions.

@@ -22,7 +22,7 @@ export function AiSearchModal({ isOpen, onClose, initialQuery = "" }: AiSearchMo
   const [query, setQuery] = useState(initialQuery)
   const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const [version, setVersion] = useState<'v0' | 'v1'>('v0')
+  const [version, setVersion] = useState<'v0' | 'v1'>('v1')
   const inputRef = useRef<HTMLInputElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
