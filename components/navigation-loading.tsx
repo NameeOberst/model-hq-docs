@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import Image from "next/image"
 
 export function NavigationLoading() {
   const [isLoading, setIsLoading] = useState(false)
