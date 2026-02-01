@@ -65,7 +65,7 @@ This step configures the Backend API Server for **Headless mode** operation. The
 
 This configuration defines the server's network location, access method, concurrency limits, and optional security controls.
 
-#### Server Mode: Localhost or External IP
+#### 3.1.2.1 Server Mode: Localhost or External IP
 
 Choose how the backend server should be exposed.
 
@@ -81,7 +81,7 @@ Choose how the backend server should be exposed.
 * Use **Localhost** for development, testing, or single machine setups.
 * Use **External IP** for shared environments, distributed agents, or production deployments.
 
-#### IP Address
+#### 3.1.2.2 IP Address
 
 Specifies the IP address on which the backend server will listen.
 
@@ -96,7 +96,7 @@ Specifies the IP address on which the backend server will listen.
 192.168.29.93
 ```
 
-#### Port
+#### 3.1.2.3 Port
 
 Defines the network port used by the backend server.
 
@@ -111,7 +111,7 @@ Defines the network port used by the backend server.
 * Change this only if the default port is already in use.
 * Ensure the port is open and allowed through firewalls if using an External IP.
 
-#### Workers
+#### 3.1.2.4 Workers
 
 Controls the number of lightweight worker processes handling concurrent requests.
 
@@ -127,7 +127,7 @@ Controls the number of lightweight worker processes handling concurrent requests
 * Increase only if you observe request bottlenecks or specific performance issues.
 * Higher values may increase memory and CPU usage.
 
-#### Trusted Key
+#### 3.1.2.5 Trusted Key
 
 An optional shared secret used to secure API access.
 
@@ -142,7 +142,7 @@ An optional shared secret used to secure API access.
 my-secure-backend-key
 ```
 
-#### Require Trusted Key
+#### 3.1.2.6 Require Trusted Key
 
 Controls whether the Trusted Key is mandatory for all API calls.
 
@@ -158,7 +158,7 @@ Controls whether the Trusted Key is mandatory for all API calls.
 * Enable **Require Key** for production or shared environments.
 * Use **No Key** only for local development or isolated networks.
 
-#### Result
+#### 3.1.2.7 Result
 
 Once configured, the backend API server will start in headless mode using the defined network settings, concurrency limits, and security rules. This server becomes the primary execution and integration point for agents, MCP services, and external systems.
 
