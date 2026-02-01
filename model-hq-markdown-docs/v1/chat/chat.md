@@ -1,5 +1,4 @@
 # Exploring Chat in Model HQ
-
 After completing the initial setup, users will be directed to the **Main Menu**. This document describes how the chat workspace is launched, how models are selected and downloaded, and how the Chat UI can be used — including RAG (Retrieval-Augmented Generation) workflows that combine uploaded documents or web search with model generation.
 
 Model HQ is described as supporting multiple model sizes to fit different needs:
