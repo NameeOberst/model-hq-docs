@@ -1,7 +1,9 @@
 # Exploring tools in Model HQ
 The Tools section provides powerful utilities for managing local setup, development workflows, and system diagnostics within Model HQ. This centralized interface includes backend server controls, CLI access, development SDKs, model management utilities, and system information displays.
 
-After completing the initial setup, users gain access to a comprehensive toolkit that supports both end-user and developer workflows. The Tools interface serves as a control center for advanced operations such as launching headless backend servers for API-based deployments, accessing command-line interfaces for scripted automation, downloading sample documents for testing, managing model installations, and diagnosing system capabilities. These tools enable power users and developers to extend Model HQ beyond its graphical interface, integrate it into larger systems, troubleshoot deployment issues, and optimize performance based on available hardware resources. Understanding the Tools section is essential for advanced configurations, programmatic access, and production deployments where Model HQ serves as a backend AI service rather than an interactive application.
+After completing the initial setup, users gain access to a comprehensive toolkit that supports both end-user and developer workflows. The Tools interface serves as a control center for advanced operations such as launching headless backend servers for API-based deployments, accessing command-line interfaces for scripted automation, downloading sample documents for testing, managing model installations, and diagnosing system capabilities. 
+
+These tools enable power users and developers to extend Model HQ beyond its graphical interface, integrate it into larger systems, troubleshoot deployment issues, and optimize performance based on available hardware resources. Understanding the Tools section is essential for advanced configurations, programmatic access, and production deployments where Model HQ serves as a backend AI service rather than an interactive application.
 
 ## 1. Launching the tools interface
 To begin, the **Tools** button (🔧) located in the top right side of the main menu can be selected.
@@ -164,11 +166,18 @@ Once configured, the backend API server will start in headless mode using the de
 
 
 ## 3.2 Demos
-The **Demos** section contains all demonstrations that have been created or pre-existed for bots and agents. Demonstrations can be executed directly from this interface.
+The **Demos** section is designed to make demos of bots and agents easy for users. This section contains all demonstrations that have been created by the user as well as some Model HQ pre-packaged demos for bots and agents. Demos are often packaged with pre-loaded prompts or queries and are designed to run automatically with the pre-loaded prompts to illustrate the bot or agent. 
+
+Demonstrations can be executed directly from this interface.
 
 ![Backend Launch](tools/04_demos.png)
 
 This provides quick access to test workflows and example implementations without navigating through the full bot or agent creation process.
+
+![Note]
+To create Demos to be added to this section, go to Bots > [select the name of bot] > Edit > Demo. In this section you will see either the option to build an input list of prompts OR a list of prompts (if the demo has already been created for the Bot). For a tutorial of how to create a demo for your custom bot, please watch our YouTube video, "One-Click Live Demos for Your AI Chabots": https://youtu.be/il48-IaEfxw
+
+To create Demos of Agents [TBD]
 
 ## 3.3 SDK
 The **Model HQ Client Tools Kit** (or Model HQ SDK) enables Model HQ to be run within an IDE environment and allows the backend server to be operated as described in the Backend section.
